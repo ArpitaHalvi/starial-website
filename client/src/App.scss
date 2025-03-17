@@ -586,6 +586,9 @@
       width: 60%;
       font-size: 2.5rem;
     }
+    @media (width<=500px) {
+      width: 100%;
+    }
   }
   .process {
     width: 90%;
@@ -700,10 +703,10 @@
     padding: 1rem;
     .process {
       .step-route {
-        left: 6%;
+        left: 4%;
+        width: 15%;
         height: 95%;
         background-color: grey;
-        width: 10%;
         @include index.flex-box;
         padding: 0.5rem;
         div {
@@ -753,7 +756,7 @@
           top: 25%;
         }
         .path {
-          height: 250px;
+          height: 240px;
         }
         .path1,
         .path2,
