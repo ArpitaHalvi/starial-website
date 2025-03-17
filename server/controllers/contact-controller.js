@@ -9,6 +9,7 @@ const contact = async (req, res, next) => {
     console.log("Contact sent successfully.");
     return res.status(200).json({ message: "Message sent successfully." });
   } catch (e) {
+    console.error("Error from contact controller: ", e);
     next(e);
   }
 };

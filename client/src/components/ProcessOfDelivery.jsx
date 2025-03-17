@@ -4,10 +4,11 @@ export default function ProcessOfDelivery() {
   return (
     <section className="process-section">
       <h2>How we make it happen?</h2>
-      {/* <div className="process-wrapper"> */}
       <div className="process">
         <IoLocationSharp className="location" />
-        <div className="step-route"></div>
+        <div className="step-route">
+          <div></div>
+        </div>
         <div className="first-div step">
           <div className="step-decor step-1"></div>
           <h5>
@@ -44,7 +45,6 @@ export default function ProcessOfDelivery() {
           <div className="path path5"></div>
         </div>
       </div>
-      {/* </div> */}
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import StatusModal from "../modals/StatusModal";
+import axios from "axios";
 
 const initialData = {
   fullname: "",
@@ -21,25 +22,23 @@ export default function ContactUs() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5002/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(contactData),
-      });
-      const res_data = await response.json();
-      if (response.ok) {
-        console.log("Message sent successfully.");
-        setOpenModal(true);
-        setSuccess("Message sent successfully.");
-      } else {
-        setError(
-          res_data.extraDetails ? res_data.extraDetails : res_data.message
-        );
-        setOpenModal(true);
-        console.error("Error while sending message.", e);
-      }
+      await axios
+        .post("http://localhost:5002/api/contact", contactData, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then(() => {
+          console.log("Message sent successfully.");
+          setSuccess("Message sent successfully.");
+          setOpenModal(true);
+          setContactData(initialData);
+        })
+        .catch((e) => {
+          setError(e.extraDetails ? e.extraDetails : e.message);
+          setOpenModal(true);
+          console.error("Error while sending message.", e);
+        });
     } catch (e) {
       console.error("Error: ", e);
       setOpenModal(true);

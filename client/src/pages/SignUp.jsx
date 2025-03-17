@@ -28,16 +28,25 @@ export default function SignUp() {
         .post("http://localhost:5002/api/auth/signup", user, {
           headers: { "Content-Type": "application/json" },
         })
-        .then((res) => {
-          setSuccess(res.data.message);
+        .then(() => {
+          setSuccess("Successfully signed up!");
+          setOpenModal(true);
+          setUser(initialData);
           console.log("Successfully signed up!");
         })
         .catch((e) => {
-          setError(e.message);
+          console.log("Error", e.response.data.extraDetails);
+          setError(
+            e.response.data.extraDetails
+              ? e.response.data.extraDetails
+              : e.response.data.message
+          );
+          setOpenModal(true);
           console.error("Error while creating account.");
         });
     } catch (e) {
       setError(e.message);
+      setOpenModal(true);
       console.error("Error: ", e);
     }
   };
