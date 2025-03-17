@@ -601,10 +601,17 @@
       top: 5%;
       // height: 1200px;
       height: 90%;
-      width: 5px;
-      background-color: black;
-      left: 50%;
+      // width: 5px;
+      width: 5%;
+      background-color: grey;
+      left: 47.5%;
       z-index: 2;
+      @include index.flex-box;
+      div {
+        width: 2%;
+        height: 100%;
+        border: 2px dashed white;
+      }
     }
     .location {
       font-size: 3rem;
@@ -700,6 +707,32 @@
       }
     }
   }
+  @media (width<1160px) {
+    .process {
+      .step {
+        .step-decor {
+          width: 150px;
+          height: 150px;
+          // position: absolute;
+          // top: ;
+        }
+        .path1,
+        .path3,
+        .path5 {
+          top: 0;
+          right: 40%;
+        }
+        .path2,
+        .path4 {
+          top: 0;
+          left: 40%;
+        }
+        .location {
+          animation: move-cursor-medium 6s linear infinite;
+        }
+      }
+    }
+  }
   @media (width<=500px) {
     border-radius: 0 0 0 0;
     padding: 1rem;
@@ -746,7 +779,7 @@
         .step-4,
         .step-5 {
           position: absolute;
-          right: 7%;
+          right: 5%;
           top: 30%;
         }
         h5 {
@@ -770,6 +803,45 @@
         }
       }
     }
+  }
+}
+
+$mediumScreen: 1000px;
+$largeScreen: 1180px;
+
+@keyframes move-cursor-medium {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(220px);
+  }
+  50% {
+    transform: translateY(600px);
+  }
+  75% {
+    transform: translateY(820px);
+  }
+  100% {
+    transform: translateY($mediumScreen);
+  }
+}
+
+@keyframes move-cursor {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(220px);
+  }
+  50% {
+    transform: translateY(600px);
+  }
+  75% {
+    transform: translateY(820px);
+  }
+  100% {
+    transform: translateY($largeScreen);
   }
 }
 
