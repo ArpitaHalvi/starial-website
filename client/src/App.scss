@@ -595,6 +595,7 @@
     @include index.flex-box($flex-dir: column);
     gap: 3rem;
     position: relative;
+    // background-color: pink;
     .step-route {
       position: absolute;
       top: 5%;
@@ -624,6 +625,7 @@
       gap: 1rem;
       position: relative;
       padding: 1rem;
+      // background-color: plum;
       &:nth-of-type(2n + 2) {
         justify-content: flex-end;
       }
@@ -744,7 +746,7 @@
         .step-4,
         .step-5 {
           position: absolute;
-          right: 10%;
+          right: 7%;
           top: 30%;
         }
         h5 {
@@ -753,7 +755,7 @@
           font-size: 1rem;
           margin-top: 0;
           left: 20%;
-          top: 25%;
+          top: 20%;
         }
         .path {
           height: 240px;
