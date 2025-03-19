@@ -463,7 +463,7 @@
     width: 100%;
     padding: 2rem;
     @include index.res-grid(calc(100% / 3));
-    background-color: pink;
+    // background-color: pink;
     div {
       width: 80%;
       height: 70vh;
