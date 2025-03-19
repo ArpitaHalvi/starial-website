@@ -9,20 +9,11 @@ const userSchema = new Schema({
     required: [true, "Enter your email first."],
     unique: true,
   },
-  phoneNumber: {
-    type: Number,
-    // required: [true, "Enter your phone number first."],
-    unique: true,
-  },
   password: {
     type: String,
     required: [true, "Password required."],
     unique: true,
   },
-  address: { type: [String] },
-  city: { type: String },
-  pincode: { type: Number },
-  state: { type: String },
 });
 
 userSchema.pre("save", async function (next) {

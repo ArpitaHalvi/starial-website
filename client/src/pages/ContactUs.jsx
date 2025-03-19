@@ -41,8 +41,8 @@ export default function ContactUs() {
         });
     } catch (e) {
       console.error("Error: ", e);
-      setOpenModal(true);
       setError(e.message);
+      setOpenModal(true);
     }
   };
   useEffect(() => {
@@ -72,14 +72,14 @@ export default function ContactUs() {
         />
         <div>
           <input
-            type="text"
+            type="email"
             name="email"
             placeholder="Your email"
             value={contactData.email}
             onChange={handleChange}
           />
           <input
-            type="text"
+            type="tel"
             name="phoneNumber"
             placeholder="Your phone number"
             value={contactData.phoneNumber}

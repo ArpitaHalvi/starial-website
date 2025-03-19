@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaPencilRuler } from "react-icons/fa";
 
 const categories = [
   { name: "Art  & Crafts", image: "" },
@@ -50,13 +51,14 @@ export default function CategoriesPage() {
   );
   return (
     <section className="categories-page">
-      <h2>Categories of Products</h2>
+      <h2>Category of Products</h2>
       <div>
         <input
           type="search"
           placeholder="Search by Categories"
           onChange={(e) => setSearchText(e.target.value)}
         />
+        {/* <FaPencilRuler className="input-icon" /> */}
         <p>Showing results for {filteredCategories.length} categories...</p>
       </div>
       <div className="categories">
@@ -65,7 +67,8 @@ export default function CategoriesPage() {
             <div className="category" key={index}>
               <div>
                 {/* <img src={product.image} alt="" /> */}
-                <img src="/stationery.jpg" alt="" loading="lazy" />
+                {/* <img src="/category.jpg" alt="" loading="lazy" /> */}
+                <FaPencilRuler className="pencil-ruler-icon" />
               </div>
               <h4>{product.name}</h4>
             </div>

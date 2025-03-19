@@ -26,6 +26,22 @@ const signUp = async (req, res, next) => {
 const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
+    console.log(email, password);
+    const userExists = await User.findOne({ email });
+    if (userExists) {
+      const loggedInUser = await userExists.comparePassword(password);
+      if (loggedInUser) {
+        res.status(200).json({
+          message: "Logged in sucessfully!",
+          token: userExists.generateToken(),
+          userId: userExists._id.toString(),
+        });
+      } else {
+        res.status(401).json({ message: "Invalid Email or Password!" });
+      }
+    } else {
+      res.status(400).json({ message: "Invalid credentials." });
+    }
   } catch (e) {
     next(e);
   }

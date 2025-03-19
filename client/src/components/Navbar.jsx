@@ -16,14 +16,6 @@ export default function Navbar() {
       </div>
       <nav className="navbar">
         <ul className={`links ${isOpen ? "open" : ""}`}>
-          <li className="home-link">
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? "active" : "a")}
-            >
-              <HiHome className="home-icon" />
-            </NavLink>
-          </li>
           <li>
             <NavLink
               to="/about"
@@ -57,9 +49,6 @@ export default function Navbar() {
             </NavLink>
           </li>
           {/* <li> */}
-          <NavLink to="/register" className="register">
-            Register
-          </NavLink>
           <NavLink to="/signup" className="register signup">
             Sign Up
           </NavLink>

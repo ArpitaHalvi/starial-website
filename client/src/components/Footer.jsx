@@ -1,7 +1,8 @@
-import { BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
 import { CgMail } from "react-icons/cg";
 import { CiLocationOn } from "react-icons/ci";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { IoCall } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
 
@@ -21,12 +22,12 @@ export default function Footer() {
   ];
   const socialLinks = [
     { url: "", icon: <FaFacebook className="social-icon" /> },
-    { url: "", icon: <BsTwitter className="social-icon" /> },
+    { url: "", icon: <FaXTwitter className="social-icon" /> },
     {
       url: "https://www.linkedin.com/company/starial/?originalSubdomain=in",
-      icon: <BsLinkedin className="social-icon" />,
+      icon: <FaLinkedin className="social-icon" />,
     },
-    { url: "", icon: <BsInstagram className="social-icon" /> },
+    { url: "", icon: <FaInstagram className="social-icon" /> },
   ];
   return (
     <footer className="footer-section">
@@ -91,7 +92,7 @@ export default function Footer() {
               <span>
                 <span>Mail Us</span>
                 <NavLink to="mailto:Starialofficial@gmail.com">
-                  Starialofficial@gmail.com
+                  business@starial.in
                 </NavLink>
               </span>
             </li>

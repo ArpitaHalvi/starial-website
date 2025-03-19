@@ -1,31 +1,82 @@
-import { FaClock } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import Masonry from "react-masonry-css";
+
+const TypeWriter = ({ words, speed = 100, delay = 1000 }) => {
+  const [index, setIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  useEffect(() => {
+    const word = words[index];
+    if (!isDeleting && text === word) {
+      setTimeout(() => setIsDeleting(true), delay);
+      return;
+    }
+    if (isDeleting && text === "") {
+      setIsDeleting(false);
+      setIndex((prev) => (prev + 1) % words.length);
+    }
+    const typing = setTimeout(
+      () => {
+        setText((prev) =>
+          isDeleting
+            ? word.slice(0, prev.length - 1)
+            : word.slice(0, prev.length + 1)
+        );
+      },
+      isDeleting ? speed / 4 : speed
+    );
+    return () => clearTimeout(typing);
+  }, [text, isDeleting, index, words, speed, delay]);
+  return <h4>{text}</h4>;
+};
 
 export default function AboutPage() {
+  const membersName = [
+    "Rahul Rai - CEO",
+    "Anusha - HR",
+    "Deeksha Sen - Manager",
+    "Ashish - Graphic Designer",
+  ];
+  const images = [
+    "/gallery1.jpg",
+    "/gallery2.jpg",
+    "/gallery3.jpg",
+    "/gallery4.jpg",
+    "/gallery5.jpg",
+  ];
+  const breakPoints = {
+    default: 3,
+    1100: 2,
+    768: 1,
+  };
   return (
     <section className="about-page">
-      <h2>Know More about Us</h2>
       <div className="about-us">
-        <h3>Get your Books and Stationery at your doorstep!</h3>
-        <div className="about-company">
-          {/* <img src="" alt="" /> */}
-          <p>
-            Starial is a startup providing convenient and efficient delivery of
-            Stationery and Uniforms within an hour.
-          </p>
-          <FaClock className="clock-icon" />
-        </div>
-        <div className="about-ceo">
-          <div>
-            <img src="/stationery-items.png" alt="" />
+        <div className="about-members">
+          <h3>Where creativity meets functionality - Introducing Our Team!</h3>
+          <div className="animate-text">
+            <TypeWriter words={membersName} />
+            {/* <h4>Team Member</h4> */}
           </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-            animi sed quidem optio! Voluptates odit facere possimus deserunt
-            consectetur praesentium nobis minima natus impedit dignissimos odio
-            fuga nam labore, qui a? Nesciunt repellendus dolor quia voluptates
-            velit, ipsum ullam quibusdam vitae tempora quae numquam sit.
-            <blockquote> Rahul Rai (CEO at Starial)</blockquote>
-          </p>
+          <div className="team-members">
+            <img src="team.jpg" alt="" />
+          </div>
+        </div>
+        <div className="some-glimpes">
+          <h3>A Peek into our world!</h3>
+          <Masonry
+            breakpointCols={breakPoints}
+            columnClassName="masonry-col"
+            className="masonry-grid"
+          >
+            {images.map((url, index) => {
+              return (
+                <div>
+                  <img src={url} alt="Image" key={index} />
+                </div>
+              );
+            })}
+          </Masonry>
         </div>
       </div>
     </section>

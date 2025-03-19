@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StatusModal from "../modals/StatusModal";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { BiLogIn } from "react-icons/bi";
+import { toast } from "react-toastify";
 
 const initialData = {
   fullname: "",
@@ -32,24 +33,32 @@ export default function SignUp() {
           setSuccess("Successfully signed up!");
           setOpenModal(true);
           setUser(initialData);
+          toast.success("Successfully signed up!");
           console.log("Successfully signed up!");
         })
         .catch((e) => {
           console.log("Error", e.response.data.extraDetails);
-          setError(
-            e.response.data.extraDetails
-              ? e.response.data.extraDetails
-              : e.response.data.message
-          );
+          setError("Error while creating account.");
+          setError(e.response.data.extraDetails);
           setOpenModal(true);
+          toast.error("Error while creating account.");
           console.error("Error while creating account.");
         });
     } catch (e) {
       setError(e.message);
       setOpenModal(true);
+      toast.error(e.message);
       console.error("Error: ", e);
     }
   };
+  useEffect(() => {
+    if (openModal) {
+      const timer = setTimeout(() => {
+        setOpenModal(false);
+      }, 3000);
+      return () => clearInterval(timer);
+    }
+  });
   return (
     <section className="signup-section">
       <StatusModal
@@ -58,29 +67,32 @@ export default function SignUp() {
         onClose={() => setOpenModal(false)}
         isOpen={openModal}
       />
+      <div></div>
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2>Sign Up</h2>
-        <input
-          type="text"
-          name="fullname"
-          placeholder="Enter your fullname"
-          value={user.fullname}
-          onChange={handleChange}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          value={user.email}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Enter your password"
-          value={user.password}
-          onChange={handleChange}
-        />
+        <div>
+          <input
+            type="text"
+            name="fullname"
+            placeholder="Enter your fullname"
+            value={user.fullname}
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            value={user.email}
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            value={user.password}
+            onChange={handleChange}
+          />
+        </div>
         <button type="submit">SIGN UP</button>
         <div className="already-acc">
           <p>

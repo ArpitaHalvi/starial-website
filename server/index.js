@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const app = express();
 const port = 5002;
@@ -6,9 +10,9 @@ const cors = require("cors");
 const url = "mongodb://127.0.0.1:27017/starial";
 const userRoutes = require("./routers/user-router");
 const contactRoutes = require("./routers/contact-router");
+const downloadRoutes = require("./routers/download-link-router");
 const ErrorMiddleware = require("./middlewares/error-middleware");
 
-app.use(express.json());
 const corsConfig = {
   origin: "http://localhost:5173",
   methods: "GET, POST, PUT, PATCH, HEAD, DELETE",
@@ -16,6 +20,7 @@ const corsConfig = {
 };
 
 app.use(cors(corsConfig));
+app.use(express.json());
 
 mongoose
   .connect(url)
@@ -31,4 +36,5 @@ mongoose
 
 app.use("/api/auth", userRoutes);
 app.use("/api/contact", contactRoutes);
+app.use("/api/download", downloadRoutes);
 app.use(ErrorMiddleware);
