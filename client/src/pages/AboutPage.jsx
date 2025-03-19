@@ -41,8 +41,8 @@ export default function AboutPage() {
   const images = [
     "/glimpse3.jpg",
     "/glimpse4.jpg",
-    "/glimpse5.jpg",
     "/glimpse1.jpg",
+    "/glimpse5.jpg",
     "/glimpse2.jpg",
   ];
   const breakPoints = {
@@ -59,7 +59,7 @@ export default function AboutPage() {
             <TypeWriter words={membersName} />
           </div>
           <div className="team-members">
-            <img src="glimpse5.jpg" alt="" />
+            <img src="glimpse5-final.jpg" alt="" />
           </div>
         </div>
         <div className="some-glimpes">
