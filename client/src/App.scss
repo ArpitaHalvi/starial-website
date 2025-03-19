@@ -565,8 +565,10 @@
             left: -10%;
           }
           @media (width<=500px) {
-            width: 80%;
-            a {
+            width: 85%;
+            height: 60vh;
+            img {
+              height: 60vh;
             }
           }
         }
