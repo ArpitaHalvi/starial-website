@@ -47,4 +47,14 @@ const login = async (req, res, next) => {
   }
 };
 
-module.exports = { signUp, login };
+const user = async (req, res, next) => {
+  try {
+    const userData = req.user;
+    console.log("User data from controller: ", userData);
+    return res.status(200).json({ userData });
+  } catch (e) {
+    next(e);
+  }
+};
+
+module.exports = { signUp, login, user };

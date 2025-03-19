@@ -3,10 +3,12 @@ import { IoArrowForward } from "react-icons/io5";
 import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { useAuth } from "../store/auth";
 
 export default function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
   const navigate = useNavigate();
+  const { storeTokenInLS } = useAuth();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser((prev) => {
@@ -23,7 +25,9 @@ export default function Login() {
         .post("http://localhost:5002/api/auth/login", user, {
           headers: { "Content-Type": "application/json" },
         })
-        .then(() => {
+        .then((res) => {
+          storeTokenInLS(res.data.token);
+          console.log("Token: ", res.data.token);
           setUser({ email: "", password: "" });
           toast.success("Successfully Logged In!", {
             onClose: navigate("/categories"),

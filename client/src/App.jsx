@@ -10,6 +10,7 @@ import CategoriesPage from "./pages/CategoriesPage";
 import AboutPage from "./pages/AboutPage";
 import SignUp from "./pages/SignUp";
 import { ToastContainer } from "react-toastify";
+import Logout from "./components/Logout";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/products" element={<Products />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/logout" element={<Logout />} />
       </Routes>
       <Footer />
     </BrowserRouter>

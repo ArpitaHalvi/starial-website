@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { CiMenuFries } from "react-icons/ci";
-import { HiHome } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../store/auth";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+  const { isLoggedIn } = useAuth();
   return (
     <header className="head-section">
       <div className="logo">
@@ -49,9 +50,15 @@ export default function Navbar() {
             </NavLink>
           </li>
           {/* <li> */}
-          <NavLink to="/signup" className="register signup">
-            Sign Up
-          </NavLink>
+          {isLoggedIn ? (
+            <NavLink to="/logout" className="register signup">
+              Logout
+            </NavLink>
+          ) : (
+            <NavLink to="/signup" className="register signup">
+              Sign Up
+            </NavLink>
+          )}
           {/* </li> */}
         </ul>
         <div className="menu" onClick={toggleMenu}>

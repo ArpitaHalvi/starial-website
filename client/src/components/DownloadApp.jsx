@@ -15,14 +15,18 @@ export default function DownloadApp() {
     try {
       if (email) {
         await axios
-          .post("http://localhost:5002/api/download/using-email", email, {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          })
+          .post(
+            "http://localhost:5002/api/download/using-email",
+            { email },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          )
           .then(() => {
             toast.success(
-              "Message sent successfully! Check your email for the link."
+              "Email sent successfully! Check your email for the link."
             );
           })
           .catch((e) => {
@@ -34,7 +38,7 @@ export default function DownloadApp() {
         await axios
           .post(
             "http://localhost:5002/api/download/using-phone-number",
-            phoneNumber,
+            { phoneNumber },
             {
               headers: {
                 "Content-Type": "application/json",

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import StatusModal from "../modals/StatusModal";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { BiLogIn } from "react-icons/bi";
 import { toast } from "react-toastify";
+import { useAuth } from "../store/auth";
 
 const initialData = {
   fullname: "",
@@ -16,6 +17,8 @@ export default function SignUp() {
   const [error, setError] = useState("");
   const [openModal, setOpenModal] = useState(false);
   const [success, setSuccess] = useState("");
+  const { storeTokenInLS } = useAuth();
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser((prev) => {
@@ -29,12 +32,14 @@ export default function SignUp() {
         .post("http://localhost:5002/api/auth/signup", user, {
           headers: { "Content-Type": "application/json" },
         })
-        .then(() => {
+        .then((res) => {
           setSuccess("Successfully signed up!");
           setOpenModal(true);
+          console.log("Response: ");
+          storeTokenInLS(res.data.token);
           setUser(initialData);
-          toast.success("Successfully signed up!");
-          console.log("Successfully signed up!");
+          console.log("Token: ", res.data.token);
+          toast.success("Successfully signed up!", { onClose: navigate("/") });
         })
         .catch((e) => {
           console.log("Error", e.response.data.extraDetails);
@@ -42,7 +47,6 @@ export default function SignUp() {
           setError(e.response.data.extraDetails);
           setOpenModal(true);
           toast.error("Error while creating account.");
-          console.error("Error while creating account.");
         });
     } catch (e) {
       setError(e.message);

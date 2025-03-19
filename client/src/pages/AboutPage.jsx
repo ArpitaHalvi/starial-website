@@ -33,9 +33,10 @@ const TypeWriter = ({ words, speed = 100, delay = 1000 }) => {
 export default function AboutPage() {
   const membersName = [
     "Rahul Rai - CEO",
-    "Anusha - HR",
+    "Shubham Singh - CTO",
     "Deeksha Sen - Manager",
-    "Ashish - Graphic Designer",
+    "Shruti Khatri - Social Media Manager",
+    "Anusha Pandey - People Operations",
   ];
   const images = [
     "/gallery1.jpg",
@@ -71,8 +72,8 @@ export default function AboutPage() {
           >
             {images.map((url, index) => {
               return (
-                <div>
-                  <img src={url} alt="Image" key={index} />
+                <div key={index}>
+                  <img src={url} alt="Image" />
                 </div>
               );
             })}
