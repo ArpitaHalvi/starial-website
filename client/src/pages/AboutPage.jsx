@@ -39,28 +39,27 @@ export default function AboutPage() {
     "Anusha Pandey - People Operations",
   ];
   const images = [
-    "/gallery1.jpg",
-    "/gallery2.jpg",
-    "/gallery3.jpg",
-    "/gallery4.jpg",
-    "/gallery5.jpg",
+    "/glimpse3.jpg",
+    "/glimpse4.jpg",
+    "/glimpse5.jpg",
+    "/glimpse1.jpg",
+    "/glimpse2.jpg",
   ];
   const breakPoints = {
     default: 3,
-    1100: 2,
-    768: 1,
+    1300: 2,
+    900: 1,
   };
   return (
     <section className="about-page">
       <div className="about-us">
         <div className="about-members">
-          <h3>Where creativity meets functionality - Introducing Our Team!</h3>
+          <h2>Where creativity meets functionality - Introducing Our Team!</h2>
           <div className="animate-text">
             <TypeWriter words={membersName} />
-            {/* <h4>Team Member</h4> */}
           </div>
           <div className="team-members">
-            <img src="team.jpg" alt="" />
+            <img src="glimpse5.jpg" alt="" />
           </div>
         </div>
         <div className="some-glimpes">
@@ -72,7 +71,7 @@ export default function AboutPage() {
           >
             {images.map((url, index) => {
               return (
-                <div key={index}>
+                <div key={index} className="masonry-item">
                   <img src={url} alt="Image" />
                 </div>
               );
