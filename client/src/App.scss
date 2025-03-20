@@ -1702,24 +1702,27 @@ $largeScreen: 1180px;
 // ---------------------- PRODUCTS STYLES --------------------
 .products-section {
   width: 100%;
-  padding: 2rem;
+  // padding: 2rem;
   @include index.flex-box($flex-dir: column);
   gap: 4rem;
   h2 {
     font-size: 3rem;
     border-bottom: 2px solid #00b7ff;
     font-weight: 400;
+    margin: 2% 0;
+    @media (max-width: 500px) {
+      font-size: 2rem;
+      font-weight: 100;
+    }
   }
   .products {
     width: 100%;
     @include index.res-grid;
+    margin: 5% 0;
     .category {
       width: 80%;
       height: 100%;
       // background: url("pencils.png") center;
-      background: url("supplies-drawing.jpg") center;
-      background-size: cover;
-      background-repeat: no-repeat;
       @include index.flex-box($align-items: flex-end);
       position: relative;
       border-radius: 50px;
@@ -1740,6 +1743,21 @@ $largeScreen: 1180px;
         background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
       }
     }
+    .category-1 {
+      background: url("supplies-drawing.jpg") center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .category-2 {
+      background: url("uniforms.jpg") center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .category-3 {
+      background: url("books.jpg") center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
     .items {
       width: 100%;
       // background-color: pink;
@@ -1752,14 +1770,31 @@ $largeScreen: 1180px;
         color: #050523;
       }
       .slick-prev {
-        left: 0;
-        background-color: black;
+        left: -10%;
+        background-color: #80808053;
         border-radius: 50px;
       }
       .slick-next {
-        background-color: black;
+        background-color: #8080808d;
         border-radius: 50px;
-        right: 0;
+        right: 2%;
+        width: 45px;
+        height: 45px;
+        &::before {
+          font-size: 50px;
+          color: grey;
+        }
+      }
+      @media (max-width: 500px) {
+        .slick-next {
+          right: 0;
+          width: 30px;
+          height: 30px;
+          background: none;
+          &::before {
+            font-size: 30px;
+          }
+        }
       }
       .slick-list {
         width: 100%;
@@ -1786,7 +1821,9 @@ $largeScreen: 1180px;
               height: 80%;
               border-radius: 5px;
               object-fit: contain;
-              border: 2px solid black;
+              aspect-ratio: 3/2;
+              // border: 2px solid black;
+              filter: drop-shadow(2px 2px 2px grey);
             }
             h4 {
               text-align: center;
@@ -1796,6 +1833,32 @@ $largeScreen: 1180px;
             }
           }
         }
+      }
+    }
+  }
+  .product-part2 {
+    .items {
+      order: 2;
+    }
+    .category-2 {
+      order: 1;
+    }
+  }
+  @media (max-width: 1000px) {
+    padding: 0;
+    h2 {
+      margin-top: 5%;
+      font-weight: 400;
+    }
+    .products {
+      @include index.res-grid(100%);
+      .category {
+        width: 100%;
+        height: 40vh;
+        border-radius: 0;
+      }
+      .items {
+        padding: 2rem;
       }
     }
   }
@@ -2029,6 +2092,13 @@ $largeScreen: 1180px;
         font-weight: 100;
         padding: 1rem;
         border-bottom: 2px solid #00b7ff;
+        @media (width<=700px) {
+          padding: 0;
+          font-size: 2.5rem;
+        }
+        @media (width<=600px) {
+          font-size: 2rem;
+        }
       }
       .masonry-grid {
         // display: flex;
@@ -2087,11 +2157,6 @@ $largeScreen: 1180px;
           h4 {
             font-size: 1.5rem;
           }
-        }
-      }
-      .some-glimpses {
-        h3 {
-          font-size: 2.5rem;
         }
       }
     }
