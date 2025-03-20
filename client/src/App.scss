@@ -1395,6 +1395,13 @@ $largeScreen: 1180px;
             // border-radius: 50px;
             font-size: 2rem;
             color: whitesmoke;
+            border-radius: 5px;
+            transition: all 0.2s ease-in;
+            &:hover {
+              color: var(--accent-color);
+              scale: 1.05;
+              background-color: white;
+            }
           }
         }
       }
@@ -2182,6 +2189,143 @@ $largeScreen: 1180px;
             font-size: 1.5rem;
           }
         }
+      }
+    }
+  }
+}
+
+// ----------------- PAGE NOT FOUND --------------------
+.page-not-found {
+  width: 100%;
+  height: 90vh;
+  @include index.res-grid;
+  overflow: hidden;
+  .not-found {
+    width: 100%;
+    @include index.flex-box($flex-dir: column);
+    div {
+      width: 70%;
+      @include index.flex-box($flex-dir: column);
+      text-align: center;
+      font-size: 1.1rem;
+      h2 {
+        font-size: 7rem;
+      }
+    }
+    h4 {
+      width: 40%;
+      @include index.flex-box;
+      img {
+        @include index.img-setting(60%);
+      }
+    }
+    .home-link {
+      @include index.flex-box;
+      gap: 0.5rem;
+      background-color: #f8f8bf;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease-in;
+      &:hover {
+        filter: drop-shadow(6px 6px #eddea4);
+      }
+    }
+  }
+  .starial {
+    img {
+      @include index.img-setting(100%);
+      @media (max-width: 1000px) {
+        @include index.img-setting(0);
+        width: 500px;
+        height: 500px;
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    @include index.res-grid(100%);
+    height: auto;
+  }
+  @media (max-width: 500px) {
+    .not-found {
+      div h2 {
+        font-size: 5rem;
+        margin-top: 10%;
+      }
+      h4 img {
+        @include index.img-setting(80%);
+      }
+    }
+  }
+}
+
+// --------------------- LOADING PAGE -------------------
+.loading-page {
+  width: 100%;
+  height: 90vh;
+  @include index.flex-box;
+  background-color: #f8f8bf;
+  .img {
+    @include index.img-setting(8%);
+    @media (max-width: 1000px) {
+      @include index.img-setting(20%);
+    }
+    @media (max-width: 500px) {
+      @include index.img-setting(30%);
+    }
+    animation: loading 7s linear infinite;
+    @keyframes loading {
+      0% {
+        background: url("book.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      14% {
+        background: url("stationery1.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      28% {
+        background: url("uniform1.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      42% {
+        background: url("stack-of-books.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      56% {
+        background: url("stationery2.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      70% {
+        background: url("uniform2.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      84% {
+        background: url("stationery.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      98% {
+        background: url("uniform1.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      100% {
+        background: url("uniform.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
       }
     }
   }

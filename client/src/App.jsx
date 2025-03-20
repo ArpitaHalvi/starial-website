@@ -11,6 +11,8 @@ import AboutPage from "./pages/AboutPage";
 import SignUp from "./pages/SignUp";
 import { ToastContainer } from "react-toastify";
 import Logout from "./components/Logout";
+import PageNotFound from "./pages/PageNotFound";
+import Loading from "./pages/Loading";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/loading" element={<Loading />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>

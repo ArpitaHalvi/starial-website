@@ -9,25 +9,30 @@ import { Link, NavLink } from "react-router-dom";
 export default function Footer() {
   const year = new Date().getFullYear();
   const links1 = [
-    { title: "Products", url: "" },
+    { title: "Products", url: "/products" },
     { title: "Terms & Conditions", url: "" },
     { title: "Shipping Policy", url: "" },
-    { title: "About Us", url: "" },
+    { title: "About Us", url: "/about" },
   ];
   const links2 = [
-    { title: "Category", url: "" },
+    { title: "Category", url: "/categories" },
     { title: "Privacy", url: "" },
     { title: "Return Policy", url: "" },
-    { title: "Contact Us", url: "" },
+    { title: "Contact Us", url: "/contact" },
   ];
   const socialLinks = [
-    { url: "", icon: <FaFacebook className="social-icon" /> },
-    { url: "", icon: <FaXTwitter className="social-icon" /> },
+    { url: "", icon: <FaFacebook className="social-icon" />, color: "#1877f2" },
+    { url: "", icon: <FaXTwitter className="social-icon" />, color: "black" },
     {
       url: "https://www.linkedin.com/company/starial/?originalSubdomain=in",
       icon: <FaLinkedin className="social-icon" />,
+      color: "#0A66C2",
     },
-    { url: "", icon: <FaInstagram className="social-icon" /> },
+    {
+      url: "",
+      icon: <FaInstagram className="social-icon" />,
+      color: "#E4405F",
+    },
   ];
   return (
     <footer className="footer-section">
@@ -62,7 +67,11 @@ export default function Footer() {
             <div className="links">
               {socialLinks.map((link, index) => {
                 return (
-                  <Link to={link.url} key={index}>
+                  <Link
+                    to={link.url}
+                    key={index}
+                    style={{ "--accent-color": link.color }}
+                  >
                     {link.icon}
                   </Link>
                 );
