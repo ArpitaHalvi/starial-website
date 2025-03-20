@@ -55,9 +55,10 @@ export default function Navbar() {
               Logout
             </NavLink>
           ) : (
-            <NavLink to="/signup" className="register signup">
-              Sign Up
-            </NavLink>
+            <div className="auth">
+              <NavLink to="/signup">Sign Up </NavLink>
+              <NavLink to="/login">/ Login</NavLink>
+            </div>
           )}
           {/* </li> */}
         </ul>

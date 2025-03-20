@@ -40,16 +40,16 @@ export default function AboutPage() {
   ];
   const images = [
     "/glimpse3.jpg",
-    "/glimpse4.jpg",
-    "/glimpse1.jpg",
-    "/glimpse5.jpg",
     "/glimpse2.jpg",
+    "/glimpse4.jpg",
+    "/glimpse5.jpg",
+    "/glimpse1.jpg",
   ];
-  const breakPoints = {
-    default: 3,
-    1300: 2,
-    900: 1,
-  };
+  // const breakPoints = {
+  //   default: 3,
+  //   1300: 2,
+  //   900: 1,
+  // };
   return (
     <section className="about-page">
       <div className="about-us">
@@ -64,7 +64,7 @@ export default function AboutPage() {
         </div>
         <div className="some-glimpes">
           <h3>A Peek into our world!</h3>
-          <Masonry
+          {/* <Masonry
             breakpointCols={breakPoints}
             columnClassName="masonry-col"
             className="masonry-grid"
@@ -76,7 +76,16 @@ export default function AboutPage() {
                 </div>
               );
             })}
-          </Masonry>
+          </Masonry> */}
+          <div className="masonry-grid">
+            {images.map((url, index) => {
+              return (
+                <div key={index} className="masonry-item">
+                  <img src={url} alt="Image" />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

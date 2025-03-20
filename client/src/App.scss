@@ -48,6 +48,17 @@
           color: black;
         }
       }
+      .auth {
+        background-color: black;
+        @include index.flex-box;
+        gap: 0.5rem;
+        border-radius: 50px;
+        padding: 0.4rem 1rem;
+        a {
+          color: white;
+          font-size: 1rem;
+        }
+      }
       .signup {
         background-color: transparent;
         border: 2px solid black;
@@ -201,7 +212,7 @@
     left: 0;
     width: 100%;
     height: 60%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
   }
   div {
     @include index.flex-box($flex-dir: column);
@@ -283,14 +294,13 @@
 // ------------------------- ABOUT STYLES ----------------------
 .about-section {
   width: 100%;
-  height: 90vh;
+  height: 70vh;
   @include index.res-grid;
+  background-color: #eddea4;
   .decor {
     width: 100%;
-    height: 80%;
-    // background-color: #59d0ff;
-    // background-color: #edf68d;
-    background-color: #ffffe8;
+    height: 100%;
+    background-color: #f9f7f3;
     border-radius: 0 500px 500px 0;
     @include index.flex-box($justify-content: flex-end);
   }
@@ -301,8 +311,8 @@
     h2 {
       font-size: 3rem;
       text-align: right;
-      font-weight: 100;
-      border-bottom: 3px solid #00b7ff;
+      font-weight: 400;
+      border-bottom: 3px solid darkblue;
     }
     p {
       text-align: right;
@@ -310,8 +320,9 @@
       font-size: 1.2rem;
     }
     a {
-      // background-color: #8fdfff;
-      background-color: #93dfff;
+      // background-color: #93dfff;
+      background-color: black;
+      color: white;
       border-radius: 50px;
       padding: 0.5rem 2rem;
       transition: all 0.3s ease-in;
@@ -451,7 +462,7 @@
   width: 100%;
   @include index.flex-box($flex-dir: column);
   gap: 1rem;
-  margin-top: 3%;
+  margin: 3% 0;
   // background-color: #b1e9ff;
   h2 {
     font-size: 3rem;
@@ -515,6 +526,11 @@
           width: 20vw;
           left: -20%;
         }
+        @media (width<=1100px) {
+          top: 5%;
+          min-width: 250px;
+          transform: translateX(10%) rotate(-35deg);
+        }
       }
       &:hover {
         scale: 1.05;
@@ -532,7 +548,7 @@
       // @include index.res-grid(calc(100% / 2));
       padding: 2rem 1rem;
       div {
-        width: 90%;
+        // width: 90%;
         margin-bottom: 5%;
       }
     }
@@ -543,17 +559,14 @@
       @media (width<=500px) {
         font-weight: 100;
         padding: 1rem 2rem 0 2rem;
-        width: 90%;
+        width: 80%;
+        font-size: 2rem;
       }
     }
     .categories {
       @include index.res-grid(calc(100% / 2));
       div {
         width: 80%;
-        overflow: visible;
-        a {
-          top: 10%;
-        }
       }
       @media (width<=800px) {
         @include index.res-grid(100%);
@@ -562,13 +575,22 @@
           width: 55%;
           a {
             top: 5%;
-            left: -10%;
+            min-width: 250px;
+            transform: translateX(10%) rotate(-35deg);
           }
-          @media (width<=500px) {
-            width: 85%;
+          @media (width<=600px) {
+            width: 80%;
             height: 60vh;
+            @media (width<=500px) {
+              // width: 85%;
+            }
             img {
               height: 60vh;
+            }
+            a {
+              top: 6%;
+              min-width: 220px;
+              transform: translateX(13%) rotate(-35deg);
             }
           }
         }
@@ -580,6 +602,7 @@
 // ----------------- DELIVERY PROCESS SECTION ------------------
 .delivery-process {
   width: 100%;
+  height: 90vh;
   @include index.flex-box($flex-dir: column);
   gap: 2rem;
   h2 {
@@ -992,24 +1015,32 @@ $largeScreen: 1180px;
   // .app-info {
   @include index.res-grid;
   padding: 2rem;
-  background-color: #ffffe8;
+  background-color: #f9f7f3;
+  background: url("pencils-2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
   .about-app {
-    width: 100%;
+    width: 90%;
     @include index.flex-box($flex-dir: column, $align-items: flex-start);
     gap: 1rem;
-    padding: 0 5rem;
+    padding: 3rem;
+    border-radius: 5px;
+    background-color: #fffffff0;
+    // filter: drop-shadow(2px 2px 2px grey);
+    box-shadow: 2px 2px 2px 2px grey;
+    border-top: 2px solid black;
     @media (width<=1270px) {
       padding: 2rem;
     }
     h4 {
-      font-size: 3rem;
+      font-size: 2.5rem;
+      font-weight: 400;
     }
     p {
       font-size: 1.1rem;
       color: grey;
     }
     .download-options {
-      // background-color: pink;
       width: 100%;
       @include index.flex-box($justify-content: flex-start);
       gap: 10rem;
@@ -1031,16 +1062,15 @@ $largeScreen: 1180px;
         width: 100%;
         @include index.flex-box;
         gap: 0.5rem;
-        // background-color: pink;
         input {
-          width: 100%;
+          width: 80%;
           padding: 0.5rem;
           border-radius: 5px;
           border: 2px solid #c0bebe;
           font-size: 1rem;
         }
         button {
-          width: 25%;
+          width: 30%;
           background-color: #e58e0c;
           color: white;
           border-radius: 5px;
@@ -1071,7 +1101,6 @@ $largeScreen: 1180px;
         @include index.flex-box;
         gap: 1rem;
         .download-btn {
-          // background-color: #00aaff;
           background-color: black;
           color: white;
           border-radius: 50px;
@@ -1094,37 +1123,41 @@ $largeScreen: 1180px;
     @include index.flex-box;
     img {
       width: 70%;
-      // @include index.img-setting(100%);
     }
   }
   // }
   @media (width<=1100px) {
     .about-app {
-      padding: 1rem;
-      h4 {
-        font-size: 2.8rem;
-      }
+      padding: 2rem;
       @media (width<=960px) {
         padding: 0;
-        h4 {
-          font-size: 2.5rem;
-        }
+      }
+      h4 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1rem;
       }
     }
   }
   @media (width<=1000px) {
     @include index.res-grid(100%);
+    background: none;
     .about-app {
       padding: 2rem;
       @media (width<=700px) {
-        h4 {
-          font-size: 2.2rem;
+        .download-options {
+          gap: 7rem;
+        }
+        p {
+          font-size: 1rem;
         }
       }
     }
   }
   @media (width<=700px) {
     .about-app {
+      width: 100%;
       padding: 1rem;
       .download-form {
         form {
@@ -1136,13 +1169,6 @@ $largeScreen: 1180px;
             width: 40%;
           }
         }
-      }
-    }
-  }
-  @media (width<=500px) {
-    .about-app {
-      p {
-        font-size: 1rem;
       }
     }
   }
@@ -1674,7 +1700,6 @@ $largeScreen: 1180px;
 }
 
 // ---------------------- PRODUCTS STYLES --------------------
-
 .products-section {
   width: 100%;
   padding: 2rem;
@@ -1683,29 +1708,94 @@ $largeScreen: 1180px;
   h2 {
     font-size: 3rem;
     border-bottom: 2px solid #00b7ff;
+    font-weight: 400;
   }
   .products {
     width: 100%;
-    @include index.res-grid(calc(100% / 5));
-    gap: 0.5rem;
-    .product {
+    @include index.res-grid;
+    .category {
       width: 80%;
-      @include index.flex-box($flex-dir: column, $justify-content: flex-start);
-      div {
-        width: 100%;
-        height: 20vh;
-        border-radius: 10px;
-        border: 2px solid grey;
-        img {
-          width: 100%;
-          border-radius: 5px;
-          object-fit: cover;
-        }
-      }
+      height: 100%;
+      // background: url("pencils.png") center;
+      background: url("supplies-drawing.jpg") center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      @include index.flex-box($align-items: flex-end);
+      position: relative;
+      border-radius: 50px;
       h4 {
-        text-align: center;
-        font-size: 1.2rem;
-        padding: 0.5rem;
+        z-index: 2;
+        font-size: 2rem;
+        font-weight: 100;
+        color: white;
+        margin-bottom: 5%;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      }
+    }
+    .items {
+      width: 100%;
+      // background-color: pink;
+      @include index.flex-box;
+      div {
+        @include index.flex-box;
+        font-size: 1.3rem;
+      }
+      .slick-dots {
+        color: #050523;
+      }
+      .slick-prev {
+        left: 0;
+        background-color: black;
+        border-radius: 50px;
+      }
+      .slick-next {
+        background-color: black;
+        border-radius: 50px;
+        right: 0;
+      }
+      .slick-list {
+        width: 100%;
+        // @include index.flex-box;
+      }
+      .slick-track {
+        @include index.flex-box;
+      }
+      .slick-slider {
+        width: 100%;
+        overflow: hidden;
+        @include index.flex-box;
+        // background-color: plum;
+        .slick-slide {
+          width: 100%;
+          @include index.flex-box;
+          .product {
+            @include index.flex-box;
+            padding: 1rem;
+            width: 100%;
+            height: 50vh;
+            img {
+              width: 100%;
+              height: 80%;
+              border-radius: 5px;
+              object-fit: contain;
+              border: 2px solid black;
+            }
+            h4 {
+              text-align: center;
+              font-size: 1.2rem;
+              padding: 0.5rem;
+              font-weight: 400;
+            }
+          }
+        }
       }
     }
   }
@@ -1911,8 +2001,9 @@ $largeScreen: 1180px;
       }
       .team-members {
         width: 90%;
-        background-color: pink;
-        border: 2px solid black;
+        // background-color: pink;
+        // border: 2px solid black;
+        filter: drop-shadow(5px 5px 5px grey);
         border-radius: 50px;
         margin: 5% auto;
         img {
@@ -1940,21 +2031,24 @@ $largeScreen: 1180px;
         border-bottom: 2px solid #00b7ff;
       }
       .masonry-grid {
-        display: flex;
-        width: auto;
-        @media (width<=500px) {
-          padding-bottom: 30px;
-        }
+        // display: flex;
+        // width: auto;
+        // @media (width<=500px) {
+        //   padding-bottom: 30px;
+        // }
+        column-width: 300px;
       }
       .masonry-col {
-        margin-left: 10px;
+        // margin-left: 10px;
         // border: 2px solid black;
       }
       div {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        gap: 10px;
-        grid-auto-flow: dense;
+        width: 100%;
+        // display: grid;
+        margin: 2%;
+        // grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        // gap: 10px;
+        // grid-auto-flow: dense;
         img {
           width: 100%;
           height: auto;

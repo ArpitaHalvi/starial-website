@@ -28,6 +28,7 @@ export default function DownloadApp() {
             toast.success(
               "Email sent successfully! Check your email for the link."
             );
+            setEmail("");
           })
           .catch((e) => {
             console.error("Error: ", e);
@@ -50,6 +51,7 @@ export default function DownloadApp() {
             toast.success(
               "Message sent successfully! Check your whatsapp for the link."
             );
+            setPhoneNumber("");
           })
           .catch((e) => {
             console.error("Error: ", e);

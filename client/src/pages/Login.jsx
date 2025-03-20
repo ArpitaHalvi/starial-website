@@ -40,7 +40,7 @@ export default function Login() {
         });
     } catch (e) {
       console.error("Error: ", e);
-      toast.error(e.message);
+      toast.error("Error while loggin in.");
     }
   };
   return (
