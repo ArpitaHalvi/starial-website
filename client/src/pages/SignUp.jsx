@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import StatusModal from "../modals/StatusModal";
 import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
 import { BiLogIn } from "react-icons/bi";
@@ -14,9 +13,7 @@ const initialData = {
 
 export default function SignUp() {
   const [user, setUser] = useState(initialData);
-  const [error, setError] = useState("");
   const [openModal, setOpenModal] = useState(false);
-  const [success, setSuccess] = useState("");
   const { storeTokenInLS } = useAuth();
   const navigate = useNavigate();
   const handleChange = (e) => {
@@ -33,25 +30,17 @@ export default function SignUp() {
           headers: { "Content-Type": "application/json" },
         })
         .then((res) => {
-          setSuccess("Successfully signed up!");
-          setOpenModal(true);
           console.log("Response: ");
           storeTokenInLS(res.data.token);
           setUser(initialData);
-          console.log("Token: ", res.data.token);
           toast.success("Successfully signed up!", { onClose: navigate("/") });
         })
         .catch((e) => {
           console.log("Error", e.response.data.extraDetails);
-          setError("Error while creating account.");
-          setError(e.response.data.extraDetails);
-          setOpenModal(true);
           toast.error("Error while creating account.");
         });
     } catch (e) {
-      setError(e.message);
-      setOpenModal(true);
-      toast.error(e.message);
+      toast.error("Error while signing up!");
       console.error("Error: ", e);
     }
   };
@@ -65,12 +54,6 @@ export default function SignUp() {
   });
   return (
     <section className="signup-section">
-      <StatusModal
-        msg={error ? error : success}
-        statusType={error ? "error" : "success"}
-        onClose={() => setOpenModal(false)}
-        isOpen={openModal}
-      />
       <div></div>
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2>Sign Up</h2>
