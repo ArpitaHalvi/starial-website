@@ -581,16 +581,16 @@
           @media (width<=600px) {
             width: 80%;
             height: 60vh;
-            @media (width<=500px) {
-              // width: 85%;
+            @media (width<=468px) {
+              width: 85%;
             }
             img {
               height: 60vh;
             }
             a {
-              top: 6%;
-              min-width: 220px;
-              transform: translateX(13%) rotate(-35deg);
+              top: 5%;
+              min-width: 240px;
+              transform: translateX(10%) rotate(-35deg);
             }
           }
         }
@@ -1147,7 +1147,10 @@ $largeScreen: 1180px;
       padding: 2rem;
       @media (width<=700px) {
         .download-options {
-          gap: 7rem;
+          gap: 5rem;
+          @media (width<=700px) {
+            gap: 2rem;
+          }
         }
         p {
           font-size: 1rem;
@@ -1169,6 +1172,14 @@ $largeScreen: 1180px;
             width: 40%;
           }
         }
+      }
+    }
+  }
+  @media (max-width: 468px) {
+    padding: 1rem;
+    .about-app {
+      .download-btn {
+        padding: 1rem 0;
       }
     }
   }
@@ -1771,15 +1782,14 @@ $largeScreen: 1180px;
       }
       .slick-prev {
         left: -10%;
-        background-color: #80808053;
         border-radius: 50px;
       }
       .slick-next {
-        background-color: #8080808d;
         border-radius: 50px;
+        top: 43%;
         right: 2%;
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         &::before {
           font-size: 50px;
           color: grey;
@@ -1790,7 +1800,6 @@ $largeScreen: 1180px;
           right: 0;
           width: 30px;
           height: 30px;
-          background: none;
           &::before {
             font-size: 30px;
           }
