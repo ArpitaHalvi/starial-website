@@ -1152,9 +1152,6 @@ $largeScreen: 1180px;
             gap: 2rem;
           }
         }
-        p {
-          font-size: 1rem;
-        }
       }
     }
   }
@@ -1180,6 +1177,12 @@ $largeScreen: 1180px;
     .about-app {
       .download-btn {
         padding: 1rem 0;
+      }
+      h4 {
+        font-weight: lighter;
+      }
+      p {
+        font-size: 0.9rem;
       }
     }
   }
