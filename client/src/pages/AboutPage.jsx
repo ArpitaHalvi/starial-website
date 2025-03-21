@@ -50,6 +50,13 @@ export default function AboutPage() {
   //   1300: 2,
   //   900: 1,
   // };
+  const teamMembers = [
+    { name: "Rahul Rai (CEO)", img: "" },
+    { name: "Shubham Singh (CTO)", img: "" },
+    { name: "Deeksha Sen (Manager)", img: "" },
+    { name: "Shruti Khatri (Social Media Manager)", img: "" },
+    { name: "Anusha Pandey (Anusha Pandey)", img: "" },
+  ];
   return (
     <section className="about-page">
       <div className="about-us">
@@ -57,6 +64,16 @@ export default function AboutPage() {
           <h2>Where creativity meets functionality - Introducing Our Team!</h2>
           <div className="animate-text">
             <TypeWriter words={membersName} />
+          </div>
+          <div className="team">
+            {teamMembers.map((member, index) => {
+              return (
+                <div className="member" key={index}>
+                  <img src={member.img} alt="Team Member" />
+                  <h6>{member.name}</h6>
+                </div>
+              );
+            })}
           </div>
           <div className="team-members">
             <img src="glimpse5-final.jpg" alt="" />

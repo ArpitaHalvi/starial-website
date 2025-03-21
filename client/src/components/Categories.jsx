@@ -5,15 +5,18 @@ export default function Categories() {
   const categories = [
     {
       name: "Stationery Items",
-      img: "/category1-2.jpg",
+      // img: "/category1-2.jpg",
+      img: "",
     },
     {
       name: "Uniforms",
-      img: "/category2.jpg",
+      // img: "/category2.jpg",
+      img: "",
     },
     {
       name: "Exam Books",
-      img: "/category3.jpg",
+      // img: "/category3.jpg",
+      img: "",
     },
   ];
   return (

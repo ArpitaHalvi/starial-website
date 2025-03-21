@@ -2,12 +2,10 @@ import { useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { CiMenuFries } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
-import { useAuth } from "../store/auth";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
-  const { isLoggedIn } = useAuth();
   return (
     <header className="head-section">
       <div className="logo">
@@ -49,18 +47,6 @@ export default function Navbar() {
               Contact Us
             </NavLink>
           </li>
-          {/* <li> */}
-          {isLoggedIn ? (
-            <NavLink to="/logout" className="register signup">
-              Logout
-            </NavLink>
-          ) : (
-            <div className="auth">
-              <NavLink to="/signup">Sign Up </NavLink>
-              <NavLink to="/login">/ Login</NavLink>
-            </div>
-          )}
-          {/* </li> */}
         </ul>
         <div className="menu" onClick={toggleMenu}>
           {isOpen ? (

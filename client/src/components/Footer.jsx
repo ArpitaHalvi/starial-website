@@ -1,9 +1,9 @@
 import { BsLinkedin } from "react-icons/bs";
 import { CgMail } from "react-icons/cg";
 import { CiLocationOn } from "react-icons/ci";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { IoCall } from "react-icons/io5";
+import { IoCall, IoLogoGooglePlaystore } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
 
 export default function Footer() {
@@ -21,7 +21,6 @@ export default function Footer() {
     { title: "Contact Us", url: "/contact" },
   ];
   const socialLinks = [
-    { url: "", icon: <FaFacebook className="social-icon" />, color: "#1877f2" },
     { url: "", icon: <FaXTwitter className="social-icon" />, color: "black" },
     {
       url: "https://www.linkedin.com/company/starial/?originalSubdomain=in",
@@ -29,7 +28,7 @@ export default function Footer() {
       color: "#0A66C2",
     },
     {
-      url: "",
+      url: "https://www.instagram.com/starial_/?hl=en",
       icon: <FaInstagram className="social-icon" />,
       color: "#E4405F",
     },
@@ -77,6 +76,12 @@ export default function Footer() {
                 );
               })}
             </div>
+            <Link
+              className="download-btn"
+              to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1"
+            >
+              Download Now <IoLogoGooglePlaystore className="icon" />
+            </Link>
           </div>
         </div>
         <div className="more-info">
