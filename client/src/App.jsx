@@ -13,25 +13,35 @@ import { ToastContainer } from "react-toastify";
 import Logout from "./components/Logout";
 import PageNotFound from "./pages/PageNotFound";
 import Loading from "./pages/Loading";
+import { useEffect, useState } from "react";
 
 function App() {
-  
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  });
   return (
     <BrowserRouter>
       <ToastContainer theme="light" draggable />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/categories" element={<CategoriesPage />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/loading" element={<Loading />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
+      {loading ? (
+        <Loading />
+      ) : (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/logout" element={<Logout />} />
+          {/* <Route path="/loading" element={<Loading />} /> */}
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      )}
       <Footer />
     </BrowserRouter>
   );

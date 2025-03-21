@@ -53,6 +53,14 @@ export default function Products() {
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   return (
     <section className="products-section">
