@@ -619,8 +619,8 @@
           @media (width<=600px) {
             width: 80%;
             height: 60vh;
-            @media (width<=468px) {
-              width: 85%;
+            @media (max-width: 468px) {
+              width: 90%;
             }
             img {
               height: 60vh;
@@ -629,6 +629,10 @@
               top: 5%;
               min-width: 240px;
               transform: translateX(10%) rotate(-35deg);
+              @media (max-width: 468px) {
+                top: 7%;
+                transform: translateX(8%) rotate(-35deg);
+              }
             }
           }
         }
