@@ -117,7 +117,9 @@
   }
   @media (width<=1000px) {
     justify-content: space-between;
-    position: relative;
+    position: sticky;
+    top: 0;
+    left: 0;
     .logo {
       width: 50%;
       a img {
