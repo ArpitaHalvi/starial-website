@@ -652,6 +652,7 @@
     padding: 2rem;
     font-size: 3rem;
     font-weight: 100;
+    border-bottom: 2px solid #00b7ff;
   }
   .process {
     width: 100%;
@@ -777,12 +778,22 @@
             justify-content: space-around;
             border-bottom: 2px solid #e2e0e0;
             padding: 0.5rem;
+            &:nth-last-of-type(1) {
+              border-bottom: none;
+            }
             h5 {
               width: 50%;
             }
           }
         }
       }
+    }
+  }
+  @media (max-width: 468px) {
+    h2 {
+      width: 60%;
+      text-align: center;
+      padding: 2rem 0 0 0;
     }
   }
 }
@@ -1291,6 +1302,7 @@ $largeScreen: 1180px;
   @media (max-width: 468px) {
     padding: 1rem;
     .about-app {
+      gap: 1.5rem;
       .download-btn {
         padding: 1rem 0;
         font-size: 0.9rem;
