@@ -6,6 +6,7 @@
   position: sticky;
   // position: fixed;
   top: 0;
+  left: 0;
   z-index: 1000;
   @include index.flex-box;
   padding: 1rem;
@@ -54,6 +55,7 @@
         gap: 0.5rem;
         border-radius: 50px;
         padding: 0.4rem 1rem;
+        transition: all 0.5s ease-in;
         a {
           color: white;
           font-size: 1rem;
@@ -136,12 +138,14 @@
     .navbar {
       width: 50%;
       justify-content: flex-end;
+      z-index: 1;
       .links {
         width: 40%;
         height: 90vh;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 10%;
         left: 0;
+        bottom: 0;
         flex-direction: column;
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -152,7 +156,8 @@
         background-color: #b8ffb8;
         // background: linear-gradient(135deg, #37fe37, #b8ffb8, #fefea4);
         background-color: black;
-        filter: drop-shadow(5px 5px 5px grey);
+        filter: drop-shadow(5px 5px 5px #242424);
+        z-index: 1000;
         &.open {
           display: flex;
           transform: translateX(0);
@@ -166,8 +171,6 @@
           a {
             color: white;
             font-weight: 100;
-            &:hover {
-            }
           }
         }
         @media (width<=900px) {
@@ -184,15 +187,23 @@
         }
         .auth {
           background-color: white;
+          transition: all 0.3s ease-in-out;
           a {
             color: black;
           }
+          &:hover {
+            background: linear-gradient(to right, #56ccf2, #2f80ed);
+          }
         }
         .signup {
-          background-color: black;
-          color: white;
-          padding: 0.5rem 1rem;
+          background-color: white;
+          color: black;
+          padding: 0.4rem 1rem;
           border: none;
+          transition: all 0.3s ease-in;
+          &:hover {
+            background: linear-gradient(to right, #56ccf2, #2f80ed);
+          }
         }
       }
       .menu {
@@ -378,6 +389,19 @@
         // @include index.img-setting(70%);
         @media (width<=500px) {
           width: 80%;
+        }
+      }
+    }
+    .about-us {
+      h2 {
+        font-weight: 100;
+        @media (max-width: 500px) {
+          font-size: 2rem;
+        }
+      }
+      p {
+        @media (max-width: 500px) {
+          font-size: 0.9rem;
         }
       }
     }
@@ -617,14 +641,13 @@
   height: 90vh;
   @include index.flex-box($flex-dir: column);
   gap: 2rem;
+  overflow: hidden;
   h2 {
     padding: 2rem;
     font-size: 3rem;
     font-weight: 100;
   }
   .process {
-    // background-color: #c0bebe;
-    padding: 2rem;
     width: 100%;
     padding: 1rem;
     @include index.flex-box($flex-dir: column);
@@ -679,6 +702,78 @@
             border-radius: 50px;
             font-weight: bold;
             border: 2px solid #00b7ff;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    h2 {
+      font-size: 2.5rem;
+    }
+    .process {
+      .process-div {
+        .step {
+          .step-img {
+            width: 80px;
+            height: 80px;
+            .icon {
+              font-size: 3rem;
+            }
+          }
+          h5 {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    height: auto;
+    h2 {
+      font-size: 2rem;
+    }
+    .process {
+      flex-direction: row;
+      // background-color: pink;
+      gap: 0;
+      .step-route {
+        display: none;
+      }
+      .delivery-boy {
+        display: none;
+      }
+      .process-div {
+        width: 60%;
+        flex-direction: column;
+        gap: 2rem;
+        background-color: #ffffe8;
+        padding: 1rem;
+        .step {
+          width: 100%;
+          flex-direction: row;
+          gap: 2rem;
+          // background-color: plum;
+          .step-img {
+            order: 2;
+          }
+          h5 {
+            width: 40%;
+          }
+        }
+        @media (max-width: 600px) {
+          width: 80%;
+        }
+        @media (max-width: 468px) {
+          width: 100%;
+          .step {
+            gap: 3rem;
+            justify-content: space-around;
+            border-bottom: 2px solid #e2e0e0;
+            padding: 0.5rem;
+            h5 {
+              width: 50%;
+            }
           }
         }
       }
@@ -1028,9 +1123,11 @@ $largeScreen: 1180px;
   @include index.res-grid;
   padding: 2rem;
   background-color: #f9f7f3;
-  background: url("pencils-2.png");
+  // background: url("pencils-2.png");
+  // background: url("drawing-supplies.jpg");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: left;
   .about-app {
     width: 90%;
     @include index.flex-box($flex-dir: column, $align-items: flex-start);
@@ -1039,8 +1136,9 @@ $largeScreen: 1180px;
     border-radius: 5px;
     background-color: #fffffff0;
     // filter: drop-shadow(2px 2px 2px grey);
-    box-shadow: 2px 2px 2px 2px grey;
-    border-top: 2px solid black;
+    // box-shadow: 2px 2px 2px 2px grey;
+    // border-top: 2px solid black;
+    border: 2px solid #d9d8d8;
     @media (width<=1270px) {
       padding: 2rem;
     }
@@ -1098,12 +1196,12 @@ $largeScreen: 1180px;
       }
     }
     .download-btns {
+      width: 100%;
       @include index.flex-box($flex-dir: column, $align-items: flex-start);
       gap: 1rem;
       // background-color: #e4e2e2;
       padding: 1rem;
-      width: 100%;
-      border-radius: 5px;
+      // border-top: 2px solid #b7b5b5;
       h6 {
         font-size: 1rem;
         color: #575656;
@@ -1189,6 +1287,7 @@ $largeScreen: 1180px;
     .about-app {
       .download-btn {
         padding: 1rem 0;
+        font-size: 0.9rem;
       }
       h4 {
         font-weight: lighter;
@@ -1751,7 +1850,7 @@ $largeScreen: 1180px;
   .products {
     width: 100%;
     @include index.res-grid;
-    margin: 5% 0;
+    margin: 3% 0;
     .category {
       width: 80%;
       height: 100%;
@@ -1883,6 +1982,7 @@ $largeScreen: 1180px;
     }
     .products {
       @include index.res-grid(100%);
+      margin: 0;
       .category {
         width: 100%;
         height: 40vh;
@@ -1890,6 +1990,18 @@ $largeScreen: 1180px;
       }
       .items {
         padding: 2rem;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .products .items {
+      .slick-slider .slick-slide {
+        .product h4 {
+          font-size: 1rem;
+          @media (max-width: 468px) {
+            font-size: 0.9rem;
+          }
+        }
       }
     }
   }
@@ -2139,10 +2251,10 @@ $largeScreen: 1180px;
         // }
         column-width: 300px;
       }
-      .masonry-col {
-        // margin-left: 10px;
-        // border: 2px solid black;
-      }
+      // .masonry-col {
+      // margin-left: 10px;
+      // border: 2px solid black;
+      // }
       div {
         width: 100%;
         // display: grid;
@@ -2261,17 +2373,17 @@ $largeScreen: 1180px;
 .loading-page {
   width: 100%;
   height: 90vh;
-  @include index.flex-box;
+  @include index.flex-box($flex-dir: column);
   background-color: #f8f8bf;
   .img {
     @include index.img-setting(8%);
+    animation: loading 7s linear infinite;
     @media (max-width: 1000px) {
       @include index.img-setting(20%);
     }
     @media (max-width: 500px) {
       @include index.img-setting(30%);
     }
-    animation: loading 7s linear infinite;
     @keyframes loading {
       0% {
         background: url("book.png");

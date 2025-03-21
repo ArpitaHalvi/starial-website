@@ -6,17 +6,27 @@ const sendWhatsappMsg = async (req, res, next) => {
     console.log("Phone number: ", phoneNumber, "Req.body", req.body);
     const accountSid = process.env.ACCOUNT_SID;
     const authToken = process.env.AUTH_TOKEN;
+    // const client = require("twilio")(accountSid, authToken);
+    // const response = await client.messages
+    //   .create({
+    //     from: "whatsapp:+14155238886",
+    //     contentSid: process.env.CONTENT_SID,
+    //     body: "This is your download link  for:                                                   Play Store: https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1                                                 App Store: https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1",
+    //     to: `whatsapp:+91${phoneNumber}`,
+    //     // to: `whatsapp:+918349920270`,
+    //   })
+    //   .then((message) => console.log("Message sent successfully!", message.sid))
+    //   .catch((e) => console.error("Error while sending whatsapp  message.", e));
+
+    // SENDING SMS
     const client = require("twilio")(accountSid, authToken);
-    const response = await client.messages
+    const response = client.messages
       .create({
-        from: "whatsapp:+14155238886",
-        contentSid: process.env.CONTENT_SID,
-        body: "This is your download link  for:                                                   Play Store: https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1                                                 App Store: https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1",
-        to: `whatsapp:+91${phoneNumber}`,
-        // to: `whatsapp:+918349920270`,
+        body: "This is the Starial App Download Link: https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1",
+        from: "+15679983492",
+        to: `+91${phoneNumber}`,
       })
-      .then((message) => console.log("Message sent successfully!", message.sid))
-      .catch((e) => console.error("Error while sending whatsapp  message.", e));
+      .then((message) => console.log(message.sid));
     if (!response) {
       console.error("Error occured while sending whatsapp message.");
       return res

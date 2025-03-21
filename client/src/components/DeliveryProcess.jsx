@@ -23,7 +23,7 @@ export default function DeliveryProcess() {
     let scrollTimeout;
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const maxWidth = window.innerWidth - 150;
+      const maxWidth = window.innerWidth - 250;
       const newPosition = Math.min((scrollY / maxScroll) * maxWidth, maxWidth);
       setScrollPos(newPosition);
       clearTimeout(scrollTimeout);

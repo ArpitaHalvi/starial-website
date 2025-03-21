@@ -27,15 +27,18 @@ export default function Login() {
         })
         .then((res) => {
           storeTokenInLS(res.data.token);
-          console.log("Token: ", res.data.token);
+          console.log("Response: ", res);
           setUser({ email: "", password: "" });
-          toast.success("Successfully Logged In!", {
+          toast.success(res.data.message, {
             onClose: navigate("/categories"),
           });
         })
         .catch((e) => {
-          console.log("Error", e.response.data.extraDetails);
-          toast.error("Error while loggin in.");
+          toast.error(
+            e.response.data.extraDetails
+              ? e.response.data.extraDetails
+              : e.response.data.message
+          );
           console.error(e);
         });
     } catch (e) {

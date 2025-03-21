@@ -15,6 +15,7 @@ import PageNotFound from "./pages/PageNotFound";
 import Loading from "./pages/Loading";
 
 function App() {
+  
   return (
     <BrowserRouter>
       <ToastContainer theme="light" draggable />

@@ -30,14 +30,17 @@ export default function SignUp() {
           headers: { "Content-Type": "application/json" },
         })
         .then((res) => {
-          console.log("Response: ");
           storeTokenInLS(res.data.token);
           setUser(initialData);
-          toast.success("Successfully signed up!", { onClose: navigate("/") });
+          toast.success(res.data.message, { onClose: navigate("/") });
         })
         .catch((e) => {
           console.log("Error", e.response.data.extraDetails);
-          toast.error("Error while creating account.");
+          toast.error(
+            e.response.data.extraDetails
+              ? e.response.data.extraDetails
+              : e.response.data.message
+          );
         });
     } catch (e) {
       toast.error("Error while signing up!");
