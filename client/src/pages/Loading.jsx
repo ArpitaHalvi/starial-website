@@ -8,8 +8,8 @@ export default function Loading() {
     GiBookshelf,
     IoBookSharp,
     GiPencilBrush,
-    ImPencil,
     IoColorPalette,
+    ImPencil,
   ];
   const [visibleIndex, setVisibleIndex] = useState(0);
   useEffect(() => {
