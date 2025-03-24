@@ -2413,6 +2413,9 @@ $largeScreen: 1180px;
         h2 {
           width: 100%;
           font-size: 2.5rem;
+          @media (max-width: 468px) {
+            font-size: 2rem;
+          }
         }
         .animate-text {
           h4 {
