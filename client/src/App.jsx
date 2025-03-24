@@ -11,6 +11,8 @@ import { ToastContainer } from "react-toastify";
 import PageNotFound from "./pages/PageNotFound";
 import Loading from "./pages/Loading";
 import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -18,6 +20,10 @@ function App() {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
+  });
+  AOS.init({
+    offset: 300,
+    duration: 1000,
   });
   return (
     <BrowserRouter>
