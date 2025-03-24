@@ -10,15 +10,16 @@ import AboutPage from "./pages/AboutPage";
 import { ToastContainer } from "react-toastify";
 import PageNotFound from "./pages/PageNotFound";
 import Loading from "./pages/Loading";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  });
+  const [loading, setLoading] = useState(false);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
+  // });
   return (
     <BrowserRouter>
       <ToastContainer theme="light" draggable />
@@ -32,7 +33,7 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/products" element={<Products />} />
           <Route path="/about" element={<AboutPage />} />
-          {/* <Route path="/loading" element={<Loading />} /> */}
+          <Route path="/loading" element={<Loading />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       )}

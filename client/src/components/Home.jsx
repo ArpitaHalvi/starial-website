@@ -1,4 +1,5 @@
 import About from "./About";
+import Brands from "./Brands";
 import Categories from "./Categories";
 import DeliveryProcess from "./DeliveryProcess";
 import DownloadApp from "./DownloadApp";
@@ -13,7 +14,7 @@ export default function Home() {
       <Categories />
       <About />
       <DeliveryProcess />
-      {/* <ProcessOfDelivery /> */}
+      <Brands />
       <DownloadApp />
     </main>
   );
