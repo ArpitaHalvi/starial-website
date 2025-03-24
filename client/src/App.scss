@@ -2417,6 +2417,9 @@ $largeScreen: 1180px;
         .animate-text {
           h4 {
             font-size: 1.5rem;
+            @media (max-width: 468px) {
+              font-size: 1.1rem;
+            }
           }
         }
         .team {
