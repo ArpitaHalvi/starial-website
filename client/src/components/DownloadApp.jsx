@@ -66,7 +66,7 @@ export default function DownloadApp() {
   return (
     <div className="download-app">
       <div className="about-app">
-        <h4>Get the Best Stationery at your Fingertips</h4>
+        <h4>Download Our App</h4>
         <p>
           Enter your email or phone number, and we'll send you a link to explore
           our latest collections of premium stationery products.

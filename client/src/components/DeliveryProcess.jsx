@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { FaPencilRuler } from "react-icons/fa";
-import { IoLocationSharp } from "react-icons/io5";
 
 const processes = [
   { id: 1, step: "Customer places order", cName: "step1" },
@@ -49,10 +48,17 @@ export default function DeliveryProcess() {
     <section className="delivery-process">
       <h2>How we make it happen?</h2>
       <div className="process">
-        <IoLocationSharp
-          className="delivery-boy"
-          style={{ transform: `translateX(${scrollPos}px)` }}
-        />
+        <div className="delivery">
+          <img
+            src="delivery-boy.svg"
+            alt="Delivery Boy"
+            className="delivery-boy"
+            style={{ transform: `translateX(${scrollPos}px)` }}
+          />
+          <span className="tooltip">
+            Delivering essentials - catch me later!
+          </span>
+        </div>
         <div className="step-route">
           <div></div>
         </div>

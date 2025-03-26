@@ -4,7 +4,8 @@ export default function About() {
   return (
     <section className="about-section">
       <div className="decor">
-        <img src="/stationery-items.png" alt="" />
+        <div className="box-1"></div>
+        <div className="box-2"></div>
       </div>
       <div className="about-us">
         <h2>About Company</h2>
