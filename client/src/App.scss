@@ -279,9 +279,12 @@
     .box-2 {
       width: 300px;
       height: 350px;
+      border-radius: 5px;
       position: absolute;
       filter: drop-shadow(5px 5px 5px grey);
       background-color: white;
+    }
+    .box-1 {
     }
     .box-2 {
       transform: translateX(50%);
@@ -381,7 +384,6 @@
     .about-us {
       padding: 1rem 1.5rem;
       h2 {
-        font-weight: 100;
         @media (max-width: 500px) {
           font-size: 2rem;
         }
@@ -582,11 +584,19 @@
       }
     }
   }
+  @media (max-width: 1300px) {
+    .categories {
+      .category {
+        width: 80%;
+      }
+    }
+  }
   @media (width<=1200px) {
     .categories {
       @include index.res-grid(calc(100% / 2));
       padding: 2rem 1rem;
       .category {
+        width: 60%;
         margin-bottom: 10%;
       }
     }
@@ -595,13 +605,15 @@
     h2 {
       font-size: 2.5rem;
       @media (width<=500px) {
-        font-weight: 100;
         padding: 1rem 2rem 0 2rem;
         width: 90%;
         font-size: 1.5rem;
       }
     }
     .categories {
+      .category {
+        width: 80%;
+      }
       @media (width<=800px) {
         @include index.res-grid(100%);
         gap: 2rem;
@@ -1283,6 +1295,16 @@ $largeScreen: 1180px;
             background-color: #00b7ff;
             // background-color: index.$astros-navy;
             color: black;
+          }
+        }
+      }
+    }
+    @media (max-width: 1200px) {
+      width: 90%;
+      .download-form {
+        form {
+          button {
+            width: 40%;
           }
         }
       }

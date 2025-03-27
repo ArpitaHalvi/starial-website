@@ -8,7 +8,7 @@ export default function About() {
         <div className="box-2"></div>
       </div>
       <div className="about-us">
-        <h2>About Company</h2>
+        <h2>Why Choose Us?</h2>
         <p>
           Starial is a startup providing convenient and efficient delivery of
           Stationery and Uniforms within an hour.
