@@ -53,7 +53,7 @@ export default function AboutPage() {
   const teamMembers = [
     { name: "Rahul Rai (CEO)", img: "" },
     { name: "Shubham Singh (CTO)", img: "" },
-    { name: "Deeksha Sen (Manager)", img: "" },
+    { name: "Deeksha Sen (Manager)", img: "deekshaMaam.jpg" },
     { name: "Shruti Khatri (Social Media Manager)", img: "" },
     { name: "Anusha Pandey (Anusha Pandey)", img: "" },
   ];

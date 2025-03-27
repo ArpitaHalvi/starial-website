@@ -169,7 +169,7 @@
   padding: 2rem;
   position: relative;
   overflow: hidden;
-  background: url("waves.svg");
+  // background: url("waves.svg");
   @media (max-width: 1100px) {
     @include index.res-grid(100%);
     height: auto;
@@ -656,35 +656,19 @@
     @include index.flex-box($flex-dir: column);
     position: relative;
     gap: 5rem;
-    .delivery {
+    // .delivery {
+    &:hover {
+      opacity: 1;
+    }
+    img {
+      @include index.img-setting(15%);
       font-size: 3rem;
       color: index.$astros-navy;
       position: absolute;
-      left: -10%;
+      left: 0;
       bottom: 7%;
       z-index: 3;
-      animation: move-delivery-boy 10s linear infinite;
-      &:hover {
-        opacity: 1;
-      }
-      img {
-        @include index.img-setting();
-      }
-      .tooltip {
-        position: absolute;
-        width: 50%;
-        text-align: center;
-        font-size: 0.8rem;
-        background-color: white;
-        padding: 1rem;
-        border-radius: 5px;
-        top: -40px;
-        left: 50%;
-        filter: drop-shadow(5px 5px 5px grey);
-        transition: opacity 0.3s;
-        opacity: 0;
-        transform: translateX(-50%);
-      }
+      animation: move-delivery-boy 9s linear infinite;
     }
     .step-route {
       width: 100%;
@@ -704,17 +688,39 @@
       .step {
         @include index.flex-box($flex-dir: column);
         gap: 2rem;
+        // background-color: pink;
         .step-img {
           width: 100px;
           height: 100px;
           background-color: index.$argentinan-blue;
           border-radius: 50%;
           @include index.flex-box;
+          // animation: scale-step 2s infinite;
+          transition: transform 1s ease-in-out, background-color 1s ease-in-out;
           .icon {
             font-size: 3.5rem;
             color: aliceblue;
           }
         }
+        .scaled {
+          transform: scale(1.3);
+          background-color: index.$astros-navy;
+        }
+        // &:nth-of-type(1) {
+        //   animation: scale-step 2s infinite;
+        // }
+        // &:nth-of-type(2) {
+        //   animation: scale-step 2s 2s infinite;
+        // }
+        // &:nth-of-type(3) {
+        //   animation: scale-step 2s 4s infinite;
+        // }
+        // &:nth-of-type(4) {
+        //   animation: scale-step 2s 6s infinite;
+        // }
+        // &:nth-of-type(5) {
+        //   animation: scale-step 2s 8s infinite;
+        // }
         h5 {
           font-size: 1rem;
           width: 70%;
@@ -760,7 +766,6 @@
     }
     .process {
       flex-direction: row;
-      // background-color: pink;
       gap: 0;
       .step-route {
         display: none;
@@ -778,7 +783,6 @@
           width: 100%;
           flex-direction: row;
           gap: 2rem;
-          // background-color: plum;
           .step-img {
             order: 2;
           }
@@ -840,6 +844,20 @@
 // transform: translateX(100vw);
 // }
 // }
+
+@keyframes scale-step {
+  0%,
+  100% {
+    transform: scale(1);
+    // background-color: index.$argentinan-blue;
+    background-color: transparent;
+    padding: 0.5rem 0;
+  }
+  50% {
+    transform: scale(1.2);
+    background-color: index.$alice-blue;
+  }
+}
 
 @keyframes move-delivery-boy {
   0% {
@@ -1570,15 +1588,14 @@ $largeScreen: 1180px;
           }
         }
         .download-btn {
-          // color: aliceblue;
-          background-color: index.$argentinan-blue;
           padding: 0.5rem 1rem;
           border-radius: 2px;
           @include index.flex-box;
           gap: 0.5rem;
           transition: all 0.3s ease-in;
+          background-color: #ffffffe4;
           &:hover {
-            background-color: aliceblue;
+            background-color: index.$alice-blue;
           }
           .icon {
             font-size: 1.5rem;
@@ -2320,7 +2337,7 @@ $largeScreen: 1180px;
     .team {
       width: 100%;
       padding: 2rem;
-      background-color: index.$alice-blue;
+      // background-color: index.$alice-blue;
       // @include index.flex-box($justify-content: space-between);
       @include index.res-grid(calc(100% / 5));
       // background-color: plum;
@@ -2331,6 +2348,8 @@ $largeScreen: 1180px;
         img {
           width: 200px;
           height: 200px;
+          object-fit: cover;
+          aspect-ratio: 3/2;
           border-radius: 100px;
           border: 2px solid index.$astros-navy;
           @include index.flex-box;
@@ -2341,6 +2360,7 @@ $largeScreen: 1180px;
           text-align: center;
           font-size: 1.3rem;
           font-weight: 400;
+          font-weight: bold;
         }
       }
       @media (max-width: 1300px) {
