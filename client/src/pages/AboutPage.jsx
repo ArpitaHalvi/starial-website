@@ -54,7 +54,7 @@ export default function AboutPage() {
     { name: "Rahul Rai (CEO)", img: "" },
     { name: "Shubham Singh (CTO)", img: "" },
     { name: "Deeksha Sen (Manager)", img: "deekshaMaam.jpg" },
-    { name: "Shruti Khatri (Social Media Manager)", img: "" },
+    { name: "Shruti Khatri (Social Media Manager)", img: "shruti.jpg" },
     { name: "Anusha Pandey (Anusha Pandey)", img: "" },
   ];
   return (
