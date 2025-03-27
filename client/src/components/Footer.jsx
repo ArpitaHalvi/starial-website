@@ -106,11 +106,18 @@ export default function Footer() {
             </div>
             <div className="download-links">
               <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
-                <img src="playstore-btn.png" alt="" />
+                <img src="play-store-logo.svg" alt="" />
+                <span>
+                  <span>GET IT ON</span>
+                  <span>Google Play </span>
+                </span>
               </Link>
               <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
-                {/* <img src="appstore-btn.png" alt="" /> */}
-                <img src="playstore-btn.png" alt="" />
+                <img src="apple-logo.svg" alt="" />
+                <span>
+                  <span>Download on the</span>
+                  <span>App Store</span>
+                </span>
               </Link>
             </div>
           </div>
