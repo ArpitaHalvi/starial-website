@@ -53,14 +53,11 @@ export default function Navbar() {
               Products
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) => (isActive ? "active" : "a")}
-            >
-              Contact Us
-            </NavLink>
-          </li>
+          {/* <li> */}
+          <NavLink to="/contact" className="contact-us">
+            Contact Us
+          </NavLink>
+          {/* </li> */}
         </ul>
         <div className="menu" onClick={toggleMenu}>
           {isOpen ? (

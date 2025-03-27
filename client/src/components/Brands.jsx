@@ -7,7 +7,7 @@ export default function Brands() {
     "faber-castell2.png",
     "pidilite.png",
     "reynolds.jpg",
-    "youva2.jpg",
+    "youva-logo2.png",
   ];
   return (
     <section className="brands-section">

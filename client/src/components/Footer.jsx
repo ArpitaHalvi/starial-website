@@ -59,31 +59,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="social-links">
-          <img src="/starial-white-logo.png" alt="LOGO" />
-          <div className="socials">
-            <h6>Follow Us</h6>
-            <div className="links">
-              {socialLinks.map((link, index) => {
-                return (
-                  <Link
-                    to={link.url}
-                    key={index}
-                    style={{ "--accent-color": link.color }}
-                  >
-                    {link.icon}
-                  </Link>
-                );
-              })}
-            </div>
-            <Link
-              className="download-btn"
-              to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1"
-            >
-              Download Now <IoLogoGooglePlaystore className="icon" />
-            </Link>
-          </div>
-        </div>
         <div className="more-info">
           <ul>
             <li>
@@ -111,6 +86,34 @@ export default function Footer() {
               </span>
             </li>
           </ul>
+        </div>
+        <div className="social-links">
+          <img src="/starial-white-logo.png" alt="LOGO" />
+          <div className="socials">
+            <h6>Follow Us</h6>
+            <div className="links">
+              {socialLinks.map((link, index) => {
+                return (
+                  <Link
+                    to={link.url}
+                    key={index}
+                    style={{ "--accent-color": link.color }}
+                  >
+                    {link.icon}
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="download-links">
+              <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
+                <img src="playstore-btn.png" alt="" />
+              </Link>
+              <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
+                {/* <img src="appstore-btn.png" alt="" /> */}
+                <img src="playstore-btn.png" alt="" />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
       <p>&copy; {year} All Rights Reserved. Starial Pvt. Ltd.</p>
