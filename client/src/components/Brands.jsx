@@ -4,7 +4,7 @@ export default function Brands() {
     "cello.png",
     "classmate.svg",
     "doms.png",
-    "faber-castell.jpg",
+    "faber-castell2.png",
     "pidilite.png",
     "reynolds.jpg",
     "youva2.jpg",

@@ -2,7 +2,7 @@ export default function Intro() {
   return (
     <section className="intro-part">
       <div data-aos="slide-right" className="intro">
-        <img src="/starial-black-logo.png" alt="" />
+        {/* <img src="/starial-black-logo.png" alt="" /> */}
         <h1>
           <span>Books, Stationery and Uniforms</span>
           <span>at your doorstep.</span>
