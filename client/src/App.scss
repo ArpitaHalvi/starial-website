@@ -1371,9 +1371,6 @@ $largeScreen: 1180px;
         padding: 1rem 0;
         font-size: 0.9rem;
       }
-      h4 {
-        font-weight: lighter;
-      }
       p {
         font-size: 0.8rem;
       }
@@ -2661,12 +2658,6 @@ $largeScreen: 1180px;
   @media (max-width: 500px) {
     h2 {
       font-size: 2rem;
-    }
-    .brands {
-      .brand {
-        width: 100px;
-        height: 50px;
-      }
     }
   }
   @media (max-width: 500px) {
