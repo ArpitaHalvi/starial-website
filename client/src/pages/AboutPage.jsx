@@ -55,7 +55,7 @@ export default function AboutPage() {
     { name: "Shubham Singh (CTO)", img: "" },
     { name: "Deeksha Sen (Manager)", img: "deekshaMaam.jpg" },
     { name: "Shruti Khatri (Social Media Manager)", img: "shruti.jpg" },
-    { name: "Anusha Pandey (Anusha Pandey)", img: "" },
+    { name: "Anusha Pandey (People Relations)", img: "" },
   ];
   return (
     <section className="about-page">
