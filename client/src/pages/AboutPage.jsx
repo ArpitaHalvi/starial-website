@@ -41,18 +41,14 @@ export default function AboutPage() {
   const images = [
     "/glimpse2.jpg",
     "work1.jpg",
-    "work2.jpg",
     "work7.jpg",
-    "work14.jpg",
-    "/glimpse4.jpg",
-    "work4.jpg",
+    "work17.jpg",
+    "work18.jpg",
     "work3.jpg",
     "work5.jpg",
-    "work6.jpg",
-    "work9.jpg",
     "work10.jpg",
     "work13.jpg",
-    "/glimpse3.jpg",
+    "work16.jpg",
   ];
   // const breakPoints = {
   //   default: 3,
@@ -64,7 +60,7 @@ export default function AboutPage() {
     { name: "Shubham Singh (CTO)", img: "" },
     { name: "Deeksha Sen (Manager)", img: "deekshaMaam.jpg" },
     { name: "Shruti Khatri (Social Media Manager)", img: "shruti.jpg" },
-    { name: "Anusha Pandey (People Relations)", img: "" },
+    { name: "Anusha Pandey (People Relations)", img: "anushaMaam2.jpg" },
   ];
   return (
     <section className="about-page">

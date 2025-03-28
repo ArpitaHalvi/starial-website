@@ -336,7 +336,7 @@
     // background: url("about1.jpg") center/cover no-repeat;
     background: url("https://private-user-images.githubusercontent.com/169876450/427960858-ff64a106-97f9-4e45-b33c-fab02c8e3fb3.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDMxNTYxODUsIm5iZiI6MTc0MzE1NTg4NSwicGF0aCI6Ii8xNjk4NzY0NTAvNDI3OTYwODU4LWZmNjRhMTA2LTk3ZjktNGU0NS1iMzNjLWZhYjAyYzhlM2ZiMy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzI4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMyOFQwOTU4MDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03YzU1OTAzY2VhOWJlMGFiNzg3OTFiZGUzOWFhZDljNjRjODNhM2EzMjUwMTMyOGQwZjBmYWZhNTAyMTdmNzliJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.y7q2xIb3KHryQvtX_gbH_rLfUjeLxZwKsXV2eq_vTX4")
       center/cover no-repeat;
-    border-radius: 40% 60% 70% 30%/ 50% 30% 60% 40%;
+    border-radius: 40% 60% 70% 30%/ 50% 40% 60% 50%;
     // .box-1,
     // .box-2 {
     //   width: 300px;
@@ -361,7 +361,7 @@
     h2 {
       font-size: 3rem;
       text-align: center;
-      font-weight: 400;
+      // font-weight: 400;
       color: index.$astros-navy;
       border-bottom: 3px solid index.$astros-navy;
     }
@@ -607,7 +607,7 @@
   h2 {
     font-size: 3rem;
     padding: 1rem;
-    font-weight: 400;
+    // font-weight: 400;
     text-align: center;
     // border-bottom: 2px solid #00b7ff;
     color: index.$astros-navy;
@@ -768,7 +768,7 @@
   width: 100%;
   height: 90vh;
   @include index.flex-box($flex-dir: column);
-  gap: 2rem;
+  gap: 5rem;
   overflow: hidden;
   margin-top: 5%;
   h2 {
@@ -788,80 +788,72 @@
     &:hover {
       opacity: 1;
     }
-    img {
-      @include index.img-setting(15%);
-      font-size: 3rem;
-      color: index.$astros-navy;
-      position: absolute;
-      left: 0;
-      bottom: 7%;
-      z-index: 3;
-      animation: move-delivery-boy 9s linear infinite;
-    }
-    .step-route {
-      width: 100%;
-      height: 10vh;
-      order: 2;
-      transform: skewX(-20deg);
-      @include index.flex-box;
-      background-color: grey;
-      padding: 1rem;
-      div {
-        width: 100%;
-        border: 2px dashed white;
-      }
-    }
+    // img {
+    //   @include index.img-setting(15%);
+    //   font-size: 3rem;
+    //   color: index.$astros-navy;
+    //   position: absolute;
+    //   left: 0;
+    //   bottom: 7%;
+    //   z-index: 3;
+    //   animation: move-delivery-boy 9s linear infinite;
+    // }
+    // .step-route {
+    //   width: 100%;
+    //   height: 10vh;
+    //   order: 2;
+    //   transform: skewX(-20deg);
+    //   @include index.flex-box;
+    //   background-color: grey;
+    //   padding: 1rem;
+    //   div {
+    //     width: 100%;
+    //     border: 2px dashed white;
+    //   }
+    // }
     .process-div {
       @include index.flex-box;
+      // gap: 2rem;
       .step {
         @include index.flex-box($flex-dir: column);
         gap: 2rem;
         // background-color: pink;
         .step-img {
-          width: 100px;
-          height: 100px;
-          background-color: index.$argentinan-blue;
-          border-radius: 50%;
+          width: 150px;
+          height: 150px;
+          // background-color: index.$argentinan-blue;
+          // border-radius: 50%;
           @include index.flex-box;
           // animation: scale-step 2s infinite;
           transition: transform 1s ease-in-out, background-color 1s ease-in-out;
-          .icon {
-            font-size: 3.5rem;
-            color: aliceblue;
+          // .icon {
+          //   font-size: 3.5rem;
+          //   color: aliceblue;
+          // }
+          img {
+            width: 100%;
+            height: 100%;
+            // @include index.img-setting;
           }
         }
         .scaled {
-          transform: scale(1.3);
-          background-color: index.$astros-navy;
+          transform: scale(1.5);
+          // background-color: index.$astros-navy;
         }
-        // &:nth-of-type(1) {
-        //   animation: scale-step 2s infinite;
-        // }
-        // &:nth-of-type(2) {
-        //   animation: scale-step 2s 2s infinite;
-        // }
-        // &:nth-of-type(3) {
-        //   animation: scale-step 2s 4s infinite;
-        // }
-        // &:nth-of-type(4) {
-        //   animation: scale-step 2s 6s infinite;
-        // }
-        // &:nth-of-type(5) {
-        //   animation: scale-step 2s 8s infinite;
-        // }
         h5 {
           font-size: 1rem;
           width: 70%;
           text-align: center;
-          font-weight: 400;
-          sup {
-            background-color: index.$astros-navy;
-            padding: 0.3rem 0.6rem;
-            border-radius: 50px;
-            font-weight: bold;
-            color: index.$argentinan-blue;
-            border: 2px solid white;
-          }
+          font-weight: 600;
+          color: index.$astros-navy;
+          // sup {
+          //   background-color: index.$astros-navy;
+          //   padding: 0.3rem 0.6rem;
+          //   border-radius: 50px;
+          //   font-weight: bold;
+          //   color: index.$argentinan-blue;
+          //   border: 2px solid white;
+          // }
         }
       }
     }
@@ -987,14 +979,14 @@
   }
 }
 
-@keyframes move-delivery-boy {
-  0% {
-    left: -10%;
-  }
-  100% {
-    left: 100%;
-  }
-}
+// @keyframes move-delivery-boy {
+//   0% {
+//     left: -10%;
+//   }
+//   100% {
+//     left: 100%;
+//   }
+// }
 
 // -------------------- PROCESS SECTION ---------------------
 .process-section {
@@ -1778,6 +1770,10 @@ $largeScreen: 1180px;
           }
           @media (max-width: 468px) {
             width: 80%;
+            a {
+              font-size: 0.9rem;
+              padding: 0.3rem;
+            }
           }
         }
       }
@@ -2394,12 +2390,12 @@ $largeScreen: 1180px;
         font-weight: 400;
       }
       &:hover {
-        background-color: index.$argentinan-blue;
-        background: linear-gradient(
-          135deg,
-          index.$argentinan-blue,
-          index.$alice-blue
-        );
+        background-color: #93d9ff;
+        // background: linear-gradient(
+        //   135deg,
+        //   index.$argentinan-blue,
+        //   index.$alice-blue
+        // );
         scale: 1.05;
       }
     }
@@ -2581,6 +2577,10 @@ $largeScreen: 1180px;
           border-radius: 5px;
           background-color: #575656;
           box-shadow: 5px 5px 13px #c4c4c4;
+          transition: all 0.3s ease-in;
+          &:hover {
+            scale: 1.02;
+          }
         }
       }
       @media (max-width: 468px) {
