@@ -46,6 +46,7 @@ export default function AboutPage() {
     "work18.jpg",
     "work3.jpg",
     "work5.jpg",
+    "work19.jpg",
     "work10.jpg",
     "work13.jpg",
     "work16.jpg",
@@ -59,8 +60,8 @@ export default function AboutPage() {
     { name: "Rahul Rai (CEO)", img: "" },
     { name: "Shubham Singh (CTO)", img: "" },
     { name: "Deeksha Sen (Manager)", img: "deekshaMaam.jpg" },
-    { name: "Shruti Khatri (Social Media Manager)", img: "shruti.jpg" },
-    { name: "Anusha Pandey (People Relations)", img: "anushaMaam2.jpg" },
+    { name: "Shruti Khatri (Social Media Manager)", img: "shruti.png" },
+    { name: "Anusha Pandey (People Relations)", img: "anusha-maam.jpg" },
   ];
   return (
     <section className="about-page">

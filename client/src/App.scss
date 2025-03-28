@@ -185,12 +185,14 @@
     height: 100%;
     @include index.flex-box($align-items: flex-end);
     background: url("intro-img1.png");
+    // background: url("Starial-intro.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     img {
       width: 100%;
-      height: 600px;
+      height: 700px;
+      padding-bottom: 5%;
       object-fit: contain;
     }
   }
@@ -363,7 +365,7 @@
       text-align: center;
       // font-weight: 400;
       color: index.$astros-navy;
-      border-bottom: 3px solid index.$astros-navy;
+      border-bottom: 3px solid index.$argentinan-blue;
     }
     p {
       width: 70%;
@@ -628,7 +630,7 @@
       gap: 1rem;
       filter: drop-shadow(5px 5px 5px grey);
       background-color: white;
-      // padding: 1rem 0.5rem;
+      padding: 1rem 0.5rem;
       border-radius: 5px;
       transition: all 0.3s ease-in;
       .slick-dots {
@@ -642,7 +644,6 @@
         &::before {
           font-size: 30px;
           color: #e4e3e3;
-          // color: #c7c7c7;
           filter: drop-shadow(2px 2px 2px grey);
         }
       }
@@ -659,10 +660,10 @@
         @include index.flex-box;
       }
       .slick-slider {
-        // width: 80%;
-        // height: 80%;
-        width: 100%;
-        height: 100%;
+        width: 80%;
+        height: 80%;
+        // width: 100%;
+        // height: 100%;
         overflow: hidden;
         @include index.flex-box;
         background-color: index.$argentinan-blue;
@@ -678,15 +679,15 @@
       }
       a {
         width: fit-content;
-        right: 0;
-        padding: 0.5rem 1rem;
-        position: absolute;
-        top: 5%;
-        border-radius: 20px 0 0 20px;
-        text-align: right;
+        // right: 0;
+        // padding: 0.5rem 1rem;
+        // position: absolute;
+        // top: 5%;
+        // border-radius: 20px 0 0 20px;
+        // text-align: right;
         font-size: 1.3rem;
-        background-color: index.$astros-navy;
-        color: white;
+        // background-color: index.$astros-navy;
+        // color: white;
       }
       &:hover {
         scale: 1.05;
@@ -731,7 +732,7 @@
       @media (width<=500px) {
         padding: 1rem 2rem 0 2rem;
         width: 90%;
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
     }
     .categories {
@@ -774,7 +775,7 @@
   h2 {
     padding: 0 2rem;
     font-size: 3rem;
-    font-weight: 400;
+    // font-weight: 400;
     color: index.$astros-navy;
     border-bottom: 2px solid index.$argentinan-blue;
   }
@@ -825,20 +826,16 @@
           // border-radius: 50%;
           @include index.flex-box;
           // animation: scale-step 2s infinite;
-          transition: transform 1s ease-in-out, background-color 1s ease-in-out;
-          // .icon {
-          //   font-size: 3.5rem;
-          //   color: aliceblue;
-          // }
+          transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+          opacity: 0.6;
           img {
             width: 100%;
             height: 100%;
-            // @include index.img-setting;
           }
         }
         .scaled {
           transform: scale(1.5);
-          // background-color: index.$astros-navy;
+          opacity: 1;
         }
         h5 {
           font-size: 1rem;
@@ -846,14 +843,18 @@
           text-align: center;
           font-weight: 600;
           color: index.$astros-navy;
-          // sup {
-          //   background-color: index.$astros-navy;
-          //   padding: 0.3rem 0.6rem;
-          //   border-radius: 50px;
-          //   font-weight: bold;
-          //   color: index.$argentinan-blue;
-          //   border: 2px solid white;
-          // }
+          sup {
+            // background-color: index.$astros-navy;
+            padding: 0.3rem 0.6rem;
+            border-radius: 50px;
+            font-weight: bold;
+            color: index.$argentinan-blue;
+            border: 2px solid white;
+            // display: none;
+          }
+        }
+        .show-step-no {
+          background-color: index.$astros-navy;
         }
       }
     }
@@ -935,7 +936,7 @@
     h2 {
       width: 60%;
       text-align: center;
-      font-size: 1.5rem;
+      // font-size: 1.5rem;
       padding: 2rem 0 0 0;
     }
   }
@@ -1326,7 +1327,7 @@ $largeScreen: 1180px;
     }
     h4 {
       font-size: 2.5rem;
-      font-weight: 400;
+      // font-weight: 400;
       color: index.$astros-navy;
     }
     p {
@@ -2634,6 +2635,13 @@ $largeScreen: 1180px;
           }
         }
       }
+      @media (max-width: 468px) {
+        .some-glimpses {
+          .masonry-grid {
+            column-gap: 2rem;
+          }
+        }
+      }
     }
   }
 }
@@ -2796,7 +2804,7 @@ $largeScreen: 1180px;
   overflow: hidden;
   h2 {
     font-size: 3rem;
-    font-weight: 400;
+    // font-weight: 400;
     text-align: center;
     color: index.$astros-navy;
     border-bottom: 2px solid index.$argentinan-blue;

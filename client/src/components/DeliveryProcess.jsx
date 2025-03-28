@@ -64,7 +64,13 @@ export default function DeliveryProcess() {
                   <img src={url} alt="" />
                 </div>
                 <h5>
-                  {/* <sup>{id}</sup> */}
+                  <sup
+                    className={`${
+                      id - 1 === activeIndex ? "show-step-no" : ""
+                    }`}
+                  >
+                    {id}
+                  </sup>
                   {step}
                 </h5>
               </div>

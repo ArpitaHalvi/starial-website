@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Intro() {
   const [index, setIndex] = useState(0);
-  const [animating, setAnimating] = useState(false);
+  // const [animating, setAnimating] = useState(false);
   const words = ["", "Books", "Stationery", "Uniforms"];
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,7 +52,7 @@ export default function Intro() {
         </div>
       </div>
       <div className="intro-img">
-        <img src="starial-services.png" alt="" />
+        <img src="Starial-intro.png" alt="" />
       </div>
     </section>
   );
