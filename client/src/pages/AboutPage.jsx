@@ -39,11 +39,20 @@ export default function AboutPage() {
     "Anusha Pandey - People Operations",
   ];
   const images = [
-    "/glimpse5.jpg",
     "/glimpse2.jpg",
+    "work1.jpg",
+    "work2.jpg",
+    "work7.jpg",
+    "work14.jpg",
     "/glimpse4.jpg",
+    "work4.jpg",
+    "work3.jpg",
+    "work5.jpg",
+    "work6.jpg",
+    "work9.jpg",
+    "work10.jpg",
+    "work13.jpg",
     "/glimpse3.jpg",
-    "/glimpse1.jpg",
   ];
   // const breakPoints = {
   //   default: 3,

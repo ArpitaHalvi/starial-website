@@ -3,11 +3,20 @@ import { Link } from "react-router-dom";
 
 export default function Intro() {
   const [index, setIndex] = useState(0);
-  const words = ["Books", "Stationery", "Uniforms", "Books"];
+  const [animating, setAnimating] = useState(false);
+  const words = ["", "Books", "Stationery", "Uniforms"];
   useEffect(() => {
     const interval = setInterval(() => {
+      // if (index === words.length) {
+      //   setTimeout(() => {
+      //     setAnimating(false);
+      //     setIndex(0);
+      //   }, 800);
+      // } else {
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 1000);
+      // setIndex((prevIndex) => prevIndex + 1);
+      // }
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
   return (
@@ -21,7 +30,12 @@ export default function Intro() {
                 return (
                   <h1
                     key={idx}
-                    style={{ transform: `translateY(-${index * 100}%)` }}
+                    style={{
+                      transform: `translateY(-${index * 100}%)`,
+                      // transition: `${
+                      //   animating ? "transform .8s ease-in-out" : "none"
+                      // }`,
+                    }}
                   >
                     {word}
                   </h1>
