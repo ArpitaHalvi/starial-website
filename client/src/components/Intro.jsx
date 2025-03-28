@@ -7,6 +7,7 @@ export default function Intro() {
   const words = ["", "Books", "Stationery", "Uniforms"];
   useEffect(() => {
     const interval = setInterval(() => {
+      // setAnimating(true);
       // if (index === words.length) {
       //   setTimeout(() => {
       //     setAnimating(false);
@@ -14,7 +15,7 @@ export default function Intro() {
       //   }, 800);
       // } else {
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
-      // setIndex((prevIndex) => prevIndex + 1);
+      //   setIndex((prevIndex) => prevIndex + 1);
       // }
     }, 2000);
     return () => clearInterval(interval);
@@ -32,9 +33,9 @@ export default function Intro() {
                     key={idx}
                     style={{
                       transform: `translateY(-${index * 100}%)`,
-                      // transition: `${
-                      //   animating ? "transform .8s ease-in-out" : "none"
-                      // }`,
+                      // transition: animating
+                      //   ? "transform .5s ease-in-out"
+                      //   : "none",
                     }}
                   >
                     {word}

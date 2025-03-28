@@ -333,7 +333,9 @@
     height: 100%;
     @include index.flex-box;
     position: relative;
-    background: url("about1.jpg") center/cover no-repeat;
+    // background: url("about1.jpg") center/cover no-repeat;
+    background: url("https://private-user-images.githubusercontent.com/169876450/427960858-ff64a106-97f9-4e45-b33c-fab02c8e3fb3.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDMxNTYxODUsIm5iZiI6MTc0MzE1NTg4NSwicGF0aCI6Ii8xNjk4NzY0NTAvNDI3OTYwODU4LWZmNjRhMTA2LTk3ZjktNGU0NS1iMzNjLWZhYjAyYzhlM2ZiMy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzI4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMyOFQwOTU4MDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03YzU1OTAzY2VhOWJlMGFiNzg3OTFiZGUzOWFhZDljNjRjODNhM2EzMjUwMTMyOGQwZjBmYWZhNTAyMTdmNzliJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.y7q2xIb3KHryQvtX_gbH_rLfUjeLxZwKsXV2eq_vTX4")
+      center/cover no-repeat;
     border-radius: 40% 60% 70% 30%/ 50% 30% 60% 40%;
     // .box-1,
     // .box-2 {
@@ -442,6 +444,7 @@
     background: linear-gradient(to bottom, #ffffff, #dbf2fe, #93d9ff);
     height: auto;
     padding: 1rem;
+    gap: 2rem;
     .decor {
       order: 2;
       width: 500px;
@@ -476,7 +479,7 @@
       }
       @media (max-width: 468px) {
         padding: 1rem;
-        gap: 2rem;
+        gap: 3rem;
       }
       h2 {
         @media (max-width: 500px) {
@@ -498,7 +501,7 @@
         @media (max-width: 500px) {
           width: 100%;
           div {
-            padding: 0.5rem;
+            // padding: 0.5rem;
           }
         }
       }
