@@ -297,7 +297,12 @@
   }
   @media (max-width: 468px) {
     .intro-img {
-      padding: 2rem;
+      // padding: 2rem;
+      // background-color: pink;
+      img {
+        height: 500px;
+        // padding-bottom: 0;
+      }
     }
     .intro {
       .intro-heading {
