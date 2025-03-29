@@ -15,7 +15,7 @@ export default function Intro() {
       //   }, 800);
       // } else {
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
-      //   setIndex((prevIndex) => prevIndex + 1);
+      // setIndex((prevIndex) => prevIndex + 1);
       // }
     }, 2000);
     return () => clearInterval(interval);

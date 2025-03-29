@@ -33,7 +33,7 @@ const processes = [
 export default function DeliveryProcess() {
   const [activeIndex, setActiveIndex] = useState(0);
   useEffect(() => {
-    const delay = activeIndex === processes.length - 1 ? 3000 : 1500;
+    const delay = activeIndex === processes.length - 1 ? 2000 : 1500;
     const interval = setTimeout(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % processes.length);
     }, delay);
@@ -41,7 +41,7 @@ export default function DeliveryProcess() {
   }, [activeIndex]);
   return (
     <section className="delivery-process">
-      <h2>How we make it happen?</h2>
+      <h2>From Cart to Doorstep</h2>
       <div className="process">
         {/* <img
           src="delivery-boy.svg"
