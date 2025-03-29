@@ -1,4 +1,4 @@
-import { IoArrowForward } from "react-icons/io5";
+// import { IoArrowForward } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

@@ -58,7 +58,6 @@ export default function CategoriesPage() {
           placeholder="Search by Categories"
           onChange={(e) => setSearchText(e.target.value)}
         />
-        {/* <FaPencilRuler className="input-icon" /> */}
         <p>Showing results for {filteredCategories.length} categories...</p>
       </div>
       <div className="categories">

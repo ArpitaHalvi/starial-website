@@ -61,42 +61,44 @@ export default function ContactUs() {
         onClose={() => setOpenModal(false)}
         isOpen={openModal}
       />
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <h3>Contact Us</h3>
-        <input
-          type="text"
-          name="fullname"
-          placeholder="Your fullname"
-          value={contactData.fullname}
-          onChange={handleChange}
-        />
-        <div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Your email"
-            value={contactData.email}
-            onChange={handleChange}
-          />
-          <input
-            type="tel"
-            name="phoneNumber"
-            placeholder="Your phone number"
-            value={contactData.phoneNumber}
-            onChange={handleChange}
-          />
-        </div>
-        <textarea
-          name="message"
-          className="msg"
-          placeholder="Your Message"
-          value={contactData.message}
-          onChange={handleChange}
-        ></textarea>
-        <button type="submit">Send</button>
-      </form>
       <div className="contact-decor">
-        <img src="/contact-us.jpg" alt="" />
+        <img src="/contact-bg.png" alt="" />
+      </div>
+      <div className="contact-form">
+        <form onSubmit={handleSubmit}>
+          <h3>Get in touch</h3>
+          <input
+            type="text"
+            name="fullname"
+            placeholder="Fullname"
+            value={contactData.fullname}
+            onChange={handleChange}
+          />
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={contactData.email}
+              onChange={handleChange}
+            />
+            <input
+              type="tel"
+              name="phoneNumber"
+              placeholder="Phone"
+              value={contactData.phoneNumber}
+              onChange={handleChange}
+            />
+          </div>
+          <textarea
+            name="message"
+            className="msg"
+            placeholder="Message"
+            value={contactData.message}
+            onChange={handleChange}
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
       </div>
     </section>
   );
