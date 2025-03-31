@@ -1,4 +1,5 @@
 import About from "./About";
+import AboutUs from "./AboutUs";
 import Brands from "./Brands";
 import Categories from "./Categories";
 import DeliveryProcess from "./DeliveryProcess";
@@ -10,7 +11,8 @@ export default function Home() {
     <main className="home-page">
       <Intro />
       <Categories />
-      <About />
+      {/* <About /> */}
+      <AboutUs />
       <DeliveryProcess />
       <Brands />
       <DownloadApp />

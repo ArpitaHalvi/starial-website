@@ -46,10 +46,10 @@ export default function AboutPage() {
     "work1.jpg",
     "work8.jpg",
     "work17.jpg",
-    "work18.jpg",
+    "work2.jpg",
     "work3.jpg",
     "work5.jpg",
-    "work19.jpg",
+    "work15.jpg",
     "work10.jpg",
     "work13.jpg",
     "work16.jpg",
@@ -72,7 +72,7 @@ export default function AboutPage() {
   const teamMembers = [
     { name: "Rahul Rai", img: "", designation: "CEO" },
     { name: "Shubham Singh", img: "", designation: "CTO" },
-    { name: "Deeksha Sen", img: "deekshaMaam.jpg", designation: "Manager" },
+    { name: "Deeksha Sen", img: "deekshaMaam2.jpg", designation: "Manager" },
     {
       name: "Shruti Khatri",
       img: "shruti.png",
@@ -81,25 +81,31 @@ export default function AboutPage() {
     {
       name: "Anusha Pandey",
       img: "anushaMaam3.jpg",
-      designation: "People Relations",
+      designation: "Human Resources",
     },
   ];
   const about = [
     {
       title: "What is Starial?",
       text: "Your go-to destination for fast and reliable stationery delivery! We are here to revolutionize the way you get your stationery essentials, making sure you never have to wait for what you need.",
-      img: "",
+      img: "about1.jpg",
     },
     {
       title: "Who Are We?",
       text: "We are a passionate team of innovators, problem-solvers, and stationery enthusiasts dedicated to bringing convenience to your doorstep.",
-      img: "",
+      img: "whoWeR.jpg",
     },
     {
       title: "What we do?",
       text: "At Starial, we provide an on-demand stationery delivery service, ensuring you get your supplies within just one hour. Whether you need notebooks, pens, art supplies, office essentials, or school materials, we’ve got you covered.",
-      img: "",
+      img: "whatWeDo.jpg",
     },
+  ];
+  const workculture = [
+    "starial1.jpg",
+    "starial2.jpg",
+    "starial3.jpg",
+    "starial4.jpg",
   ];
   return (
     <section className="about-page">
@@ -116,20 +122,23 @@ export default function AboutPage() {
             <TypeWriter words={membersName} />
           </div> */}
           <div className="work-culture">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            {workculture.map((w, idx) => {
+              return (
+                <div key={idx}>
+                  <img src={w} alt="" />
+                </div>
+              );
+            })}
           </div>
           <div className="about-starial">
-            {about.map(({ title, text }, index) => {
+            {about.map(({ title, text, img }, index) => {
               return (
                 <div className="about" key={index}>
                   <div>
                     <h3>{title}</h3>
                     <p>{text}</p>
                   </div>
-                  <img src="" alt="" />
+                  <img src={img} alt="" />
                 </div>
               );
             })}
