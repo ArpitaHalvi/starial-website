@@ -80,7 +80,7 @@ export default function AboutPage() {
     },
     {
       name: "Anusha Pandey",
-      img: "anushaMaam2.jpg",
+      img: "anushaMaam3.jpg",
       designation: "People Relations",
     },
   ];

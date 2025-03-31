@@ -5,6 +5,7 @@ export default function Intro() {
   const [index, setIndex] = useState(0);
   // const [animating, setAnimating] = useState(false);
   const words = ["", "Books", "Stationery", "Uniforms"];
+  // const words = ["Books", "Stationery", "Uniforms"];
   useEffect(() => {
     const interval = setInterval(() => {
       // setAnimating(true);
