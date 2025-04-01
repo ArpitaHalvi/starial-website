@@ -46,27 +46,30 @@ export default function Categories() {
           })}
         </Slider> */}
         <div className="category category-1">
-          <Slider {...settings}>
+          {/* <Slider {...settings}>
             {category1.map((cat, index) => {
               return <img src={cat} alt="Category" key={index} />;
             })}
-          </Slider>
+          </Slider> */}
+          <img src="" alt="Category" />
           <NavLink to="/categories">Stationery Items</NavLink>
         </div>
         <div className="category category-2">
-          <Slider {...settings}>
+          {/* <Slider {...settings}>
             {category2.map((cat, index) => {
               return <img src={cat} alt="Category" key={index} />;
             })}
-          </Slider>
+          </Slider> */}
+          <img src="" alt="Category" />
           <NavLink to="/categories">Uniforms</NavLink>
         </div>
         <div className="category category-3">
-          <Slider {...settings}>
+          {/* <Slider {...settings}>
             {category3.map((cat, index) => {
               return <img src={cat} alt="Category" key={index} />;
-            })}
-          </Slider>
+              })}
+              </Slider> */}
+          <img src="" alt="Category" />
           <NavLink to="/categories">Exam Books</NavLink>
         </div>
       </div>

@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { IoClose } from "react-icons/io5";
 import { RiMenu2Fill } from "react-icons/ri";
 
 const stationery = [
@@ -74,7 +72,6 @@ const categories = [
 ];
 
 export default function CategoriesPage() {
-  const [isOpen, setIsOpen] = useState(true);
   const [searchText, setSearchText] = useState("");
   const filteredCategories = categories.map((cate) => ({
     ...cate,
@@ -88,55 +85,6 @@ export default function CategoriesPage() {
   );
   return (
     <section className="categories-page">
-      {!isOpen && (
-        <div className="menu" onClick={() => setIsOpen(true)}>
-          <RiMenu2Fill className="menu-icon" />
-        </div>
-      )}
-      <aside className={`side-bar ${isOpen && "open"}`}>
-        <h2>CATEGORIES</h2>
-        <div onClick={() => setIsOpen(false)}>
-          {isOpen && <IoClose className="close-icon" />}
-        </div>
-        <div className="cate-gories">
-          <div className="cat stationery">
-            <h5>Stationery</h5>
-            <ul>
-              {stationery.map((s, idx) => {
-                return (
-                  <li key={idx}>
-                    <NavLink to="#stationery">{s.name}</NavLink>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div className="cat uniforms">
-            <h5>Uniforms</h5>
-            <ul>
-              {uniforms.map((s, idx) => {
-                return (
-                  <li key={idx}>
-                    <NavLink to="#stationery">{s.name}</NavLink>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div className="cat books">
-            <h5>Competitive Exam Books</h5>
-            <ul>
-              {books.map((s, idx) => {
-                return (
-                  <li key={idx}>
-                    <NavLink to="#stationery">{s.name}</NavLink>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </div>
-      </aside>
       <main className="categories">
         <div className="search-container">
           <input

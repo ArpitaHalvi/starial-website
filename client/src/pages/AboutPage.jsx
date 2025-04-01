@@ -1,46 +1,37 @@
-import { useEffect, useState } from "react";
-// import Masonry from "react-masonry-css";
-import Slider from "react-slick";
+// import { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const TypeWriter = ({ words, speed = 100, delay = 1000 }) => {
-  const [index, setIndex] = useState(0);
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  useEffect(() => {
-    const word = words[index];
-    if (!isDeleting && text === word) {
-      setTimeout(() => setIsDeleting(true), delay);
-      return;
-    }
-    if (isDeleting && text === "") {
-      setIsDeleting(false);
-      setIndex((prev) => (prev + 1) % words.length);
-    }
-    const typing = setTimeout(
-      () => {
-        setText((prev) =>
-          isDeleting
-            ? word.slice(0, prev.length - 1)
-            : word.slice(0, prev.length + 1)
-        );
-      },
-      isDeleting ? speed / 4 : speed
-    );
-    return () => clearTimeout(typing);
-  }, [text, isDeleting, index, words, speed, delay]);
-  return <h4>{text}</h4>;
-};
+// const TypeWriter = ({ words, speed = 100, delay = 1000 }) => {
+//   const [index, setIndex] = useState(0);
+//   const [text, setText] = useState("");
+//   const [isDeleting, setIsDeleting] = useState(false);
+//   useEffect(() => {
+//     const word = words[index];
+//     if (!isDeleting && text === word) {
+//       setTimeout(() => setIsDeleting(true), delay);
+//       return;
+//     }
+//     if (isDeleting && text === "") {
+//       setIsDeleting(false);
+//       setIndex((prev) => (prev + 1) % words.length);
+//     }
+//     const typing = setTimeout(
+//       () => {
+//         setText((prev) =>
+//           isDeleting
+//             ? word.slice(0, prev.length - 1)
+//             : word.slice(0, prev.length + 1)
+//         );
+//       },
+//       isDeleting ? speed / 4 : speed
+//     );
+//     return () => clearTimeout(typing);
+//   }, [text, isDeleting, index, words, speed, delay]);
+//   return <h4>{text}</h4>;
+// };
 
 export default function AboutPage() {
-  // const membersName = [
-  //   "Rahul Rai - CEO",
-  //   "Shubham Singh - CTO",
-  //   "Deeksha Sen - Manager",
-  //   "Shruti Khatri - Social Media Manager",
-  //   "Anusha Pandey - People Operations",
-  // ];
   const images = [
     "/glimpse2.jpg",
     "work1.jpg",
@@ -54,25 +45,10 @@ export default function AboutPage() {
     "work13.jpg",
     "work16.jpg",
   ];
-  // const breakPoints = {
-  //   default: 3,
-  //   1300: 2,
-  //   900: 1,
-  // };
-  // var settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 3,
-  //   slidesToScroll: 1,
-  //   autoplay: true,
-  //   autoplaySpeed: 3000,
-  //   pauseOnHover: true,
-  // };
   const teamMembers = [
     { name: "Rahul Rai", img: "", designation: "CEO" },
     { name: "Shubham Singh", img: "", designation: "CTO" },
-    { name: "Deeksha Sen", img: "deekshaMaam2.jpg", designation: "Manager" },
+    { name: "Deeksha Sen", img: "dkmaam.jpg", designation: "Manager" },
     {
       name: "Shruti Khatri",
       img: "shruti.png",
@@ -118,9 +94,6 @@ export default function AboutPage() {
             products and optimize our delivery network, ensuring that every
             order reaches you in record time.
           </p>
-          {/* <div className="animate-text">
-            <TypeWriter words={membersName} />
-          </div> */}
           <div className="work-culture">
             {workculture.map((w, idx) => {
               return (
@@ -157,7 +130,6 @@ export default function AboutPage() {
                       backgroundSize: "cover",
                     }}
                   >
-                    {/* <img src={member.img} alt="" /> */}
                     <div>
                       <h5>{member.name}</h5>
                       <h6>{member.designation}</h6>
@@ -165,43 +137,11 @@ export default function AboutPage() {
                   </div>
                 );
               })}
-              {/* <Slider {...settings}> */}
-              {/* {teamMembers.map((member, index) => {
-                return (
-                  <div
-                    className="member"
-                    key={index}
-                    style={{ background: `url("${member.img}")` }}
-                  >
-                    <div>
-                      <h5>{member.name}</h5>
-                      <h6>{member.designation}</h6>
-                    </div>
-                  </div>
-                );
-              })} */}
-              {/* </Slider> */}
             </div>
           </div>
-          {/* <div className="team-members">
-            <img src="glimpse5-final.jpg" alt="" />
-          </div> */}
         </div>
         <div className="some-glimpes">
           <h3>A Peek into our world!</h3>
-          {/* <Masonry
-            breakpointCols={breakPoints}
-            columnClassName="masonry-col"
-            className="masonry-grid"
-          >
-            {images.map((url, index) => {
-              return (
-                <div key={index} className="masonry-item">
-                  <img src={url} alt="Image" />
-                </div>
-              );
-            })}
-          </Masonry> */}
           <div className="masonry-grid">
             {images.map((url, index) => {
               return (

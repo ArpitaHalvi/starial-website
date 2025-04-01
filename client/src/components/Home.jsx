@@ -11,7 +11,7 @@ export default function Home() {
     <main className="home-page">
       <Intro />
       <Categories />
-      {/* <About /> */}
+      <About />
       <AboutUs />
       <DeliveryProcess />
       <Brands />
