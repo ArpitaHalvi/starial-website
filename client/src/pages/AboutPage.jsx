@@ -36,11 +36,12 @@ export default function AboutPage() {
     "/glimpse2.jpg",
     "work1.jpg",
     "work8.jpg",
-    "work17.jpg",
+    "work14.jpg",
     "work2.jpg",
+    "work11.jpg",
     "work3.jpg",
-    "work5.jpg",
     "work15.jpg",
+    "work5.jpg",
     "work10.jpg",
     "work13.jpg",
     "work16.jpg",
@@ -69,19 +70,19 @@ export default function AboutPage() {
     {
       title: "Who Are We?",
       text: "We are a passionate team of innovators, problem-solvers, and stationery enthusiasts dedicated to bringing convenience to your doorstep.",
-      img: "whoWeR.jpg",
+      img: "team.jpg",
     },
     {
       title: "What we do?",
       text: "At Starial, we provide an on-demand stationery delivery service, ensuring you get your supplies within just one hour. Whether you need notebooks, pens, art supplies, office essentials, or school materials, we’ve got you covered.",
-      img: "whatWeDo.jpg",
+      img: "delivery.jpg",
     },
   ];
   const workculture = [
-    "starial1.jpg",
+    "starial4.jpg",
     "starial2.jpg",
     "starial3.jpg",
-    "starial4.jpg",
+    "starial1.jpg",
   ];
   return (
     <section className="about-page">

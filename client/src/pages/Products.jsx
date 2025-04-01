@@ -4,7 +4,12 @@ import "slick-carousel/slick/slick-theme.css";
 import { NavLink } from "react-router-dom";
 
 export default function Products() {
-  const choices = ["cate1.png", "cate3.png", "cate2.png"];
+  // const choices = ["cate1.png", "cate3.png", "cate2.png"];
+  const choices = [
+    { title: "Stationery", img: "stationery.jpg" },
+    { title: "School Uniforms", img: "uniforms.jpg" },
+    { title: "Exam Books", img: "books.jpg" },
+  ];
   return (
     <section className="products-section">
       <div className="choices-section">
@@ -18,7 +23,8 @@ export default function Products() {
           {choices.map((c, idx) => {
             return (
               <NavLink to="/categories" key={idx}>
-                <img src={c} alt="Categories Image" />
+                <img src={c.img} alt="Categories Image" />
+                <h6>{c.title}</h6>
               </NavLink>
             );
           })}
