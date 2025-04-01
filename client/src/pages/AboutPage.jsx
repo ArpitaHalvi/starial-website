@@ -112,7 +112,7 @@ export default function AboutPage() {
                     <h3>{title}</h3>
                     <p>{text}</p>
                   </div>
-                  <img src={img} alt="" />
+                  <img src={img} alt="Pictures about us" />
                 </div>
               );
             })}

@@ -2713,7 +2713,7 @@ $largeScreen: 1180px;
           }
           &:nth-of-type(2) {
             div {
-              order: 2;
+              order: 1;
             }
           }
         }
@@ -2884,12 +2884,27 @@ $largeScreen: 1180px;
           }
         }
         .about-starial {
+          padding: 2rem;
           .about {
             @include index.res-grid(100%);
-            &:nth-of-type(2) {
-              div {
-                order: 1;
+            div {
+              width: 100%;
+              padding: 2rem 0;
+              p {
+                width: 80%;
+                @media (max-width: 468px) {
+                  width: 100%;
+                }
               }
+            }
+            img {
+              border-radius: 2px;
+              filter: drop-shadow(5px 5px 5px #bbbaba);
+            }
+          }
+          &:nth-of-type(2) {
+            img {
+              order: 1;
             }
           }
         }
