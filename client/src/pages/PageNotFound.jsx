@@ -7,7 +7,7 @@ export default function PageNotFound() {
       <div className="not-found">
         <div>
           <h2>404</h2>
-          Oops! Looks like this page took a coffee break you our notebooks.
+          Oops! Looks like this page took a coffee break with our notebooks.
           Let's get you back on track!
         </div>
         <h4>
@@ -18,7 +18,7 @@ export default function PageNotFound() {
         </NavLink>
       </div>
       <div className="starial">
-        <img src="starial-services.png" alt="" />
+        <img src="Starial-intro.png" alt="" />
       </div>
     </section>
   );

@@ -1,8 +1,8 @@
 // import { IoArrowForward } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 export default function Categories() {
   // const categories = [
@@ -19,19 +19,19 @@ export default function Categories() {
   //     img: "https://i.pinimg.com/736x/5c/d9/35/5cd935371340d403afd678a076f450be.jpg",
   //   },
   // ];
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    pauseOnHover: true,
-  };
-  const category1 = ["category.jpg", "", ""];
-  const category2 = ["", "", ""];
-  const category3 = ["", "", ""];
+  // var settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 4000,
+  //   pauseOnHover: true,
+  // };
+  // const category1 = ["category.jpg", "", ""];
+  // const category2 = ["", "", ""];
+  // const category3 = ["", "", ""];
   return (
     <section className="categories-section">
       <h2>Category of products we offer</h2>
@@ -51,7 +51,9 @@ export default function Categories() {
               return <img src={cat} alt="Category" key={index} />;
             })}
           </Slider> */}
-          <img src="" alt="Category" />
+          <div>
+            <img src="stationery.jpg" alt="Category" />
+          </div>
           <NavLink to="/categories">Stationery Items</NavLink>
         </div>
         <div className="category category-2">
@@ -60,7 +62,9 @@ export default function Categories() {
               return <img src={cat} alt="Category" key={index} />;
             })}
           </Slider> */}
-          <img src="" alt="Category" />
+          <div>
+            <img src="uniforms.jpg" alt="Category" />
+          </div>
           <NavLink to="/categories">Uniforms</NavLink>
         </div>
         <div className="category category-3">
@@ -69,7 +73,9 @@ export default function Categories() {
               return <img src={cat} alt="Category" key={index} />;
               })}
               </Slider> */}
-          <img src="" alt="Category" />
+          <div>
+            <img src="books.jpg" alt="Category" />
+          </div>
           <NavLink to="/categories">Exam Books</NavLink>
         </div>
       </div>

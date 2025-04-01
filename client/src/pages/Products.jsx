@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { NavLink } from "react-router-dom";
 
 export default function Products() {
-  const choices = ["cate1.png", "cate2.png", "cate3.png"];
+  const choices = ["cate1.png", "cate3.png", "cate2.png"];
   return (
     <section className="products-section">
       <div className="choices-section">
