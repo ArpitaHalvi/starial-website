@@ -9,8 +9,8 @@ import { Link, NavLink } from "react-router-dom";
 export default function Footer() {
   const year = new Date().getFullYear();
   const links1 = [
-    { title: "Products", url: "/products" },
     { title: "Terms & Conditions", url: "" },
+    { title: "Products", url: "/products" },
     { title: "Shipping Policy", url: "" },
     { title: "About Us", url: "/about" },
   ];
@@ -70,19 +70,19 @@ export default function Footer() {
               </span>
             </li>
             <li>
-              <IoCall className="connect-icon" />
-              <span>
-                <span>Call Us</span>
-                <NavLink to="tel:+919329885817">+91 9329885817</NavLink>
-              </span>
-            </li>
-            <li>
               <CgMail className="connect-icon" />
               <span>
                 <span>Mail Us</span>
                 <NavLink to="mailto:Starialofficial@gmail.com">
                   business@starial.in
                 </NavLink>
+              </span>
+            </li>
+            <li>
+              <IoCall className="connect-icon" />
+              <span>
+                <span>Call Us</span>
+                <NavLink to="tel:+919329885817">+91 9329885817</NavLink>
               </span>
             </li>
           </ul>

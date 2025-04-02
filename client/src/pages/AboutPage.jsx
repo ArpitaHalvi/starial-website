@@ -47,7 +47,7 @@ export default function AboutPage() {
     "work16.jpg",
   ];
   const teamMembers = [
-    { name: "Rahul Rai", img: "", designation: "CEO" },
+    { name: "Rahul Rai", img: "rahulSir2.jpg", designation: "CEO" },
     { name: "Shubham Singh", img: "", designation: "CTO" },
     { name: "Deeksha Sen", img: "dkmaam.jpg", designation: "Manager" },
     {

@@ -13,6 +13,7 @@ import Loading from "./pages/Loading";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -27,6 +28,7 @@ function App() {
   });
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <ToastContainer theme="light" draggable />
       <Navbar />
       {loading ? (

@@ -1,49 +1,33 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Intro() {
   const [index, setIndex] = useState(0);
-  // const [animating, setAnimating] = useState(false);
-  const words = ["", "Books", "Stationery", "Uniforms"];
-  // const words = ["Books", "Stationery", "Uniforms"];
+  const words = ["Books", "Stationery", "Uniforms"];
   useEffect(() => {
     const interval = setInterval(() => {
-      // setAnimating(true);
-      // if (index === words.length) {
-      //   setTimeout(() => {
-      //     setAnimating(false);
-      //     setIndex(0);
-      //   }, 800);
-      // } else {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length);
-      // setIndex((prevIndex) => prevIndex + 1);
-      // }
+      setIndex((prevIdx) => (prevIdx + 1) % words.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [index]);
   return (
     <section className="intro-part">
       <div className="intro">
         <div className="intro-heading" data-aos="slide-right">
           <div>
             <h2>Get</h2>
-            <div className="word-slider">
-              {words.map((word, idx) => {
-                return (
-                  <h1
-                    key={idx}
-                    style={{
-                      transform: `translateY(-${index * 100}%)`,
-                      // transition: animating
-                      //   ? "transform .5s ease-in-out"
-                      //   : "none",
-                    }}
-                  >
-                    {word}
-                  </h1>
-                );
-              })}
-            </div>
+            <motion.div
+              key={index}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="word-carousel"
+            >
+              {words[index]}
+            </motion.div>
             <h2>at your doorstep.</h2>
           </div>
           <p>Starial delivers your favorite stationery within an hour</p>

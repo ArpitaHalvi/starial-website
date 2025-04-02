@@ -1,7 +1,7 @@
 import { AiOutlineShop } from "react-icons/ai";
-import { FaMoneyBillWave } from "react-icons/fa6";
-import { TbShoppingCartDiscount, TbTruckDelivery } from "react-icons/tb";
-import { NavLink } from "react-router-dom";
+import { FaBookOpen } from "react-icons/fa6";
+import { GiClothes } from "react-icons/gi";
+import { MdDeliveryDining, MdSportsBasketball } from "react-icons/md";
 
 export default function About() {
   return (
@@ -19,20 +19,20 @@ export default function About() {
         {/* <NavLink to="/about">Know More</NavLink> */}
         <div className="services">
           <div>
-            <TbTruckDelivery className="service-icon" />
-            Fast Delivery
+            <MdDeliveryDining className="service-icon" />
+            Quick Delivery
           </div>
           <div>
-            <TbShoppingCartDiscount className="service-icon" />
-            Lower Prices
+            <FaBookOpen className="service-icon" />
+            All Study Materials
           </div>
           <div>
-            <FaMoneyBillWave className="service-icon" />
-            Cash on Delivery
+            <GiClothes className="service-icon" />
+            Uniforms
           </div>
           <div>
-            <AiOutlineShop className="service-icon" />
-            Top Brands
+            <MdSportsBasketball className="service-icon" />
+            Sports Items
           </div>
         </div>
       </div>

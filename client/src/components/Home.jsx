@@ -1,19 +1,19 @@
 import About from "./About";
-import AboutUs from "./AboutUs";
 import Brands from "./Brands";
-import Categories from "./Categories";
+import Clients from "./Clients";
 import DeliveryProcess from "./DeliveryProcess";
 import DownloadApp from "./DownloadApp";
 import Intro from "./Intro";
+import Products from "../pages/Products";
 
 export default function Home() {
   return (
     <main className="home-page">
       <Intro />
-      <Categories />
+      <Products />
       <About />
-      <AboutUs />
       <DeliveryProcess />
+      <Clients />
       <Brands />
       <DownloadApp />
     </main>
