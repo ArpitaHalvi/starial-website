@@ -84,6 +84,7 @@ export default function AboutPage() {
     "starial3.jpg",
     "starial1.jpg",
   ];
+  // const images = ["","",""];
   return (
     <section className="about-page">
       <div className="about-us">
@@ -138,6 +139,27 @@ export default function AboutPage() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+          <div className="interns-section">
+            <div className="intern-intro">
+              <h3>Our Interns:</h3>
+              <h4>The Heart of Innovation at Starial</h4>
+              <p>
+                At Starial, we believe that fresh perspectives and innovative
+                ideas are the driving force behind growth. Our interns play a
+                crucial role in shaping the future of our platform, bringing
+                creativity, dedication, and a passion for storytelling.
+              </p>
+            </div>
+            <div className="intern-decor">
+              <div className="single-pic">
+                <img src="stationery2.png" alt="" />
+              </div>
+              <div>
+                <img src="stationery1.png" alt="" />
+                <img src="stationery1.png" alt="" />
+              </div>
             </div>
           </div>
         </div>

@@ -2738,6 +2738,111 @@ $largeScreen: 1180px;
       @media (max-width: 468px) {
         padding: 1rem;
       }
+      .interns-section {
+        width: 100%;
+        height: 90vh;
+        padding: 2rem;
+        @include index.res-grid;
+        // background-color: pink;
+        .intern-intro {
+          color: index.$dark-blue;
+          @include index.flex-box($flex-dir: column, $align-items: flex-start);
+          h3 {
+            font-size: 4rem;
+          }
+          h4 {
+            width: 70%;
+            font-size: 3rem;
+            margin-bottom: 5%;
+          }
+          p {
+            width: 70%;
+            text-align: left;
+          }
+        }
+        .intern-decor {
+          width: 80%;
+          @include index.flex-box($flex-dir: column);
+          padding: 2rem;
+          .single-pic {
+            width: 100%;
+            img {
+              width: 100%;
+              object-fit: contain;
+            }
+          }
+          div {
+            width: 100%;
+            @include index.res-grid;
+            img {
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+        @media (max-width: 1300px) {
+          .intern-intro {
+            h4 {
+              font-size: 2rem;
+            }
+          }
+        }
+        @media (max-width: 1050px) {
+          padding: 1rem;
+          .intern-intro {
+            h3 {
+              font-size: 3rem;
+            }
+            h4 {
+              width: 100%;
+              font-size: 2rem;
+            }
+            p {
+              width: 80%;
+            }
+          }
+          .intern-decor {
+            padding: 0;
+          }
+        }
+        @media (max-width: 800px) {
+          padding: 0;
+          height: auto;
+          margin: 5% 0;
+          @include index.res-grid(100%);
+          gap: 2rem;
+          .intern-intro {
+            text-align: center;
+            align-items: center;
+            h4 {
+              margin-bottom: 2%;
+            }
+            p {
+              text-align: center;
+            }
+          }
+          .intern-decor {
+            padding: 2rem;
+          }
+        }
+        @media (max-width: 500px) {
+          padding: 1rem;
+          .intern-intro {
+            h3 {
+              font-size: 2rem;
+            }
+            h4 {
+              font-size: 1.5rem;
+            }
+            p {
+              width: 100%;
+            }
+          }
+          .intern-decor {
+            padding: 0;
+          }
+        }
+      }
     }
     .team {
       width: 100%;
@@ -3140,9 +3245,9 @@ $largeScreen: 1180px;
   width: 100%;
   height: 70vh;
   padding: 2rem;
-  @include index.flex-box($flex-dir: column);
+  @include index.flex-box($flex-dir: column, $justify-content: space-around);
   color: index.$dark-blue;
-  gap: 4rem;
+  // gap: 4rem;
   h2 {
     font-size: 3rem;
     color: index.$dark-blue;
@@ -3156,7 +3261,7 @@ $largeScreen: 1180px;
       border-radius: 5px;
       filter: drop-shadow(5px 5px 5px #c2c0c0);
       @include index.flex-box($flex-dir: column, $align-items: flex-start);
-      gap: 2rem;
+      gap: 1rem;
       position: relative;
       div {
         @include index.flex-box($justify-content: flex-start);
@@ -3174,9 +3279,12 @@ $largeScreen: 1180px;
       .full-review {
         max-height: 0;
         overflow: hidden;
+        border-top: 2px solid transparent;
         transition: max-height 0.3s ease-in, all 0.3s ease-in;
         &.open {
           max-height: 30vh;
+          border-top: 2px solid #cecdcd;
+          padding-top: 1rem;
         }
       }
     }
