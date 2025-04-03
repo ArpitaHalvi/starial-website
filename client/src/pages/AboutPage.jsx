@@ -60,7 +60,7 @@ export default function AboutPage() {
     {
       name: "Anusha Pandey",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687039/anushaMaam2_b8tee9.jpg",
-      designation: "Recruitment Manager",
+      designation: "Talent Acquisition Manager",
     },
     {
       name: "Shruti Khatri",
