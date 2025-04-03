@@ -302,7 +302,7 @@
 // ------------------------- ABOUT STYLES ----------------------
 .about-section {
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   @include index.res-grid;
   margin-top: 10%;
   background: linear-gradient(to right, #ffffff, #dbf2fe, #93d9ff);
@@ -312,8 +312,9 @@
     @include index.flex-box;
     position: relative;
     // background: url("about-section.jpg") center/contain no-repeat;
+    // background: url("about-img2.jpg") center/cover no-repeat;
     background: url("https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688149/about-section_bsb5py.jpg")
-      center/contain no-repeat;
+      center/cover no-repeat;
     // border-radius: 40% 60% 70% 30%/ 50% 40% 60% 50%;
     // border-radius: 50%;
   }
@@ -360,8 +361,14 @@
         text-align: center;
         border-radius: 3px 3px 0 0;
         color: index.$astros-navy;
+        font-size: 0.8rem;
+        transition: all 0.3s ease-in;
         .service-icon {
           font-size: 2rem;
+        }
+        &:hover {
+          scale: 1.05;
+          background-color: #93d9ff;
         }
       }
     }
