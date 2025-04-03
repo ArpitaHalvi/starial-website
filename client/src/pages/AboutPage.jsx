@@ -74,7 +74,7 @@ export default function AboutPage() {
     },
     {
       name: "Mayank",
-      img: "",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743692937/mayank-1_xkhqhm.jpg",
       designation: "Graphic Designing Intern",
     },
     {
