@@ -45,7 +45,7 @@ export default function AboutPage() {
     {
       name: "Rahul Rai",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687045/rahulSir2_pyq8mx.jpg",
-      designation: "CEO",
+      designation: "Founder & CEO",
     },
     {
       name: "Shubham Singh",
@@ -54,7 +54,7 @@ export default function AboutPage() {
     },
     {
       name: "Deeksha Sen",
-      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687040/dkmaam2_t0zc2q.jpg",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743708362/deeksha_kvfowm.jpg",
       designation: "Manager",
     },
     {
@@ -69,17 +69,20 @@ export default function AboutPage() {
     },
     {
       name: "Resham Katariya",
-      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687049/resham2_enlk8w.jpg",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743708510/resham2_u9gyeh.jpg",
+      // img: "/resham.jpeg",
       designation: "Human Resources",
     },
     {
       name: "Mayank",
-      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743692937/mayank-1_xkhqhm.jpg",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743708384/mayank2_txndx3.jpg",
+      // img: "mayank2.jpeg",
       designation: "Graphic Designer",
     },
     {
       name: "Arpita Halvi",
-      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687048/arpita-img_pqcfsl.jpg",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743708382/arpita2_pbphhi.jpg",
+      // img: "arpita2.jpg",
       designation: "Web Developer",
     },
   ];
