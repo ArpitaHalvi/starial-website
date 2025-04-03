@@ -317,6 +317,9 @@
       center/cover no-repeat;
     // border-radius: 40% 60% 70% 30%/ 50% 40% 60% 50%;
     // border-radius: 50%;
+    @media (max-width: 468px) {
+      border-radius: 50px;
+    }
   }
   .about-us {
     @include index.flex-box($flex-dir: column);
@@ -1882,6 +1885,9 @@ $largeScreen: 1180px;
                 }
                 @media (max-width: 600px) {
                   width: 70%;
+                }
+                @media (max-width: 468px) {
+                  width: 63%;
                 }
               }
             }
