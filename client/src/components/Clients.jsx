@@ -1,7 +1,7 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 export default function Clients() {
-  const [openIdx, setOpenIdx] = useState(null);
+  // const [openIdx, setOpenIdx] = useState(null);
   const clients = [
     {
       name: "Client 1",
@@ -38,13 +38,13 @@ export default function Clients() {
             <div
               className="client"
               key={idx}
-              onMouseEnter={() => setOpenIdx(idx)}
-              onMouseLeave={() => setOpenIdx(null)}
+              // onMouseEnter={() => setOpenIdx(idx)}
+              // onMouseLeave={() => setOpenIdx(null)}
             >
-              <img src={c.img} alt="" />
-              <div className={`accordian ${openIdx === idx ? "open" : ""}`}>
+              <img src={c.img} alt="Client Images" loading="lazy" />
+              {/* <div className={`accordian ${openIdx === idx ? "open" : ""}`}>
                 <p> {c.review} </p>
-              </div>
+              </div> */}
             </div>
           );
         })}
