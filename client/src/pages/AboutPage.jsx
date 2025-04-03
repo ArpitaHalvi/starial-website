@@ -74,7 +74,7 @@ export default function AboutPage() {
       designation: "Human Resources",
     },
     {
-      name: "Mayank",
+      name: "Mayank Meshram",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743708384/mayank2_txndx3.jpg",
       // img: "mayank2.jpeg",
       designation: "Graphic Designer",
