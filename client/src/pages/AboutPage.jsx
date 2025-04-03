@@ -1,35 +1,6 @@
-// import { useEffect, useState } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-// const TypeWriter = ({ words, speed = 100, delay = 1000 }) => {
-//   const [index, setIndex] = useState(0);
-//   const [text, setText] = useState("");
-//   const [isDeleting, setIsDeleting] = useState(false);
-//   useEffect(() => {
-//     const word = words[index];
-//     if (!isDeleting && text === word) {
-//       setTimeout(() => setIsDeleting(true), delay);
-//       return;
-//     }
-//     if (isDeleting && text === "") {
-//       setIsDeleting(false);
-//       setIndex((prev) => (prev + 1) % words.length);
-//     }
-//     const typing = setTimeout(
-//       () => {
-//         setText((prev) =>
-//           isDeleting
-//             ? word.slice(0, prev.length - 1)
-//             : word.slice(0, prev.length + 1)
-//         );
-//       },
-//       isDeleting ? speed / 4 : speed
-//     );
-//     return () => clearTimeout(typing);
-//   }, [text, isDeleting, index, words, speed, delay]);
-//   return <h4>{text}</h4>;
-// };
+import { Link } from "react-router-dom";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { FaApple } from "react-icons/fa";
 
 export default function AboutPage() {
   const images = [
@@ -48,17 +19,32 @@ export default function AboutPage() {
   ];
   const teamMembers = [
     { name: "Rahul Rai", img: "rahulSir2.jpg", designation: "CEO" },
-    { name: "Shubham Singh", img: "", designation: "CTO" },
-    { name: "Deeksha Sen", img: "dkmaam.jpg", designation: "Manager" },
+    { name: "Shubham Singh", img: "appDev2.jpg", designation: "CTO" },
+    { name: "Deeksha Sen", img: "dkmaam2.jpg", designation: "Manager" },
+    {
+      name: "Anusha Pandey",
+      img: "anushaMaam2.jpg",
+      designation: "Human Resources",
+    },
     {
       name: "Shruti Khatri",
       img: "shruti.png",
       designation: "Social Media Manager",
     },
     {
-      name: "Anusha Pandey",
-      img: "anushaMaam3.jpg",
+      name: "Resham Katariya",
+      img: "",
       designation: "Human Resources",
+    },
+    {
+      name: "Mayank",
+      img: "",
+      designation: "Graphic Designer",
+    },
+    {
+      name: "Arpita Halvi",
+      img: "",
+      designation: "Web Developer",
     },
   ];
   const about = [
@@ -87,6 +73,20 @@ export default function AboutPage() {
   // const images = ["","",""];
   return (
     <section className="about-page">
+      <div className="about-landing">
+        {/* <img src="about-landing.png" alt="" /> */}
+        <div className="landing-image">
+          <div>
+            <h2>Where creativity meets functionality</h2>
+            <p>
+              At Starial, we take pride in our commitment to speed, reliability,
+              and quality. Our team works tirelessly to source the best
+              stationery products and optimize our delivery network, ensuring
+              that every order reaches you in record time.
+            </p>
+          </div>
+        </div>
+      </div>
       <div className="about-us">
         <div className="about-members">
           <h2>Where creativity meets functionality</h2>
@@ -174,6 +174,30 @@ export default function AboutPage() {
               );
             })}
           </div>
+        </div>
+      </div>
+      <div className="download-now">
+        <div className="download">
+          <h3>Download the app now!</h3>
+          <div className="download-links">
+            <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
+              <IoLogoGooglePlaystore className="link-icon" /> Play Store
+            </Link>
+            <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
+              <FaApple className="link-icon" /> App Store
+            </Link>
+          </div>
+          <div className="left-div">
+            <img src="click1.png" alt="" className="img-2" />
+            {/* <img src="rich-click-me.png" alt="" className="img-1" /> */}
+          </div>
+          <div className="right-div">
+            <img src="click2.png" alt="" className="img-1" />
+            {/* <img src="click-me.png" alt="" className="img-2" /> */}
+          </div>
+        </div>
+        <div className="starial-app">
+          <img src="starial.jpg" alt="" />
         </div>
       </div>
     </section>

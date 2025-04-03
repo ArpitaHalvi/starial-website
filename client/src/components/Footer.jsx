@@ -74,7 +74,7 @@ export default function Footer() {
               <span>
                 <span>Mail Us</span>
                 <NavLink to="mailto:Starialofficial@gmail.com">
-                  business@starial.in
+                  connect@starial.in
                 </NavLink>
               </span>
             </li>
