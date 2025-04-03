@@ -21,7 +21,7 @@ export default function Footer() {
     { title: "Contact Us", url: "/contact" },
   ];
   const socialLinks = [
-    { url: "", icon: <FaXTwitter className="social-icon" />, color: "black" },
+    // { url: "", icon: <FaXTwitter className="social-icon" />, color: "black" },
     {
       url: "https://www.linkedin.com/company/starial/?originalSubdomain=in",
       icon: <FaLinkedin className="social-icon" />,

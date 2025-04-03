@@ -60,7 +60,7 @@ export default function AboutPage() {
     {
       name: "Anusha Pandey",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687039/anushaMaam2_b8tee9.jpg",
-      designation: "Human Resource",
+      designation: "Recruitment Manager",
     },
     {
       name: "Shruti Khatri",
@@ -70,17 +70,17 @@ export default function AboutPage() {
     {
       name: "Resham Katariya",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687049/resham2_enlk8w.jpg",
-      designation: "Human Resource Intern",
+      designation: "Human Resources",
     },
     {
       name: "Mayank",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743692937/mayank-1_xkhqhm.jpg",
-      designation: "Graphic Designing Intern",
+      designation: "Graphic Designer",
     },
     {
       name: "Arpita Halvi",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687048/arpita-img_pqcfsl.jpg",
-      designation: "Web Development Intern",
+      designation: "Web Developer",
     },
   ];
   const about = [

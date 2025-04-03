@@ -307,8 +307,8 @@
   margin-top: 10%;
   background: linear-gradient(to right, #ffffff, #dbf2fe, #93d9ff);
   .decor {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     @include index.flex-box;
     position: relative;
     // background: url("about-section.jpg") center/contain no-repeat;
@@ -317,6 +317,8 @@
       center/cover no-repeat;
     // border-radius: 40% 60% 70% 30%/ 50% 40% 60% 50%;
     // border-radius: 50%;
+    border-radius: 50px;
+    filter: drop-shadow(5px 5px 15px #8b8a8a);
     @media (max-width: 468px) {
       border-radius: 50px;
     }
