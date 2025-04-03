@@ -1272,7 +1272,7 @@ $largeScreen: 1180px;
   padding: 2rem;
   // background-color: index.$alice-blue;
   background: linear-gradient(to bottom, #ffffff, #93d9ff);
-  background-color: #93d9ff;
+  // background-color: #93d9ff;
   .about-app {
     width: 80%;
     @include index.flex-box($flex-dir: column, $align-items: flex-start);
