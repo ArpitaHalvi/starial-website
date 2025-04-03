@@ -62,7 +62,11 @@ export default function ContactUs() {
         isOpen={openModal}
       />
       <div className="contact-decor">
-        <img src="/contact-bg.png" alt="" />
+        {/* <img src="/contact-bg.png" alt="" /> */}
+        <img
+          src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743691469/contact-bg_ucvxx5.png"
+          alt="Contact us Image"
+        />
       </div>
       <div className="contact-form">
         <form onSubmit={handleSubmit}>

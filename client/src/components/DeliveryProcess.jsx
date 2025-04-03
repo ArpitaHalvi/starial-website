@@ -3,30 +3,35 @@ import { useEffect, useState } from "react";
 import { FaPencilRuler } from "react-icons/fa";
 
 const processes = [
-  { id: 1, step: "Customer places order", cName: "step1", url: "step1.png" },
+  {
+    id: 1,
+    step: "Customer places order",
+    cName: "step1",
+    url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688177/step1_om2yjz.png",
+  },
   {
     id: 2,
     step: "Starial assign vendor to prepare order",
     cName: "step2",
-    url: "step2.png",
+    url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688181/step2_p1rbof.png",
   },
   {
     id: 3,
     step: "Starial assigns delivery partner",
     cName: "step3",
-    url: "step3.png",
+    url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688184/step3_riwhxk.png",
   },
   {
     id: 4,
     step: " Delivery Partner reaches shop",
     cName: "step4",
-    url: "step4.png",
+    url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688219/step4_fxmsxn.png",
   },
   {
     id: 5,
     step: " Order is picked up & delivered",
     cName: "step5",
-    url: "step5.png",
+    url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688264/step5_xl0v7f.png",
   },
 ];
 

@@ -1,80 +1,149 @@
 import { Link } from "react-router-dom";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { FaApple } from "react-icons/fa";
+// import { useEffect, useState } from "react";
 
 export default function AboutPage() {
+  // const internImages1 = [
+  //   "stationery4.png",
+  //   "stationery5.png",
+  //   "stationery6.png",
+  // ];
+  // const internImages2 = [
+  //   "stationery1.png",
+  //   "stationery2.png",
+  //   "stationery3.png",
+  // ];
+  // const internImages3 = [
+  //   "stationery7.png",
+  //   "stationery8.png",
+  //   "stationery9.png",
+  // ];
+  // const [image1, setImage1] = useState(internImages1[0]);
+  // const [image2, setImage2] = useState(internImages2[0]);
+  // const [image3, setImage3] = useState(internImages3[0]);
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  // const [fade, setFade] = useState(true);
   const images = [
-    "/glimpse2.jpg",
-    "work1.jpg",
-    "work8.jpg",
-    "work14.jpg",
-    "work2.jpg",
-    "work11.jpg",
-    "work3.jpg",
-    "work15.jpg",
-    "work5.jpg",
-    "work10.jpg",
-    "work13.jpg",
-    "work16.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743690953/glimpse2_g4rket.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687427/work1-1_ohncui.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687462/work8_fgzzxn.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687514/work14_dnmsly.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687494/work4-1_ayt8sj.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687421/work2-1_mqo9le.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687490/work12-1_bb7p7b.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687511/work3_woje1c.jpg",
+    // "work15.jpg",
+    // "work9.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687506/work19-1_nm4aoa.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687505/work5_cfbc5e.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687441/work10_ws5eg7.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687454/work13-1_azyu3y.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687489/work16_im5hx3.jpg",
   ];
   const teamMembers = [
-    { name: "Rahul Rai", img: "rahulSir2.jpg", designation: "CEO" },
-    { name: "Shubham Singh", img: "appDev2.jpg", designation: "CTO" },
-    { name: "Deeksha Sen", img: "dkmaam2.jpg", designation: "Manager" },
+    {
+      name: "Rahul Rai",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687045/rahulSir2_pyq8mx.jpg",
+      designation: "CEO",
+    },
+    {
+      name: "Shubham Singh",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687039/appDev2_lakx8t.jpg",
+      designation: "CTO",
+    },
+    {
+      name: "Deeksha Sen",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687040/dkmaam2_t0zc2q.jpg",
+      designation: "Manager",
+    },
     {
       name: "Anusha Pandey",
-      img: "anushaMaam2.jpg",
-      designation: "Human Resources",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687039/anushaMaam2_b8tee9.jpg",
+      designation: "Human Resource",
     },
     {
       name: "Shruti Khatri",
-      img: "shruti.png",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687050/shruti_b8detu.jpg",
       designation: "Social Media Manager",
     },
     {
       name: "Resham Katariya",
-      img: "",
-      designation: "Human Resources",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687049/resham2_enlk8w.jpg",
+      designation: "Human Resource Intern",
     },
     {
       name: "Mayank",
       img: "",
-      designation: "Graphic Designer",
+      designation: "Graphic Designing Intern",
     },
     {
       name: "Arpita Halvi",
-      img: "",
-      designation: "Web Developer",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687048/arpita-img_pqcfsl.jpg",
+      designation: "Web Development Intern",
     },
   ];
   const about = [
     {
       title: "What is Starial?",
       text: "Your go-to destination for fast and reliable stationery delivery! We are here to revolutionize the way you get your stationery essentials, making sure you never have to wait for what you need.",
-      img: "about1.jpg",
+      // img: "about1.jpg",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687785/about1_m6mygv.jpg",
     },
     {
       title: "Who Are We?",
       text: "We are a passionate team of innovators, problem-solvers, and stationery enthusiasts dedicated to bringing convenience to your doorstep.",
-      img: "team.jpg",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687791/team_bejk64.jpg",
     },
     {
       title: "What we do?",
       text: "At Starial, we provide an on-demand stationery delivery service, ensuring you get your supplies within just one hour. Whether you need notebooks, pens, art supplies, office essentials, or school materials, we’ve got you covered.",
-      img: "delivery.jpg",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687785/delivery_pblvqr.jpg",
     },
   ];
   const workculture = [
-    "starial4.jpg",
-    "starial2.jpg",
-    "starial3.jpg",
-    "starial1.jpg",
+    // "starial4.jpg",
+    // "starial2.jpg",
+    // "starial3.jpg",
+    // "work7.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687669/starial4_rqnxzy.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687665/starial2_q4se9w.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687668/starial3_svrs1o.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687672/work7_zm4qus.jpg",
   ];
-  // const images = ["","",""];
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setFade(false);
+  //     setTimeout(() => {
+  //       setCurrentIndex((prevIdx) => (prevIdx + 1) % internImages1.length);
+  //       setFade(true);
+  //     }, 500);
+  //   }, 2000);
+  //   return () => clearInterval(interval);
+  // }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setFade(false);
+  //     setTimeout(() => {
+  //       setCurrentIndex((prevIdx) => (prevIdx + 1) % internImages2.length);
+  //       setFade(true);
+  //     }, 500);
+  //   }, 2000);
+  //   return () => clearInterval(interval);
+  // }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setFade(false);
+  //     setTimeout(() => {
+  //       setCurrentIndex((prevIdx) => (prevIdx + 1) % internImages3.length);
+  //       setFade(true);
+  //     }, 500);
+  //   }, 2000);
+  //   return () => clearInterval(interval);
+  // }, []);
   return (
     <section className="about-page">
-      <div className="about-landing">
-        {/* <img src="about-landing.png" alt="" /> */}
+      {/* <div className="about-landing">
         <div className="landing-image">
           <div>
             <h2>Where creativity meets functionality</h2>
@@ -86,7 +155,7 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="about-us">
         <div className="about-members">
           <h2>Where creativity meets functionality</h2>
@@ -100,7 +169,11 @@ export default function AboutPage() {
             {workculture.map((w, idx) => {
               return (
                 <div key={idx}>
-                  <img src={w} alt="" />
+                  <img
+                    src={w}
+                    alt="Images that depicts creativity"
+                    loading="lazy"
+                  />
                 </div>
               );
             })}
@@ -113,7 +186,7 @@ export default function AboutPage() {
                     <h3>{title}</h3>
                     <p>{text}</p>
                   </div>
-                  <img src={img} alt="Pictures about us" />
+                  <img src={img} alt="Pictures about us" loading="lazy" />
                 </div>
               );
             })}
@@ -141,7 +214,7 @@ export default function AboutPage() {
               })}
             </div>
           </div>
-          <div className="interns-section">
+          {/* <div className="interns-section">
             <div className="intern-intro">
               <h3>Our Interns:</h3>
               <h4>The Heart of Innovation at Starial</h4>
@@ -154,14 +227,26 @@ export default function AboutPage() {
             </div>
             <div className="intern-decor">
               <div className="single-pic">
-                <img src="stationery2.png" alt="" />
+                <img
+                  src={internImages1[currentIndex]}
+                  alt="Intern Images"
+                  className={`${fade ? "fade-in" : "fade-out"}`}
+                />
               </div>
               <div>
-                <img src="stationery1.png" alt="" />
-                <img src="stationery1.png" alt="" />
+                <img
+                  src={internImages2[currentIndex]}
+                  alt="Intern Images"
+                  className={`${fade ? "fade-in" : "fade-out"}`}
+                />
+                <img
+                  src={internImages3[currentIndex]}
+                  alt="Intern Images"
+                  className={`${fade ? "fade-in" : "fade-out"}`}
+                />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="some-glimpes">
           <h3>A Peek into our world!</h3>
@@ -169,7 +254,7 @@ export default function AboutPage() {
             {images.map((url, index) => {
               return (
                 <div key={index} className="masonry-item">
-                  <img src={url} alt="Image" />
+                  <img src={url} alt="Image" loading="lazy" />
                 </div>
               );
             })}
@@ -188,16 +273,20 @@ export default function AboutPage() {
             </Link>
           </div>
           <div className="left-div">
-            <img src="click1.png" alt="" className="img-2" />
+            {/* <img src="click1.png" alt="" className="img-2" /> */}
             {/* <img src="rich-click-me.png" alt="" className="img-1" /> */}
           </div>
           <div className="right-div">
-            <img src="click2.png" alt="" className="img-1" />
+            {/* <img src="click2.png" alt="" className="img-1" /> */}
             {/* <img src="click-me.png" alt="" className="img-2" /> */}
           </div>
         </div>
         <div className="starial-app">
-          <img src="starial.jpg" alt="" />
+          {/* <img src="starial.jpg" alt="" /> */}
+          <img
+            src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687822/starial_ewf2vu.jpg"
+            alt="Starial Brochure"
+          />
         </div>
       </div>
     </section>

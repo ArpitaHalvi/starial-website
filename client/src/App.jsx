@@ -38,7 +38,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route path="/products" element={<Products />} />
+          {/* <Route path="/products" element={<Products />} /> */}
           <Route path="/about" element={<AboutPage />} />
           {/* <Route path="/loading" element={<Loading />} /> */}
           <Route path="*" element={<PageNotFound />} />

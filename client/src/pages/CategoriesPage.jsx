@@ -1,69 +1,61 @@
 import { useState } from "react";
-import { RiMenu2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const stationery = [
-  { name: "Art & Craft", img: "stationery1.png" },
-  { name: "Writing materials", img: "stationery2.png" },
-  { name: "Fancy Stationaries", img: "stationery3.png" },
-  { name: "Glue & Cutters", img: "stationery4.png" },
-  // { name: "Paper sheets", img: "stationery5.png" },
-  // { name: "Notebooks", img: "stationery6.png" },
-  // { name: "Geometry box & Pencil case", img: "stationery7.png" },
-  // { name: "Covers & Name slips", img: "stationery8.png" },
-  // { name: "Pens", img: "stationery9.png" },
+  {
+    name: "Paper Sheets",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687290/stationery5_vjhyxu.png",
+  },
+  {
+    name: "Notebooks",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687291/stationery6_toeeqf.png",
+  },
+  {
+    name: "Pens",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687293/stationery9_quuocg.png",
+  },
+  {
+    name: "Glue & Cutters",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687196/stationery4_hpkwck.png",
+  },
 ];
 
 const uniforms = [
-  { name: "Aditya Convent School", img: "stationery1.png" },
-  { name: "Ajay Satya Prakash Public School", img: "stationery2.png" },
-  { name: "Angel's Nursery School", img: "stationery3.png" },
-  { name: "Army Public School - APS Jabalpur No. 1", img: "stationery4.png" },
-  // { name: "Ashoka Hall School", img: "Stationery1.png" },
-  // { name: "Bachpan A Play School ", img: "Stationery1.png" },
-  // { name: "Belbaugh School", img: "Stationery1.png" },
-  // {
-  //   name: "Billabong High International School (BHIS)",
-  //   img: "Stationery1.png",
-  // },
-  // {
-  //   name: "Christ Church Boys' Senior Secondary School",
-  //   img: "Stationery1.png",
-  // },
-  // {
-  //   name: "Christ Church Girls' Senior Secondary School",
-  //   img: "Stationery1.png",
-  // },
-  // { name: "Cosmos Pre and Junior School", img: "Stationery1.png" },
-  // { name: "Delhi Public School (DPS Jabalpur)", img: "Stationery1.png" },
-  // { name: "Desilva Ratanshi Higher Secondary School", img: "Stationery1.png" },
-  // { name: "Dream India School", img: "Stationery1.png" },
-  // {
-  //   name: "EuroKids Government Pt. LSJ Model School of Excellence",
-  //   img: "Stationery1.png",
-  // },
-  // { name: "Gyan Ganga International School", img: "Stationery1.png" },
-  // { name: "Gyan Ganga Public School", img: "Stationery1.png" },
-  // { name: "Hello Kids - Rockstars", img: "Stationery1.png" },
-  // { name: "Ideal Play School", img: "Stationery1.png" },
+  {
+    name: "Billabong High International School (BHIS)",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687164/school1_k22tix.jpg",
+  },
+  {
+    name: "Little World School",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school4_xucuox.jpg",
+  },
+  {
+    name: "StemField International School",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school3_ejn0wb.jpg",
+  },
+  {
+    name: "Delhi Public School (DPS Jabalpur)",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school2_s2skvq.jpg",
+  },
 ];
 
 const books = [
-  { name: "SSC CHSL", img: "stationery1.png" },
-  { name: "SSC MTS", img: "stationery2.png" },
-  { name: "SSC GD", img: "stationery3.png" },
-  { name: "SSC Stenographer", img: "stationery4.png" },
-  // { name: "RRB ALP", img: "Stationery1.png" },
-  // { name: "RRB/RRC Group D", img: "Stationery1.png" },
-  // { name: "Indian Army Exam", img: "Stationery1.png" },
-  // { name: "Indian Navy Exam", img: "Stationery1.png" },
-  // { name: "BSF Exam", img: "Stationery1.png" },
-  // { name: "CRPF Exam", img: "Stationery1.png" },
-  // { name: "SSB Exam", img: "Stationery1.png" },
-  // { name: "ITBP Exam", img: "Stationery1.png" },
-  // { name: "CISF Exam", img: "Stationery1.png" },
-  // { name: "Indian Coast Guard Exam", img: "Stationery1.png" },
-  // { name: "NDA Exam", img: "Stationery1.png" },
+  {
+    name: "MPPSC",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687120/exam1_tii4sq.jpg",
+  },
+  {
+    name: "UPSC",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687121/exam2_o4pxyu.jpg",
+  },
+  {
+    name: "SSC",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687122/exam3_qnhttj.jpg",
+  },
+  {
+    name: "Railway",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687124/exam4_okqo1s.jpg",
+  },
 ];
 
 const categories = [
@@ -109,10 +101,10 @@ export default function CategoriesPage() {
                     return (
                       <div className="item" key={idx}>
                         <img src={s.img} alt="" />
-                        <h6>{s.name}</h6>
                         <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
                           Order Now
                         </Link>
+                        <h6>{s.name}</h6>
                       </div>
                     );
                   })}

@@ -10,7 +10,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
   const links1 = [
     { title: "Terms & Conditions", url: "" },
-    { title: "Products", url: "/products" },
+    { title: "Products", url: "/categories" },
     { title: "Shipping Policy", url: "" },
     { title: "About Us", url: "/about" },
   ];
@@ -73,7 +73,7 @@ export default function Footer() {
               <CgMail className="connect-icon" />
               <span>
                 <span>Mail Us</span>
-                <NavLink to="mailto:Starialofficial@gmail.com">
+                <NavLink to="mailto:connect@starial.in">
                   connect@starial.in
                 </NavLink>
               </span>
@@ -88,7 +88,11 @@ export default function Footer() {
           </ul>
         </div>
         <div className="social-links">
-          <img src="/starial-white-logo.png" alt="LOGO" />
+          {/* <img src="/starial-white-logo.png" alt="LOGO" /> */}
+          <img
+            src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688557/starial-white-logo_jshtqw.png"
+            alt="Starial Logo"
+          />
           <div className="socials">
             <h6>Follow Us</h6>
             <div className="links">
@@ -106,14 +110,22 @@ export default function Footer() {
             </div>
             <div className="download-links">
               <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
-                <img src="play-store-logo.svg" alt="" />
+                {/* <img src="play-store-logo.svg" alt="" /> */}
+                <img
+                  src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688588/play-store-logo_k1g8ob.svg"
+                  alt="Play Store Logo"
+                />
                 <span>
                   <span>GET IT ON</span>
                   <span>Google Play </span>
                 </span>
               </Link>
               <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
-                <img src="apple-logo.svg" alt="" />
+                {/* <img src="apple-logo.svg" alt="" /> */}
+                <img
+                  src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688584/apple-logo_czqbji.svg"
+                  alt="App Store Logo"
+                />
                 <span>
                   <span>Download on the</span>
                   <span>App Store</span>

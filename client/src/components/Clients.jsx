@@ -7,21 +7,26 @@ export default function Clients() {
       name: "Client 1",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
+      // img: "client1.png",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688313/Rectangle_94_iv69t3.png",
     },
     {
       name: "Client 2",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688308/Rectangle_94_1_mppxvb.png",
     },
     {
       name: "Client 3",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
+      img: "client3.png",
     },
     {
       name: "Client 4",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
+      img: "client4.png",
     },
   ];
   return (
@@ -36,14 +41,8 @@ export default function Clients() {
               onMouseEnter={() => setOpenIdx(idx)}
               onMouseLeave={() => setOpenIdx(null)}
             >
-              <div>
-                <img src="" alt="" />
-                <h3> {c.name} </h3>
-              </div>
-              <div className="accordian">
-                <p>{c.review}</p>
-              </div>
-              <div className={`full-review ${openIdx === idx ? "open" : ""}`}>
+              <img src={c.img} alt="" />
+              <div className={`accordian ${openIdx === idx ? "open" : ""}`}>
                 <p> {c.review} </p>
               </div>
             </div>

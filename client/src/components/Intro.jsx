@@ -37,7 +37,11 @@ export default function Intro() {
         </div>
       </div>
       <div className="intro-img">
-        <img src="Starial-intro.png" alt="" />
+        {/* <img src="Starial-intro.png" alt="" /> */}
+        <img
+          src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687934/Starial-intro_h1iwvs.png"
+          alt="Starial Intro Image"
+        />
       </div>
     </section>
   );
