@@ -4,7 +4,6 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ContactUs from "./pages/ContactUs";
-import Products from "./pages/Products";
 import CategoriesPage from "./pages/CategoriesPage";
 import AboutPage from "./pages/AboutPage";
 import { ToastContainer } from "react-toastify";
@@ -38,9 +37,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/contact" element={<ContactUs />} />
-          {/* <Route path="/products" element={<Products />} /> */}
           <Route path="/about" element={<AboutPage />} />
-          {/* <Route path="/loading" element={<Loading />} /> */}
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       )}
