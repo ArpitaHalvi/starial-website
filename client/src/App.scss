@@ -2618,7 +2618,9 @@ $largeScreen: 1180px;
     .landing-image {
       width: 90%;
       height: 100%;
-      background: url("about-landing.png") center/cover no-repeat;
+      background: url("https://res.cloudinary.com/dgkv2gft7/image/upload/v1743856827/about-landing_baupk4.png")
+        center/cover no-repeat;
+      // background: url("about-landing.png") center/cover no-repeat;
       position: relative;
       border-radius: 50px;
       filter: opacity(0.9);
