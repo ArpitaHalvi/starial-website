@@ -7,21 +7,20 @@ export default function Clients() {
       name: "Radhika Book Palace",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-      img: "client-1.png",
-      // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688313/Rectangle_94_iv69t3.png",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743863194/client-1_njy2gc.png",
     },
     {
       name: "Children Book House",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-      // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688308/Rectangle_94_1_mppxvb.png",
-      img: "client-2.png",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743863194/client-2_ekg3yb.png",
     },
     {
       name: "Novelty Uniforms",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-      img: "client-2.png",
+      // img: "client-2.png",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688308/Rectangle_94_1_mppxvb.png",
     },
     {
       name: "Singhai Paper Mart",
