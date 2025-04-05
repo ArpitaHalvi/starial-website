@@ -1,32 +1,33 @@
-// import { useState } from "react";
+import { useState } from "react";
 
 export default function Clients() {
-  // const [openIdx, setOpenIdx] = useState(null);
+  const [openIdx, setOpenIdx] = useState(null);
   const clients = [
     {
-      name: "Client 1",
+      name: "Radhika Book Palace",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-      // img: "client1.png",
-      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688313/Rectangle_94_iv69t3.png",
+      img: "client-1.png",
+      // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688313/Rectangle_94_iv69t3.png",
     },
     {
-      name: "Client 2",
+      name: "Children Book House",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688308/Rectangle_94_1_mppxvb.png",
+      // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688308/Rectangle_94_1_mppxvb.png",
+      img: "client-2.png",
     },
     {
-      name: "Client 3",
+      name: "Novelty Uniforms",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-      img: "client3.png",
+      img: "client-2.png",
     },
     {
-      name: "Client 4",
+      name: "Singhai Paper Mart",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-      img: "client4.png",
+      img: "client-1.png",
     },
   ];
   return (
@@ -38,13 +39,14 @@ export default function Clients() {
             <div
               className="client"
               key={idx}
-              // onMouseEnter={() => setOpenIdx(idx)}
-              // onMouseLeave={() => setOpenIdx(null)}
+              onMouseEnter={() => setOpenIdx(idx)}
+              onMouseLeave={() => setOpenIdx(null)}
             >
               <img src={c.img} alt="Client Images" loading="lazy" />
-              {/* <div className={`accordian ${openIdx === idx ? "open" : ""}`}>
+              <div className={`accordian ${openIdx === idx ? "open" : ""}`}>
+                <h5>{c.name}</h5>
                 <p> {c.review} </p>
-              </div> */}
+              </div>
             </div>
           );
         })}

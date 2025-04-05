@@ -2612,20 +2612,22 @@ $largeScreen: 1180px;
   .about-landing {
     width: 100%;
     height: 90vh;
-    padding: 2rem;
+    padding: 1rem;
+    @include index.flex-box;
     overflow: hidden;
     .landing-image {
-      width: 100%;
+      width: 90%;
       height: 100%;
-      background: url("about-landing.png") center/contain no-repeat;
+      background: url("about-landing.png") center/cover no-repeat;
       position: relative;
+      border-radius: 50px;
       filter: opacity(0.9);
       div {
         z-index: 1;
         position: absolute;
         color: white;
-        left: 17%;
-        top: 10%;
+        left: 5%;
+        top: 20%;
         h2 {
           width: 60%;
           font-size: 4rem;
@@ -2638,6 +2640,39 @@ $largeScreen: 1180px;
       }
     }
     @media (max-width: 1200px) {
+      .landing-image {
+        div {
+          top: 50%;
+          h2 {
+            width: 80%;
+            font-size: 3rem;
+          }
+          p {
+            width: 60%;
+            font-size: 0.9rem;
+          }
+        }
+        @media (max-width: 1000px) {
+          width: 100%;
+        }
+      }
+    }
+    @media (max-width: 650px) {
+      .landing-image {
+        div h2 {
+          width: 100%;
+          font-size: 2.5rem;
+        }
+        div p {
+          width: 90%;
+        }
+      }
+    }
+    @media (max-width: 468px) {
+      padding: 0;
+      .landing-image {
+        border-radius: 0;
+      }
     }
   }
   .about-us {
@@ -3470,6 +3505,8 @@ $largeScreen: 1180px;
   @include index.flex-box($flex-dir: column, $justify-content: space-around);
   color: index.$dark-blue;
   gap: 3rem;
+  background: linear-gradient(to bottom, #93d9ff, #ffffff);
+  // background-color: #b1e9ff;
   h2 {
     font-size: 3rem;
     color: index.$dark-blue;
@@ -3478,51 +3515,105 @@ $largeScreen: 1180px;
     width: 80%;
     @include index.res-grid;
     .client {
-      width: 100%;
-      background-color: white;
-      border-radius: 5px;
+      width: 90%;
+      // background-color: white;
+      border-radius: 10px;
       @include index.flex-box($flex-dir: column);
       position: relative;
       margin: 5%;
+      filter: drop-shadow(5px 5px 5px grey);
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        aspect-ratio: 3/2;
+        border-radius: 10px;
       }
-      // .accordian {
-      //   width: 95%;
-      //   overflow: hidden;
-      //   position: absolute;
-      //   top: 94%;
-      //   border-radius: 0 0 5px 5px;
-      //   z-index: 2;
-      //   transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
-      //   background-color: white;
-      //   max-height: 0;
-      //   padding: 0;
-      //   text-align: center;
-      //   filter: drop-shadow(5px 5px 5px #929090);
-      //   &.open {
-      //     max-height: 30vh;
-      //     padding: 1rem;
-      //   }
-      // }
+      .accordian {
+        padding: 0.5rem;
+        width: 100%;
+        border-radius: 10px;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateY(-10%);
+        opacity: 0;
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        @include index.flex-box($flex-dir: column, $align-items: flex-start);
+        padding: 2rem;
+        gap: 1rem;
+        background-color: white;
+        // background: linear-gradient(to bottom, #93d9ff, #ffffff);
+        // filter: drop-shadow(5px 5px 5px #929090);
+        h5 {
+          font-size: 2rem;
+          // border-bottom: 2px solid index.$dark-blue;
+        }
+        p {
+          font-size: 1rem;
+        }
+        &.open {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     }
   }
   @media (max-width: 1200px) {
     height: auto;
     .clients {
+      width: 90%;
       @include index.res-grid;
-      gap: 0;
       .client {
-        margin: 5%;
+        .accordian {
+          h5 {
+            font-size: 1.5rem;
+          }
+          p {
+            font-size: 0.9rem;
+          }
+          @media (max-width: 850px) {
+            h5 {
+              font-size: 1.2rem;
+            }
+            p {
+              font-size: 0.8rem;
+            }
+          }
+        }
       }
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
+    .clients {
+      width: 100%;
+    }
+  }
+  @media (max-width: 670px) {
+    h2 {
+      font-size: 2rem;
+    }
     .clients {
       @include index.res-grid(100%);
+      .client {
+        .accordian {
+          h5 {
+            font-size: 1.5rem;
+          }
+          p {
+            font-size: 0.9rem;
+          }
+          @media (max-width: 468px) {
+            gap: 0.5rem;
+            h5 {
+              font-size: 1.2rem;
+            }
+            p {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
     }
   }
 }

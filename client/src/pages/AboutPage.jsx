@@ -140,7 +140,7 @@ export default function AboutPage() {
   // }, []);
   return (
     <section className="about-page">
-      {/* <div className="about-landing">
+      <div className="about-landing">
         <div className="landing-image">
           <div>
             <h2>Where creativity meets functionality</h2>
@@ -152,7 +152,7 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-      </div> */}
+      </div>
       <div className="about-us">
         <div className="about-members">
           <h2>Where creativity meets functionality</h2>
