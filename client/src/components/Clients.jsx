@@ -19,14 +19,13 @@ export default function Clients() {
       name: "Novelty Uniforms",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-      // img: "client-2.png",
-      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688308/Rectangle_94_1_mppxvb.png",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743863194/client-2_ekg3yb.png",
     },
     {
       name: "Singhai Paper Mart",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-      img: "client-1.png",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743863194/client-1_njy2gc.png",
     },
   ];
   return (
