@@ -30,7 +30,7 @@ export default function Intro() {
             </motion.div>
             <h2>at your doorstep.</h2>
           </div>
-          <p>Starial delivers your favorite stationery within an hour</p>
+          <p>Starial delivers your favorite stationery within an hour.</p>
           <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
             Download App
           </Link>

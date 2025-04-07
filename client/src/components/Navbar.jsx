@@ -24,7 +24,6 @@ export default function Navbar() {
     <header className="head-section">
       <div className="logo">
         <NavLink to="/">
-          {/* <img src="/starial-black-logo.png" alt="Starial LOGO" /> */}
           <img
             src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688541/starial-black-logo_u6xvbw.png"
             alt="Starial LOGO"
@@ -33,6 +32,14 @@ export default function Navbar() {
       </div>
       <nav className="navbar">
         <ul className={`links ${isOpen ? "open" : ""}`}>
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "active" : "a")}
+            >
+              Home
+            </NavLink>
+          </li>
           <li>
             <NavLink
               to="/about"
@@ -49,14 +56,6 @@ export default function Navbar() {
               Categories
             </NavLink>
           </li>
-          {/* <li>
-            <NavLink
-              to="/products"
-              className={({ isActive }) => (isActive ? "active" : "a")}
-            >
-              Products
-            </NavLink>
-          </li> */}
           {/* <li> */}
           <NavLink to="/contact" className="contact-us">
             Contact Us

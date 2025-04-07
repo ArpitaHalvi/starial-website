@@ -1,29 +1,29 @@
 import { Link } from "react-router-dom";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { FaApple } from "react-icons/fa";
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function AboutPage() {
-  // const internImages1 = [
-  //   "stationery4.png",
-  //   "stationery5.png",
-  //   "stationery6.png",
-  // ];
-  // const internImages2 = [
-  //   "stationery1.png",
-  //   "stationery2.png",
-  //   "stationery3.png",
-  // ];
-  // const internImages3 = [
-  //   "stationery7.png",
-  //   "stationery8.png",
-  //   "stationery9.png",
-  // ];
+  const internImages1 = [
+    "stationery4.png",
+    "stationery5.png",
+    "stationery6.png",
+  ];
+  const internImages2 = [
+    "stationery1.png",
+    "stationery2.png",
+    "stationery3.png",
+  ];
+  const internImages3 = [
+    "stationery7.png",
+    "stationery8.png",
+    "stationery9.png",
+  ];
   // const [image1, setImage1] = useState(internImages1[0]);
   // const [image2, setImage2] = useState(internImages2[0]);
   // const [image3, setImage3] = useState(internImages3[0]);
-  // const [currentIndex, setCurrentIndex] = useState(0);
-  // const [fade, setFade] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [fade, setFade] = useState(true);
   const images = [
     "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743690953/glimpse2_g4rket.jpg",
     "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687427/work1-1_ohncui.jpg",
@@ -99,45 +99,41 @@ export default function AboutPage() {
     },
   ];
   const workculture = [
-    // "starial4.jpg",
-    // "starial2.jpg",
-    // "starial3.jpg",
-    // "work7.jpg",
     "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687669/starial4_rqnxzy.jpg",
     "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687665/starial2_q4se9w.jpg",
     "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687668/starial3_svrs1o.jpg",
     "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687672/work7_zm4qus.jpg",
   ];
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setFade(false);
-  //     setTimeout(() => {
-  //       setCurrentIndex((prevIdx) => (prevIdx + 1) % internImages1.length);
-  //       setFade(true);
-  //     }, 500);
-  //   }, 2000);
-  //   return () => clearInterval(interval);
-  // }, []);
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setFade(false);
-  //     setTimeout(() => {
-  //       setCurrentIndex((prevIdx) => (prevIdx + 1) % internImages2.length);
-  //       setFade(true);
-  //     }, 500);
-  //   }, 2000);
-  //   return () => clearInterval(interval);
-  // }, []);
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setFade(false);
-  //     setTimeout(() => {
-  //       setCurrentIndex((prevIdx) => (prevIdx + 1) % internImages3.length);
-  //       setFade(true);
-  //     }, 500);
-  //   }, 2000);
-  //   return () => clearInterval(interval);
-  // }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setCurrentIndex((prevIdx) => (prevIdx + 1) % internImages1.length);
+        setFade(true);
+      }, 500);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setCurrentIndex((prevIdx) => (prevIdx + 1) % internImages2.length);
+        setFade(true);
+      }, 500);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setCurrentIndex((prevIdx) => (prevIdx + 1) % internImages3.length);
+        setFade(true);
+      }, 500);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section className="about-page">
       <div className="about-landing">
@@ -196,12 +192,13 @@ export default function AboutPage() {
                   <div
                     className="member"
                     key={index}
-                    style={{
-                      backgroundImage: `url("${member.img}") `,
-                      backgroundRepeat: "no-repeat",
-                      backgroundSize: "cover",
-                    }}
+                    // style={{
+                    //   backgroundImage: `url("${member.img}") `,
+                    //   backgroundRepeat: "no-repeat",
+                    //   backgroundSize: "cover",
+                    // }}
                   >
+                    <img src={member.img} alt="" />
                     <div>
                       <h5>{member.name}</h5>
                       <h6>{member.designation}</h6>
@@ -211,7 +208,7 @@ export default function AboutPage() {
               })}
             </div>
           </div>
-          {/* <div className="interns-section">
+          <div className="interns-section">
             <div className="intern-intro">
               <h3>Our Interns:</h3>
               <h4>The Heart of Innovation at Starial</h4>
@@ -243,7 +240,7 @@ export default function AboutPage() {
                 />
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
         <div className="some-glimpes">
           <h3>A Peek into our world!</h3>

@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ScrollToTop from "./components/ScrollToTop";
+import DownloadApp from "./components/DownloadApp";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -38,6 +39,7 @@ function App() {
           <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/download-app" element={<DownloadApp />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       )}

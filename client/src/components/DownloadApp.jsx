@@ -64,7 +64,7 @@ export default function DownloadApp() {
     }
   };
   return (
-    <div className="download-app">
+    <div className="download-app" id="download-app">
       <div className="about-app">
         <h4>Download Our App</h4>
         <p>

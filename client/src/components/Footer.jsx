@@ -9,16 +9,16 @@ import { Link, NavLink } from "react-router-dom";
 export default function Footer() {
   const year = new Date().getFullYear();
   const links1 = [
-    { title: "Terms & Conditions", url: "" },
+    { title: "About Us", url: "/about" },
     { title: "Products", url: "/categories" },
     { title: "Shipping Policy", url: "" },
-    { title: "About Us", url: "/about" },
+    { title: "Terms & Conditions", url: "" },
   ];
   const links2 = [
     { title: "Category", url: "/categories" },
-    { title: "Privacy", url: "" },
-    { title: "Return Policy", url: "" },
     { title: "Contact Us", url: "/contact" },
+    { title: "Return Policy", url: "" },
+    { title: "Privacy Policy", url: "" },
   ];
   const socialLinks = [
     // { url: "", icon: <FaXTwitter className="social-icon" />, color: "black" },

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const stationery = [
   {
-    name: "Paper Sheets",
+    name: "Art & Crafts",
     img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687290/stationery5_vjhyxu.png",
   },
   {
@@ -11,49 +11,53 @@ const stationery = [
     img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687291/stationery6_toeeqf.png",
   },
   {
-    name: "Pens",
+    name: "Writing Materials",
     img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687293/stationery9_quuocg.png",
   },
   {
-    name: "Glue & Cutters",
+    name: "Office Stationery",
     img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687196/stationery4_hpkwck.png",
   },
 ];
 
 const uniforms = [
   {
-    name: "Billabong High International School (BHIS)",
+    // name: "Billabong High International School (BHIS)",
+    name: "Regular Dresses",
     img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687164/school1_k22tix.jpg",
   },
   {
-    name: "Little World School",
+    // name: "Little World School",
+    name: "House Dresses",
     img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school4_xucuox.jpg",
   },
   {
-    name: "StemField International School",
+    // name: "StemField International School",
+    name: "Seasonal Dresses",
     img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school3_ejn0wb.jpg",
   },
   {
-    name: "Delhi Public School (DPS Jabalpur)",
+    // name: "Delhi Public School (DPS Jabalpur)",
+    name: "Essentials",
     img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school2_s2skvq.jpg",
   },
 ];
 
 const books = [
   {
-    name: "MPPSC",
+    name: "Academic Books",
     img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687120/exam1_tii4sq.jpg",
   },
   {
-    name: "UPSC",
+    name: "Civil Services",
     img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687121/exam2_o4pxyu.jpg",
   },
   {
-    name: "SSC",
+    name: "Novels",
     img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687122/exam3_qnhttj.jpg",
   },
   {
-    name: "Railway",
+    name: "Kids Books",
     img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687124/exam4_okqo1s.jpg",
   },
 ];
@@ -61,7 +65,7 @@ const books = [
 const categories = [
   { name: "Stationery", items: stationery },
   { name: "School Uniforms", items: uniforms },
-  { name: "Competitive Exam Books", items: books },
+  { name: "Books", items: books },
 ];
 
 export default function CategoriesPage() {
@@ -101,9 +105,10 @@ export default function CategoriesPage() {
                     return (
                       <div className="item" key={idx}>
                         <img src={s.img} alt="" />
-                        <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
+                        <Link to="/download-app">Order Now</Link>
+                        {/* <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
                           Order Now
-                        </Link>
+                        </Link> */}
                         <h6>{s.name}</h6>
                       </div>
                     );

@@ -13,6 +13,7 @@
   background-color: white;
   .logo {
     width: 60%;
+    padding-left: 1.5rem;
     a {
       img {
         @include index.img-setting(18%);
@@ -219,13 +220,13 @@
       gap: 1rem;
       div {
         h2 {
-          font-size: 3.5rem;
+          font-size: 4rem;
           font-weight: 600;
           color: index.$astros-navy;
         }
         .word-carousel {
           text-decoration: underline;
-          font-size: 5rem;
+          font-size: 6rem;
           font-weight: bold;
           color: index.$astros-navy;
         }
@@ -304,7 +305,6 @@
   width: 100%;
   height: 90vh;
   @include index.res-grid;
-  margin-top: 10%;
   background: linear-gradient(to right, #ffffff, #dbf2fe, #93d9ff);
   .decor {
     width: 80%;
@@ -375,6 +375,24 @@
           scale: 1.05;
           background-color: #93d9ff;
         }
+      }
+    }
+    a {
+      width: 30%;
+      background-color: index.$dark-blue;
+      padding: 0.5rem;
+      border-radius: 50px;
+      color: white;
+      @include index.flex-box;
+      border: 2px solid transparent;
+      transition: all 0.4s ease-in-out;
+      img {
+        @include index.img-setting(20%);
+      }
+      &:hover {
+        background-color: transparent;
+        color: index.$dark-blue;
+        border-color: index.$dark-blue;
       }
     }
   }
@@ -452,6 +470,17 @@
           div {
             padding: 0.7rem;
           }
+        }
+      }
+      a {
+        @media (max-width: 700px) {
+          width: 40%;
+        }
+        @media (max-width: 580px) {
+          width: 50%;
+        }
+        @media (max-width: 468px) {
+          width: 60%;
         }
       }
     }
@@ -729,7 +758,7 @@
   @include index.flex-box($flex-dir: column);
   gap: 5rem;
   overflow: hidden;
-  margin-top: 5%;
+  // margin-top: 5%;
   h2 {
     padding: 0 2rem;
     font-size: 3rem;
@@ -1272,7 +1301,6 @@ $largeScreen: 1180px;
   // .app-info {
   @include index.res-grid;
   padding: 2rem;
-  // background-color: index.$alice-blue;
   background: linear-gradient(to bottom, #ffffff, #93d9ff);
   // background-color: #93d9ff;
   .about-app {
@@ -1373,7 +1401,6 @@ $largeScreen: 1180px;
           &:hover {
             background-color: index.$dark-blue;
             color: white;
-            filter: drop-shadow(5px 5px #333333);
           }
           &:nth-of-type(2) {
             .store-icon {
@@ -2950,18 +2977,25 @@ $largeScreen: 1180px;
         justify-content: center;
         place-content: center;
         .member {
-          width: 100%;
+          width: 90%;
           height: 400px;
           @include index.flex-box(
             $flex-dir: column,
             $justify-content: flex-end
           );
-          padding-bottom: 5%;
+          // padding-bottom: 5%;
           filter: drop-shadow(5px 5px 5px #bdbdbd);
           background-size: cover;
           background-position: center;
           border-radius: 5px;
           background-color: grey;
+          margin-bottom: 5%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+          }
           div {
             width: 90%;
             @include index.flex-box($flex-dir: column);
@@ -2969,6 +3003,8 @@ $largeScreen: 1180px;
             background-color: white;
             border-radius: 5px;
             padding: 0.7rem;
+            position: absolute;
+            bottom: 3%;
             h5 {
               width: 100%;
               color: index.$astros-navy;
@@ -2999,13 +3035,50 @@ $largeScreen: 1180px;
             }
           }
           @media (max-width: 600px) {
-            @include index.res-grid(calc(100%));
-            width: 70%;
+            // @include index.res-grid(calc(100%));
+            // width: 70%;
+            .member {
+              width: 100%;
+              height: 40vh;
+              img {
+                object-fit: cover;
+              }
+              div {
+                h5 {
+                  font-size: 1rem;
+                }
+                h6 {
+                  font-size: 0.7rem;
+                }
+              }
+            }
           }
           @media (max-width: 500px) {
             width: 100%;
+            padding: 0;
             .member {
-              width: 90%;
+              width: 100%;
+              margin: 0 5%;
+              div {
+                padding: 0.3rem 0.5rem;
+                h5 {
+                  font-size: 0.8rem;
+                }
+                h6 {
+                  font-size: 0.7rem;
+                }
+              }
+            }
+          }
+        }
+        @media (max-width: 468px) {
+          padding: 0.5rem;
+          div {
+            .member {
+              height: 30vh;
+              div {
+                width: 95%;
+              }
             }
           }
         }
@@ -3232,6 +3305,9 @@ $largeScreen: 1180px;
   @media (width<=700px) {
     .about-us {
       .about-members {
+        @media (max-width: 500px) {
+          padding: 1rem;
+        }
         .work-culture {
           @include index.res-grid(100%);
           div {
