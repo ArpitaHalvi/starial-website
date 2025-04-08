@@ -1,29 +1,8 @@
 import { Link } from "react-router-dom";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { FaApple } from "react-icons/fa";
-import { useEffect, useState } from "react";
 
 export default function AboutPage() {
-  const internImages1 = [
-    "stationery4.png",
-    "stationery5.png",
-    "stationery6.png",
-  ];
-  const internImages2 = [
-    "stationery1.png",
-    "stationery2.png",
-    "stationery3.png",
-  ];
-  const internImages3 = [
-    "stationery7.png",
-    "stationery8.png",
-    "stationery9.png",
-  ];
-  // const [image1, setImage1] = useState(internImages1[0]);
-  // const [image2, setImage2] = useState(internImages2[0]);
-  // const [image3, setImage3] = useState(internImages3[0]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [fade, setFade] = useState(true);
   const images = [
     {
       url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743690953/glimpse2_g4rket.jpg",
@@ -39,11 +18,11 @@ export default function AboutPage() {
     },
     {
       url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687514/work14_dnmsly.jpg",
-      title: "Festive Grace on Ganesh Chaturthi",
+      title: "Festive Grace",
     },
     {
       url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687494/work4-1_ayt8sj.jpg",
-      title: "Promotional Ad Shoot",
+      title: "Ad Shoot",
     },
     {
       url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687421/work2-1_mqo9le.jpg",
@@ -55,7 +34,7 @@ export default function AboutPage() {
     },
     {
       url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687511/work3_woje1c.jpg",
-      title: "Professional Brainstorming",
+      title: "Conference",
     },
     {
       url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687506/work19-1_nm4aoa.jpg",
@@ -71,32 +50,32 @@ export default function AboutPage() {
     },
     {
       url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687454/work13-1_azyu3y.jpg",
-      title: "Bundelkhand Hackathon 2025",
+      title: "Hackathon",
     },
     {
       url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687489/work16_im5hx3.jpg",
-      title: "Starial Promotional Ad Shoot",
+      title: "Ad Shoot",
     },
   ];
   const teamMembers = [
     {
       name: "Rahul Rai",
-      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687045/rahulSir2_pyq8mx.jpg",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744113165/rahulSir3_pvejs8.jpg",
       designation: "Founder & CEO",
     },
     {
       name: "Shubham Singh",
-      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687039/appDev2_lakx8t.jpg",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744113164/appDev2_o2s4bj.jpg",
       designation: "CTO",
     },
     {
       name: "Deeksha Sen",
-      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743708362/deeksha_kvfowm.jpg",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744113166/deekshaMaam2_hoxumg.jpg",
       designation: "Manager",
     },
     {
       name: "Anusha Pandey",
-      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687039/anushaMaam2_b8tee9.jpg",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744113164/anushaMaam2_hvyq6y.jpg",
       designation: "Talent Acquisition Manager",
     },
     {
@@ -143,36 +122,6 @@ export default function AboutPage() {
     "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687668/starial3_svrs1o.jpg",
     "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687672/work7_zm4qus.jpg",
   ];
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentIndex((prevIdx) => (prevIdx + 1) % internImages1.length);
-        setFade(true);
-      }, 500);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentIndex((prevIdx) => (prevIdx + 1) % internImages2.length);
-        setFade(true);
-      }, 500);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentIndex((prevIdx) => (prevIdx + 1) % internImages3.length);
-        setFade(true);
-      }, 500);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
   return (
     <section className="about-page">
       <div className="about-landing">
@@ -245,39 +194,6 @@ export default function AboutPage() {
                   </div>
                 );
               })}
-            </div>
-          </div>
-          <div className="interns-section">
-            <div className="intern-intro">
-              <h3>Our Interns:</h3>
-              <h4>The Heart of Innovation at Starial</h4>
-              <p>
-                At Starial, we believe that fresh perspectives and innovative
-                ideas are the driving force behind growth. Our interns play a
-                crucial role in shaping the future of our platform, bringing
-                creativity, dedication, and a passion for storytelling.
-              </p>
-            </div>
-            <div className="intern-decor">
-              <div className="single-pic">
-                <img
-                  src={internImages1[currentIndex]}
-                  alt="Intern Images"
-                  className={`${fade ? "fade-in" : "fade-out"}`}
-                />
-              </div>
-              <div>
-                <img
-                  src={internImages2[currentIndex]}
-                  alt="Intern Images"
-                  className={`${fade ? "fade-in" : "fade-out"}`}
-                />
-                <img
-                  src={internImages3[currentIndex]}
-                  alt="Intern Images"
-                  className={`${fade ? "fade-in" : "fade-out"}`}
-                />
-              </div>
             </div>
           </div>
         </div>

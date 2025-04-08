@@ -10,8 +10,8 @@ export default function Footer() {
   const year = new Date().getFullYear();
   const links1 = [
     { title: "About Us", url: "/about" },
-    { title: "Products", url: "/categories" },
     { title: "Shipping Policy", url: "/shipping-policy" },
+    { title: "Vendors Inquiry", url: "/vendors" },
     { title: "Terms & Conditions", url: "/terms-conditions" },
   ];
   const links2 = [
