@@ -3741,8 +3741,7 @@ $largeScreen: 1180px;
 }
 
 @mixin policies {
-  width: 80%;
-  padding: 2rem;
+  width: 100%;
   @include index.flex-box($flex-dir: column, $align-items: flex-start);
   gap: 1rem;
   margin: auto;
@@ -3767,15 +3766,29 @@ $largeScreen: 1180px;
   gap: 2rem;
 }
 
-// ------------------ TERMS & CONDITIONS ----------------------
-.terms-conditions {
-  @include policies;
+.policies {
+  width: 80%;
+  margin: auto;
+  padding: 2rem;
+  @include index.flex-box($flex-dir: column, $align-items: flex-start);
+  gap: 1rem;
   h2 {
     @include h2-style;
   }
   h4 {
     @include h4-style;
   }
+  @media (max-width: 500px) {
+    width: 90%;
+  }
+  @media (max-width: 468px) {
+    width: 100%;
+  }
+}
+
+// ------------------ TERMS & CONDITIONS ----------------------
+.terms-conditions {
+  @include policies;
   .terms {
     @include policies-style;
     .term {
@@ -3792,17 +3805,15 @@ $largeScreen: 1180px;
       }
     }
   }
-  @media (max-width: 500px) {
-    width: 90%;
-  }
-  @media (max-width: 468px) {
-    width: 100%;
-  }
 }
 
 // ------------------ PRIVACY POLICIES ----------------------
 .privacy-policies {
-  @include policies;
+  width: 80%;
+  margin: auto;
+  padding: 2rem;
+  @include index.flex-box($flex-dir: column, $align-items: flex-start);
+  gap: 1rem;
   h2 {
     @include h2-style;
   }
@@ -3833,6 +3844,8 @@ $largeScreen: 1180px;
     .policies {
       @include index.flex-box($flex-dir: column, $align-items: flex-start);
       gap: 1rem;
+      width: 100%;
+      padding: 0;
       .privacy h3 {
         color: index.$dark-blue;
       }
