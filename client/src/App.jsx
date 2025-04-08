@@ -14,6 +14,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ScrollToTop from "./components/ScrollToTop";
 import DownloadApp from "./components/DownloadApp";
+import TermsConditions from "./pages/TermsConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ShippingPolicy from "./pages/ShippingPolicy";
+import ReturnPolicy from "./pages/ReturnPolicy";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -40,6 +44,10 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/download-app" element={<DownloadApp />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/shipping-policy" element={<ShippingPolicy />} />
+          <Route path="/return-policy" element={<ReturnPolicy />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       )}

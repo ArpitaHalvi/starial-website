@@ -11,14 +11,14 @@ export default function Footer() {
   const links1 = [
     { title: "About Us", url: "/about" },
     { title: "Products", url: "/categories" },
-    { title: "Shipping Policy", url: "" },
-    { title: "Terms & Conditions", url: "" },
+    { title: "Shipping Policy", url: "/shipping-policy" },
+    { title: "Terms & Conditions", url: "/terms-conditions" },
   ];
   const links2 = [
     { title: "Category", url: "/categories" },
     { title: "Contact Us", url: "/contact" },
-    { title: "Return Policy", url: "" },
-    { title: "Privacy Policy", url: "" },
+    { title: "Return Policy", url: "/return-policy" },
+    { title: "Privacy Policy", url: "/privacy-policy" },
   ];
   const socialLinks = [
     // { url: "", icon: <FaXTwitter className="social-icon" />, color: "black" },

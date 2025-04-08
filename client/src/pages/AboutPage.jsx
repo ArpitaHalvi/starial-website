@@ -25,19 +25,58 @@ export default function AboutPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
   const images = [
-    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743690953/glimpse2_g4rket.jpg",
-    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687427/work1-1_ohncui.jpg",
-    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687462/work8_fgzzxn.jpg",
-    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687514/work14_dnmsly.jpg",
-    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687494/work4-1_ayt8sj.jpg",
-    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687421/work2-1_mqo9le.jpg",
-    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687490/work12-1_bb7p7b.jpg",
-    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687511/work3_woje1c.jpg",
-    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687506/work19-1_nm4aoa.jpg",
-    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687505/work5_cfbc5e.jpg",
-    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687441/work10_ws5eg7.jpg",
-    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687454/work13-1_azyu3y.jpg",
-    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687489/work16_im5hx3.jpg",
+    {
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743690953/glimpse2_g4rket.jpg",
+      title: "Global Invest Event",
+    },
+    {
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687427/work1-1_ohncui.jpg",
+      title: "Learning in Action",
+    },
+    {
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687462/work8_fgzzxn.jpg",
+      title: "Learning in Action",
+    },
+    {
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687514/work14_dnmsly.jpg",
+      title: "Festive Grace on Ganesh Chaturthi",
+    },
+    {
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687494/work4-1_ayt8sj.jpg",
+      title: "Promotional Ad Shoot",
+    },
+    {
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687421/work2-1_mqo9le.jpg",
+      title: "Face and Hand Art Fun",
+    },
+    {
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687490/work12-1_bb7p7b.jpg",
+      title: "Orientation Session",
+    },
+    {
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687511/work3_woje1c.jpg",
+      title: "Professional Brainstorming",
+    },
+    {
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687506/work19-1_nm4aoa.jpg",
+      title: "Diwali Celebration",
+    },
+    {
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687505/work5_cfbc5e.jpg",
+      title: "Our Team",
+    },
+    {
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687441/work10_ws5eg7.jpg",
+      title: "Innocent Moments",
+    },
+    {
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687454/work13-1_azyu3y.jpg",
+      title: "Bundelkhand Hackathon 2025",
+    },
+    {
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687489/work16_im5hx3.jpg",
+      title: "Starial Promotional Ad Shoot",
+    },
   ];
   const teamMembers = [
     {
@@ -245,10 +284,11 @@ export default function AboutPage() {
         <div className="some-glimpes">
           <h3>A Peek into our world!</h3>
           <div className="masonry-grid">
-            {images.map((url, index) => {
+            {images.map((img, index) => {
               return (
                 <div key={index} className="masonry-item">
-                  <img src={url} alt="Image" loading="lazy" />
+                  <img src={img.url} alt="Event Images" loading="lazy" />
+                  <h6 className="img-desc">{img.title}</h6>
                 </div>
               );
             })}
