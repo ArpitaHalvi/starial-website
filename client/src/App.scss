@@ -19,6 +19,9 @@
         @include index.img-setting(18%);
       }
     }
+    @media (max-width: 1000px) {
+      padding-left: 0;
+    }
   }
   .navbar {
     width: 40%;
