@@ -2724,8 +2724,22 @@ $largeScreen: 1180px;
     }
     @media (max-width: 468px) {
       padding: 0;
+      height: 50vh;
       .landing-image {
         border-radius: 0;
+        div {
+          text-align: center;
+          bottom: 5%;
+          h2 {
+            font-size: 1.8rem;
+          }
+          p {
+            font-size: 0.7rem;
+          }
+        }
+        &::after {
+          border-radius: 0;
+        }
       }
     }
   }
@@ -2742,7 +2756,7 @@ $largeScreen: 1180px;
         width: 50%;
         text-align: center;
         font-size: 4rem;
-        padding: 2rem 2rem 0 2rem;
+        padding: 1rem 2rem 0 2rem;
         color: index.$astros-navy;
       }
       p {
