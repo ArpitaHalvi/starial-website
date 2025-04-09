@@ -4,21 +4,23 @@ import { Link } from "react-router-dom";
 const stationery = [
   {
     name: "Art & Crafts",
-    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687290/stationery5_vjhyxu.png",
+    img: "art.jpg",
+    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687290/stationery5_vjhyxu.png",
   },
   {
     name: "Notebooks",
-    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687291/stationery6_toeeqf.png",
+    img: "notebooks.jpg",
+    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687291/stationery6_toeeqf.png",
   },
   {
     name: "Writing Materials",
-    img: "writing2.jpg",
+    img: "pens.jpg",
     // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687293/stationery9_quuocg.png",
   },
   {
     name: "Office Stationery",
-    // img: "Amazon_com_ Desk Organizer with File Holder, 3-Tier Paper Letter Tray Organizer with Sliding Drawer and 2 Pen Holder, Mesh Desktop Organizer and Storage with Magazine Holder for Office, School, Home, Black _ Office.jpg",
-    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687196/stationery4_hpkwck.png",
+    img: "office.jpg",
+    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687196/stationery4_hpkwck.png",
   },
 ];
 
