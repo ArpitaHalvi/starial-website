@@ -134,7 +134,7 @@ export default function DownloadApp() {
               PlayStore <IoLogoGooglePlaystore className="store-icon" />
             </Link>
             <Link
-              to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1"
+              to="https://apps.apple.com/us/app/starial-stationery-uniform/id6477531287"
               className="download-btn"
             >
               AppStore <FaApple className="store-icon" />

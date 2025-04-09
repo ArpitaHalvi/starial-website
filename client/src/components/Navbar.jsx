@@ -36,6 +36,7 @@ export default function Navbar() {
             <NavLink
               to="/"
               className={({ isActive }) => (isActive ? "active" : "a")}
+              onClick={() => setIsOpen(false)}
             >
               Home
             </NavLink>
@@ -44,6 +45,7 @@ export default function Navbar() {
             <NavLink
               to="/about"
               className={({ isActive }) => (isActive ? "active" : "a")}
+              onClick={() => setIsOpen(false)}
             >
               About Us
             </NavLink>
@@ -52,12 +54,17 @@ export default function Navbar() {
             <NavLink
               to="/categories"
               className={({ isActive }) => (isActive ? "active" : "a")}
+              onClick={() => setIsOpen(false)}
             >
               Categories
             </NavLink>
           </li>
           {/* <li> */}
-          <NavLink to="/contact" className="contact-us">
+          <NavLink
+            to="/contact"
+            className="contact-us"
+            onClick={() => setIsOpen(false)}
+          >
             Contact Us
           </NavLink>
           {/* </li> */}
