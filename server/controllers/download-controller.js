@@ -1,6 +1,7 @@
 const { Resend } = require("resend");
 const nodemailer = require("nodemailer");
-const msg91 = require("msg91").default;
+// const msg91 = require("msg91").default;
+const axios = require("axios");
 
 const sendWhatsappMsg = async (req, res, next) => {
   try {
@@ -38,9 +39,34 @@ const sendWhatsappMsg = async (req, res, next) => {
     // return res.status(200).json({ message: "Message sent successfully." });
 
     // USING MSG91 FOR SENDING DOWNLOAD LINK
-    msg91.initialize({ authKey: "" });
-    let sms = msg91.getSMS();
-    sms.send("flowId", { mobile: "" });
+    try {
+      const response = await axios.post(
+        "https://control.msg91.com/api/v5/flow/",
+        {
+          template_id: "EntertemplateID",
+          sender: "EnterSenderID",
+          short_url: "1", // or '0'
+          mobiles: "919XXXXXXXXX",
+          VAR1: "VALUE 1",
+          VAR2: "VALUE 2",
+        },
+        {
+          headers: {
+            Authkey: "<authkey>",
+            accept: "application/json",
+            "content-type": "application/json",
+          },
+        }
+      );
+      console.log(response.data);
+      res.json({ message: "SMS sent successfully", data: response.data });
+    } catch (error) {
+      console.error(error.response?.data || error.message);
+      res.status(500).json({
+        message: "Failed to send SMS",
+        error: error.response?.data || error.message,
+      });
+    }
   } catch (e) {
     console.error("Error: ", e);
     next(e);

@@ -143,7 +143,10 @@ export default function DownloadApp() {
         </div>
       </div>
       <div className="app-decor">
-        <img src="/starial-services.png" alt="Starial app" />
+        <img
+          src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1744197760/starial-services_dnvmqy.png"
+          alt="Starial app"
+        />
       </div>
     </div>
   );
