@@ -1,5 +1,6 @@
 const { Resend } = require("resend");
 const nodemailer = require("nodemailer");
+const msg91 = require("msg91").default;
 
 const sendWhatsappMsg = async (req, res, next) => {
   try {
@@ -20,21 +21,26 @@ const sendWhatsappMsg = async (req, res, next) => {
     //   .catch((e) => console.error("Error while sending whatsapp  message.", e));
 
     // SENDING SMS
-    const client = require("twilio")(accountSid, authToken);
-    const response = client.messages
-      .create({
-        body: "This is the Starial App Download Link: https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1",
-        from: "+15679983492",
-        to: `+91${phoneNumber}`,
-      })
-      .then((message) => console.log(message.sid));
-    if (!response) {
-      console.error("Error occured while sending whatsapp message.");
-      return res
-        .status(500)
-        .json({ message: "Error occured while sending whatsapp message." });
-    }
-    return res.status(200).json({ message: "Message sent successfully." });
+    // const client = require("twilio")(accountSid, authToken);
+    // const response = client.messages
+    //   .create({
+    //     body: "This is the Starial App Download Link: https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1",
+    //     from: "+15679983492",
+    //     to: `+91${phoneNumber}`,
+    //   })
+    //   .then((message) => console.log(message.sid));
+    // if (!response) {
+    //   console.error("Error occured while sending whatsapp message.");
+    //   return res
+    //     .status(500)
+    //     .json({ message: "Error occured while sending whatsapp message." });
+    // }
+    // return res.status(200).json({ message: "Message sent successfully." });
+
+    // USING MSG91 FOR SENDING DOWNLOAD LINK
+    msg91.initialize({ authKey: "" });
+    let sms = msg91.getSMS();
+    sms.send("flowId", { mobile: "" });
   } catch (e) {
     console.error("Error: ", e);
     next(e);
@@ -75,13 +81,13 @@ const sendEmail = (req, res, next) => {
       port: 465,
       secure: true,
       auth: {
-        user: "arpitahalvi@gmail.com",
+        user: "starialofficial@gmail.com",
         pass: process.env.EMAIL_PASSWORD,
       },
     });
     const receiver = {
       // from: "starialofficial@gmail.com",
-      from: "arpitahalvi@gmail.com",
+      from: "starialofficial@gmail.com",
       to: email,
       subject: `Starial App Download Link`,
       html: `<p>Hello,</p>
@@ -90,7 +96,7 @@ const sendEmail = (req, res, next) => {
       <br>
       <p>
       <a href="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1" style="padding: 0.6rem 1rem; border-radius: 5px; border: none; background-color:#49c6f8; text-decoration:none; color: black;font-family: 'Segoe UI'; font-size: 1rem;margin-right: 2rem;">PlayStore Link</a>
-      <a href="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1" style="padding: 0.6rem 1rem; border-radius: 5px; border: none; background-color:#49c6f8; text-decoration:none; color: black;font-family: 'Segoe UI'; font-size: 1rem;">AppStore Link</a>
+      <a href="https://apps.apple.com/us/app/starial-stationery-uniform/id6477531287" style="padding: 0.6rem 1rem; border-radius: 5px; border: none; background-color:#49c6f8; text-decoration:none; color: black;font-family: 'Segoe UI'; font-size: 1rem;">AppStore Link</a>
       </p>
       <br>
       <p>If you didn't request this, you can ignore this email.</p>

@@ -10,14 +10,14 @@ const contact = (req, res, next) => {
       port: 465,
       secure: true,
       auth: {
-        user: "arpitahalvi@gmail.com",
+        user: "starialofficial@gmail.com",
         pass: process.env.EMAIL_PASSWORD,
       },
     });
     const receiver = {
       // from: "starialofficial@gmail.com",
-      from: "arpitahalvi@gmail.com",
-      to: "arpitaa0311@gmail.com",
+      from: "starialofficial@gmail.com",
+      to: "starialofficial@gmail.com",
       subject: `New message from ${fullname}`,
       text: `New Message Received!\n\nName: ${fullname}\nEmail: ${email}\nPhone Number: ${phoneNumber}\nMessage: ${message}`,
       html: `<h1>New Message Received!</h1>
