@@ -10,12 +10,13 @@ const contact = (req, res, next) => {
       port: 465,
       secure: true,
       auth: {
-        user: "starialofficial@gmail.com",
+        user: "arpitahalvi@gmail.com",
         pass: process.env.EMAIL_PASSWORD,
       },
     });
     const receiver = {
-      from: "starialofficial@gmail.com",
+      // from: "starialofficial@gmail.com",
+      from: "arpitahalvi@gmail.com",
       to: "arpitaa0311@gmail.com",
       subject: `New message from ${fullname}`,
       text: `New Message Received!\n\nName: ${fullname}\nEmail: ${email}\nPhone Number: ${phoneNumber}\nMessage: ${message}`,
@@ -25,15 +26,22 @@ const contact = (req, res, next) => {
           <p>Phone Number: ${phoneNumber}</p>
           <p>Message: ${message}</p>`,
     };
-    const info = transporter.sendMail(receiver, (err, info) => {
+    transporter.sendMail(receiver, (err, info) => {
       if (err) {
         console.error("Error while sending mail: ", err);
+        return res.status(500).json({ message: "Error while sending mail." });
       } else {
         console.log("Email sent: ", info.response);
+        return res.status(200).json({ message: "Email sent successfully." });
       }
     });
-    console.log("Email sent: ", info);
-    console.log("Message sent: %s", info.messageId);
+    // if (info) {
+    //   console.log("Email sent: ", info);
+    //   return res.status(200).json({ message: "Successfully sent email." });
+    // } else {
+    //   return res.status(500).json({ message: "Error while sending email." });
+    // }
+    // console.log("Message sent: %s", info.messageId);
 
     // SENDING EMAIL USING RESEND
     // const resend = new Resend(process.env.RESEND_API_KEY);

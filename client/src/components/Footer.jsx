@@ -120,7 +120,7 @@ export default function Footer() {
                   <span>Google Play </span>
                 </span>
               </Link>
-              <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
+              <Link to="https://apps.apple.com/us/app/starial-stationery-uniform/id6477531287">
                 {/* <img src="apple-logo.svg" alt="" /> */}
                 <img
                   src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688584/apple-logo_czqbji.svg"

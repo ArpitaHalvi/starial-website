@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import StatusModal from "../modals/StatusModal";
-import axios from "axios";
+// import axios from "axios";
 
 const initialData = {
   fullname: "",
@@ -21,28 +21,47 @@ export default function ContactUs() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // try {
+    //   await axios.post("http://localhost:5002/api/contact", contactData, {
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   });
+    //   console.log("Message sent successfully.");
+    //   setSuccess("Message sent successfully.");
+    //   setOpenModal(true);
+    //   setContactData(initialData);
+    // } catch (e) {
+    //   console.error("Error: ", e);
+    //   setOpenModal(true);
+    //   setError(e.reponse?.data?.extraDetails || e.message);
+    //   console.error("Error while sending message.", e);
+    // }
     try {
-      await axios
-        .post("http://localhost:5002/api/contact", contactData, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-        .then(() => {
-          console.log("Message sent successfully.");
-          setSuccess("Message sent successfully.");
-          setOpenModal(true);
-          setContactData(initialData);
-        })
-        .catch((e) => {
-          setError(e.extraDetails ? e.extraDetails : e.message);
-          setOpenModal(true);
-          console.error("Error while sending message.", e);
-        });
+      const response = await fetch("http://localhost:5002/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contactData),
+      });
+      const res_data = await response.json();
+      console.log("Response from contact form:", res_data);
+      if (response.ok) {
+        console.log("Message sent successfully.");
+        setSuccess("Message sent successfully.");
+        setOpenModal(true);
+        setContactData(initialData);
+      } else {
+        console.error("Error: ");
+        setOpenModal(true);
+        setError(
+          res_data.extraDetails ? res_data.extraDetails : res_data.message
+        );
+        // console.error("Error while sending message.");
+      }
     } catch (e) {
-      console.error("Error: ", e);
-      setError(e.message);
-      setOpenModal(true);
+      console.error(e.message);
     }
   };
   useEffect(() => {

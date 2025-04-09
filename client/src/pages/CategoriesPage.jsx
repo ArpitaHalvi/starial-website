@@ -12,10 +12,12 @@ const stationery = [
   },
   {
     name: "Writing Materials",
-    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687293/stationery9_quuocg.png",
+    img: "writing2.jpg",
+    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687293/stationery9_quuocg.png",
   },
   {
     name: "Office Stationery",
+    // img: "Amazon_com_ Desk Organizer with File Holder, 3-Tier Paper Letter Tray Organizer with Sliding Drawer and 2 Pen Holder, Mesh Desktop Organizer and Storage with Magazine Holder for Office, School, Home, Black _ Office.jpg",
     img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687196/stationery4_hpkwck.png",
   },
 ];
@@ -24,41 +26,49 @@ const uniforms = [
   {
     // name: "Billabong High International School (BHIS)",
     name: "Regular Dresses",
-    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687164/school1_k22tix.jpg",
+    img: "",
+    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687164/school1_k22tix.jpg",
   },
   {
     // name: "Little World School",
     name: "House Dresses",
-    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school4_xucuox.jpg",
+    img: "",
+    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school4_xucuox.jpg",
   },
   {
     // name: "StemField International School",
     name: "Seasonal Dresses",
-    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school3_ejn0wb.jpg",
+    img: "",
+    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school3_ejn0wb.jpg",
   },
   {
     // name: "Delhi Public School (DPS Jabalpur)",
     name: "Essentials",
-    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school2_s2skvq.jpg",
+    img: "",
+    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school2_s2skvq.jpg",
   },
 ];
 
 const books = [
   {
     name: "Academic Books",
-    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687120/exam1_tii4sq.jpg",
+    img: "academic2.jpg",
+    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687120/exam1_tii4sq.jpg",
   },
   {
     name: "Civil Services",
-    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687121/exam2_o4pxyu.jpg",
+    img: "compBook.jpg",
+    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687121/exam2_o4pxyu.jpg",
   },
   {
     name: "Novels",
-    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687122/exam3_qnhttj.jpg",
+    img: "novels2.jpg",
+    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687122/exam3_qnhttj.jpg",
   },
   {
     name: "Kids Books",
-    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687124/exam4_okqo1s.jpg",
+    img: "kidsBook2.jpg",
+    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687124/exam4_okqo1s.jpg",
   },
 ];
 
