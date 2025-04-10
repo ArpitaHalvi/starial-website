@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const stationery = [
@@ -81,21 +81,21 @@ const categories = [
 ];
 
 export default function CategoriesPage() {
-  const [searchText, setSearchText] = useState("");
-  const filteredCategories = categories.map((cate) => ({
-    ...cate,
-    items: cate.items.filter((item) =>
-      item.name.toLowerCase().includes(searchText.toLowerCase())
-    ),
-  }));
-  const filteredCount = filteredCategories.reduce(
-    (count, cat) => count + cat.items.length,
-    0
-  );
+  // const [searchText, setSearchText] = useState("");
+  // const filteredCategories = categories.map((cate) => ({
+  //   ...cate,
+  //   items: cate.items.filter((item) =>
+  //     item.name.toLowerCase().includes(searchText.toLowerCase())
+  //   ),
+  // }));
+  // const filteredCount = filteredCategories.reduce(
+  //   (count, cat) => count + cat.items.length,
+  //   0
+  // );
   return (
     <section className="categories-page">
       <main className="categories">
-        <div className="search-container">
+        {/* <div className="search-container">
           <input
             type="search"
             placeholder="Search by Categories"
@@ -106,9 +106,10 @@ export default function CategoriesPage() {
             <span> {filteredCount} </span>
             categories...
           </p>
-        </div>
+        </div> */}
+        <h2>Choose what you need</h2>
         <div className="cate-go-ries">
-          {filteredCategories.map((category) =>
+          {categories.map((category) =>
             category.items.length > 0 ? (
               <div className="stationeries" id="stationery" key={category.name}>
                 <h5>{category.name}</h5>
@@ -118,9 +119,6 @@ export default function CategoriesPage() {
                       <div className="item" key={idx}>
                         <img src={s.img} alt="" />
                         <Link to="/download-app">Order Now</Link>
-                        {/* <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
-                          Order Now
-                        </Link> */}
                         <h6>{s.name}</h6>
                       </div>
                     );
