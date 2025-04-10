@@ -28,19 +28,19 @@ const uniforms = [
   {
     // name: "Billabong High International School (BHIS)",
     name: "Regular Dresses",
-    img: "",
+    img: "regular-uniform.jpg",
     // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687164/school1_k22tix.jpg",
   },
   {
     // name: "Little World School",
     name: "House Dresses",
-    img: "",
+    img: "house-uniforms.jpg",
     // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school4_xucuox.jpg",
   },
   {
     // name: "StemField International School",
     name: "Seasonal Dresses",
-    img: "",
+    img: "coats.jpg",
     // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school3_ejn0wb.jpg",
   },
   {
