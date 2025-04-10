@@ -3605,6 +3605,8 @@ $largeScreen: 1180px;
       // border: 1px solid white;
       // background-color: grey;
       // gap: 2rem;
+      // background: url("https://res.cloudinary.com/dgkv2gft7/image/upload/v1743691550/bg2_a7xy7z.png")
+      // left/contain no-repeat;
       .client-img {
         width: 100%;
         height: 100%;
@@ -3632,7 +3634,7 @@ $largeScreen: 1180px;
         gap: 2rem;
         h5 {
           // font-size: 1.7rem;
-          font-size: 3rem;
+          font-size: 2.7rem;
         }
         p {
           font-size: 0.9rem;
@@ -3668,15 +3670,40 @@ $largeScreen: 1180px;
       //   }
       // }
     }
+    @media (max-width: 1300px) {
+      width: 90%;
+      .client {
+        .review {
+          width: 35%;
+          height: 80vh;
+          h5 {
+            font-size: 2rem;
+          }
+          p {
+            font-size: 0.8rem;
+          }
+        }
+      }
+      @media (max-width: 900px) {
+        width: 100%;
+        .client {
+          .review {
+            width: 40%;
+            h5 {
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+    }
   }
   @media (max-width: 1200px) {
-    height: auto;
     .clients {
       // width: 90%;
       // @include index.res-grid;
       .client {
         @media (max-width: 1000px) {
-          margin: 1%;
+          // margin: 1%;
         }
         // .accordian {
         //   gap: 0.5rem;
@@ -3707,11 +3734,6 @@ $largeScreen: 1180px;
       }
     }
   }
-  @media (max-width: 750px) {
-    .clients {
-      width: 100%;
-    }
-  }
   @media (max-width: 820px) {
     h2 {
       font-size: 3rem;
@@ -3721,29 +3743,68 @@ $largeScreen: 1180px;
     }
     .clients {
       // @include index.res-grid(100%);
-      flex-direction: column;
+      // flex-direction: column;
       .client {
-        width: 60%;
-        margin: 5% 0;
-        .accordian {
-          h5 {
-            font-size: 1.2rem;
-          }
-          p {
-            font-size: 0.8rem;
-          }
-          @media (max-width: 468px) {
-            gap: 0.5rem;
-            h5 {
-              font-size: 1.2rem;
-            }
-            p {
-              font-size: 0.8rem;
-            }
-          }
-        }
+        // width: 60%;
+        // margin: 5% 0;
+        // .accordian {
+        //   h5 {
+        //     font-size: 1.2rem;
+        //   }
+        //   p {
+        //     font-size: 0.8rem;
+        //   }
+        //   @media (max-width: 468px) {
+        //     gap: 0.5rem;
+        //     h5 {
+        //       font-size: 1.2rem;
+        //     }
+        //     p {
+        //       font-size: 0.8rem;
+        //     }
+        //   }
+        // }
         @media (max-width: 500px) {
-          width: 90%;
+          // width: 90%;
+        }
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    .clients {
+      width: 70%;
+      .client {
+        height: 80vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-between;
+        .client-img {
+          @include index.img-setting(80%);
+        }
+        .review {
+          width: 100%;
+          height: 40vh;
+          border-radius: 0 0 5px 5px;
+          gap: 0.5rem;
+        }
+      }
+      @media (max-width: 600px) {
+        width: 80%;
+        height: 60vh;
+        .client {
+          height: 70vh;
+        }
+      }
+      @media (max-width: 468px) {
+        width: 90%;
+        height: 60vh;
+        .client {
+          height: 70vh;
+          .review {
+            h5 {
+              font-size: 1.5rem;
+            }
+          }
         }
       }
     }
