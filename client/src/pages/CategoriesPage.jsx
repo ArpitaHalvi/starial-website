@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const stationery = [
   {
     name: "Art & Crafts",
-    img: "art.jpg",
+    img: "craft.jpg",
     // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687290/stationery5_vjhyxu.png",
   },
   {
