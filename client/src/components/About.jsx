@@ -35,13 +35,22 @@ export default function About() {
             Sports Items
           </div>
         </div>
-        <NavLink to="/download-app">
-          <img
-            src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688588/play-store-logo_k1g8ob.svg"
-            alt="Play Store Logo"
-          />
-          Download App
-        </NavLink>
+        <div className="app-download-links">
+          <NavLink to="/download-app">
+            <img
+              src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688588/play-store-logo_k1g8ob.svg"
+              alt="Play Store Logo"
+            />
+            Download App
+          </NavLink>
+          <NavLink to="/download-app">
+            <img
+              src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688584/apple-logo_czqbji.svg"
+              alt="Play Store Logo"
+            />
+            Download App
+          </NavLink>
+        </div>
       </div>
     </section>
   );

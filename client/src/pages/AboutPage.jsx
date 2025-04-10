@@ -139,26 +139,13 @@ export default function AboutPage() {
       </div>
       <div className="about-us">
         <div className="about-members">
-          <h2>Where creativity meets functionality</h2>
+          {/* <h2>Where creativity meets functionality</h2>
           <p>
             At Starial, we take pride in our commitment to speed, reliability,
             and quality. Our team works tirelessly to source the best stationery
             products and optimize our delivery network, ensuring that every
             order reaches you in record time.
-          </p>
-          <div className="work-culture">
-            {workculture.map((w, idx) => {
-              return (
-                <div key={idx}>
-                  <img
-                    src={w}
-                    alt="Images that depicts creativity"
-                    loading="lazy"
-                  />
-                </div>
-              );
-            })}
-          </div>
+          </p> */}
           <div className="about-starial">
             {about.map(({ title, text, img }, index) => {
               return (
@@ -171,6 +158,22 @@ export default function AboutPage() {
                 </div>
               );
             })}
+          </div>
+          <div className="work-culture">
+            <h2>Culture at Starial</h2>
+            <div className="culture">
+              {workculture.map((w, idx) => {
+                return (
+                  <div key={idx}>
+                    <img
+                      src={w}
+                      alt="Images that depicts creativity"
+                      loading="lazy"
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
           <div className="team">
             <h2>Meet Our Team</h2>

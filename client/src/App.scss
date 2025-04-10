@@ -384,22 +384,30 @@
         }
       }
     }
-    a {
-      width: 30%;
-      background-color: index.$dark-blue;
-      padding: 0.5rem;
-      border-radius: 50px;
-      color: white;
+    .app-download-links {
+      width: 100%;
       @include index.flex-box;
-      border: 2px solid transparent;
-      transition: all 0.4s ease-in-out;
-      img {
-        @include index.img-setting(20%);
-      }
-      &:hover {
-        background-color: transparent;
-        color: index.$dark-blue;
-        border-color: index.$dark-blue;
+      gap: 2rem;
+      a {
+        width: 30%;
+        background-color: index.$dark-blue;
+        padding: 0.5rem;
+        border-radius: 50px;
+        color: white;
+        @include index.flex-box;
+        border: 2px solid transparent;
+        transition: all 0.4s ease-in-out;
+        img {
+          @include index.img-setting(20%);
+        }
+        &:hover {
+          // background-color: transparent;
+          // color: index.$dark-blue;
+          // border-color: index.$dark-blue;
+          background-color: #1c69ac;
+          color: white;
+          border-color: #0d5696;
+        }
       }
     }
   }
@@ -479,15 +487,18 @@
           }
         }
       }
-      a {
-        @media (max-width: 700px) {
-          width: 40%;
+      .app-download-links {
+        a {
+          @media (max-width: 700px) {
+            width: 40%;
+          }
+          @media (max-width: 580px) {
+            width: 50%;
+          }
         }
-        @media (max-width: 580px) {
-          width: 50%;
-        }
-        @media (max-width: 468px) {
-          width: 60%;
+        @media (max-width: 420px) {
+          gap: 0.5rem;
+          font-size: 0.9rem;
         }
       }
     }
@@ -1307,7 +1318,7 @@ $largeScreen: 1180px;
   width: 100%;
   // .app-info {
   @include index.res-grid;
-  padding: 2rem;
+  padding: 1rem;
   background: linear-gradient(to bottom, #ffffff, #93d9ff);
   // background-color: #93d9ff;
   .about-app {
@@ -2670,7 +2681,7 @@ $largeScreen: 1180px;
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 20vh;
+        height: 60vh;
         background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
         border-radius: 50px;
         transition: opacity 0.3s ease-in-out;
@@ -2680,15 +2691,14 @@ $largeScreen: 1180px;
         position: absolute;
         color: white;
         left: 5%;
-        // top: 20%;
         bottom: 10%;
         h2 {
           width: 60%;
           font-size: 4rem;
           margin-bottom: 3%;
-          // text-shadow: 5px 5px black;
-          color: index.$dark-blue;
           text-shadow: 5px 5px white;
+          // color: index.$dark-blue;
+          text-shadow: 5px 5px black;
         }
         p {
           width: 40%;
@@ -2769,20 +2779,26 @@ $largeScreen: 1180px;
       }
       .work-culture {
         width: 100%;
-        height: 70vh;
-        @include index.res-grid(calc(100% / 5));
-        gap: 1rem;
-        div {
+        height: 90vh;
+        @include index.flex-box($flex-dir: column);
+        gap: 2rem;
+        margin: 2rem 0;
+        .culture {
           width: 100%;
-          height: 500px;
-          border-radius: 30px;
-          background-color: grey;
-          filter: drop-shadow(5px 5px 5px #bdbdbd);
-          img {
+          @include index.res-grid(calc(100% / 5));
+          gap: 1rem;
+          div {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: 500px;
             border-radius: 30px;
+            background-color: grey;
+            filter: drop-shadow(5px 5px 5px #bdbdbd);
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 30px;
+            }
           }
         }
       }
@@ -2792,7 +2808,9 @@ $largeScreen: 1180px;
         }
         .work-culture {
           height: auto;
-          @include index.res-grid(calc(100% / 4));
+          .culture {
+            @include index.res-grid(calc(100% / 4));
+          }
         }
       }
       @media (max-width: 950px) {
@@ -2802,12 +2820,14 @@ $largeScreen: 1180px;
           margin-bottom: 1rem;
         }
         .work-culture {
-          @include index.res-grid(calc(100% / 3));
+          .culture {
+            @include index.res-grid(calc(100% / 3));
+          }
         }
       }
       .about-starial {
         width: 100%;
-        margin-top: 5%;
+        // margin-top: 5%;
         padding: 2rem;
         @include index.flex-box($flex-dir: column);
         .about {
@@ -2878,131 +2898,6 @@ $largeScreen: 1180px;
       }
       @media (max-width: 468px) {
         padding: 1rem;
-      }
-      .interns-section {
-        width: 100%;
-        height: 90vh;
-        padding: 2rem;
-        @include index.res-grid;
-        // background-color: pink;
-        .intern-intro {
-          color: index.$dark-blue;
-          @include index.flex-box($flex-dir: column, $align-items: flex-start);
-          h3 {
-            font-size: 4rem;
-          }
-          h4 {
-            width: 70%;
-            font-size: 3rem;
-            margin-bottom: 5%;
-          }
-          p {
-            width: 70%;
-            text-align: left;
-          }
-        }
-        .intern-decor {
-          width: 80%;
-          @include index.flex-box($flex-dir: column);
-          padding: 2rem;
-          gap: 1rem;
-          .single-pic {
-            width: 100%;
-            img {
-              width: 100%;
-              object-fit: contain;
-              border-radius: 0;
-              transition: opacity 8s ease-in-out;
-            }
-            .fade-in {
-              opacity: 1;
-            }
-            .fade-out {
-              opacity: 0;
-            }
-          }
-          div {
-            width: 100%;
-            @include index.res-grid;
-            img {
-              width: 100%;
-              object-fit: cover;
-              // transition: all 0.3s ease-in;
-              transition: opacity 8s ease-in-out;
-              &:nth-of-type(1) {
-                margin-right: 2rem;
-              }
-            }
-            .fade-in {
-              opacity: 1;
-            }
-            .fade-out {
-              opacity: 0;
-            }
-          }
-        }
-        @media (max-width: 1300px) {
-          .intern-intro {
-            h4 {
-              font-size: 2rem;
-            }
-          }
-        }
-        @media (max-width: 1050px) {
-          padding: 1rem;
-          .intern-intro {
-            h3 {
-              font-size: 3rem;
-            }
-            h4 {
-              width: 100%;
-              font-size: 2rem;
-            }
-            p {
-              width: 80%;
-            }
-          }
-          .intern-decor {
-            padding: 0;
-          }
-        }
-        @media (max-width: 800px) {
-          padding: 0;
-          height: auto;
-          margin: 5% 0;
-          @include index.res-grid(100%);
-          gap: 2rem;
-          .intern-intro {
-            text-align: center;
-            align-items: center;
-            h4 {
-              margin-bottom: 2%;
-            }
-            p {
-              text-align: center;
-            }
-          }
-          .intern-decor {
-            padding: 2rem;
-          }
-        }
-        @media (max-width: 500px) {
-          padding: 1rem;
-          .intern-intro {
-            h3 {
-              font-size: 2rem;
-            }
-            h4 {
-              font-size: 1.5rem;
-            }
-            p {
-              width: 100%;
-            }
-          }
-          .intern-decor {
-            padding: 0;
-          }
-        }
       }
     }
     .team {
@@ -3386,16 +3281,19 @@ $largeScreen: 1180px;
           padding: 1rem;
         }
         .work-culture {
-          @include index.res-grid(100%);
-          div {
-            width: 80%;
-            @media (max-width: 500px) {
-              width: 90%;
+          .culture {
+            @include index.res-grid(100%);
+            div {
+              width: 80%;
+              height: 40vh;
+              @media (max-width: 500px) {
+                width: 90%;
+              }
             }
           }
         }
         .about-starial {
-          padding: 2rem;
+          padding: 0 2rem;
           .about {
             @include index.res-grid(100%);
             div {
@@ -3412,10 +3310,10 @@ $largeScreen: 1180px;
               border-radius: 2px;
               filter: drop-shadow(5px 5px 5px #bbbaba);
             }
-          }
-          &:nth-of-type(2) {
-            img {
-              order: 1;
+            &:nth-of-type(2) {
+              img {
+                order: 1;
+              }
             }
           }
         }
