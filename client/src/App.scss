@@ -3571,64 +3571,102 @@ $largeScreen: 1180px;
 .clients-section {
   width: 100%;
   padding: 2rem;
+  height: 90vh;
   @include index.flex-box($flex-dir: column, $justify-content: space-around);
   color: index.$dark-blue;
   gap: 3rem;
-  background: linear-gradient(to bottom, #93d9ff, #ffffff);
   // background-color: #b1e9ff;
+  // background: url("https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688077/intro-img2_drgtio.png")
+  // left/contain no-repeat;
+  background: linear-gradient(to left, #93d9ff, #ffffff);
   h2 {
     font-size: 3rem;
     color: index.$dark-blue;
   }
   .clients {
-    // width: 80%;
-    width: 100%;
-    // @include index.res-grid;
+    width: 80%;
     @include index.flex-box;
+    // @include index.res-grid(calc(100% / 4));
+    gap: 3rem;
+    overflow: hidden;
+    filter: drop-shadow(5px 5px 5px grey);
+    border-radius: 10px;
+    .motion-div {
+      background-color: white;
+    }
     .client {
-      // width: 90%;
       width: 100%;
-      border-radius: 10px;
-      @include index.flex-box($flex-dir: column);
+      // border-radius: 10px;
+      // @include index.flex-box($flex-dir: column);
+      @include index.flex-box($justify-content: space-around);
       position: relative;
-      margin: 2%;
-      filter: drop-shadow(5px 5px 5px grey);
-      border: 1px solid white;
-      img {
+      // margin: 2%;
+      padding: 2rem 0;
+      // border: 1px solid white;
+      // background-color: grey;
+      // gap: 2rem;
+      .client-img {
         width: 100%;
         height: 100%;
         // object-fit: cover;
-        border-radius: 10px;
+        // aspect-ratio: 3/2;
+        @include index.img-setting(50%);
+        // border: 1px solid white;
+        // border-radius: 60% 40% 30% 70%/ 60% 30% 70% 40%;
       }
-      .accordian {
-        padding: 0.5rem;
-        width: 100%;
-        border-radius: 10px;
-        height: 100%;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        transform: translateY(-10%);
-        opacity: 0;
-        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-        @include index.flex-box($flex-dir: column, $align-items: flex-start);
+      // img {
+      //   width: 100%;
+      //   height: 100%;
+      //   border-radius: 10px;
+      // }
+      .review {
+        width: 30%;
+        height: 100vh;
         padding: 2rem;
-        gap: 1rem;
         background-color: white;
-        // background: linear-gradient(to bottom, #93d9ff, #ffffff);
-        // filter: drop-shadow(5px 5px 5px #929090);
+        background-color: index.$dark-blue;
+        color: white;
+        border-radius: 5px;
+        @include index.flex-box($flex-dir: column);
+        text-align: center;
+        gap: 2rem;
         h5 {
-          font-size: 2rem;
-          // border-bottom: 2px solid index.$dark-blue;
+          // font-size: 1.7rem;
+          font-size: 3rem;
         }
         p {
-          font-size: 1rem;
-        }
-        &.open {
-          opacity: 1;
-          transform: translateY(0);
+          font-size: 0.9rem;
         }
       }
+      // .accordian {
+      //   padding: 0.5rem;
+      //   width: 100%;
+      //   border-radius: 10px;
+      //   height: 100%;
+      //   position: absolute;
+      //   bottom: 0;
+      //   left: 0;
+      //   transform: translateY(-10%);
+      //   opacity: 0;
+      //   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      //   @include index.flex-box($flex-dir: column, $align-items: flex-start);
+      //   padding: 2rem;
+      //   gap: 1rem;
+      //   background-color: white;
+      //   // background: linear-gradient(to bottom, #93d9ff, #ffffff);
+      //   // filter: drop-shadow(5px 5px 5px #929090);
+      //   h5 {
+      //     font-size: 2rem;
+      //     // border-bottom: 2px solid index.$dark-blue;
+      //   }
+      //   p {
+      //     font-size: 1rem;
+      //   }
+      //   &.open {
+      //     opacity: 1;
+      //     transform: translateY(0);
+      //   }
+      // }
     }
   }
   @media (max-width: 1200px) {
@@ -3640,32 +3678,32 @@ $largeScreen: 1180px;
         @media (max-width: 1000px) {
           margin: 1%;
         }
-        .accordian {
-          gap: 0.5rem;
-          @media (max-width: 930px) {
-            gap: 0.3rem;
-          }
-          h5 {
-            font-size: 1.5rem;
-            @media (max-width: 1100px) {
-              font-size: 1.3rem;
-            }
-            @media (max-width: 965px) {
-              font-size: 1.2rem;
-            }
-          }
-          p {
-            font-size: 0.9rem;
-          }
-          @media (max-width: 930px) {
-            h5 {
-              font-size: 1rem;
-            }
-            p {
-              font-size: 0.7rem;
-            }
-          }
-        }
+        // .accordian {
+        //   gap: 0.5rem;
+        //   @media (max-width: 930px) {
+        //     gap: 0.3rem;
+        //   }
+        //   h5 {
+        //     font-size: 1.5rem;
+        //     @media (max-width: 1100px) {
+        //       font-size: 1.3rem;
+        //     }
+        //     @media (max-width: 965px) {
+        //       font-size: 1.2rem;
+        //     }
+        //   }
+        //   p {
+        //     font-size: 0.9rem;
+        //   }
+        //   @media (max-width: 930px) {
+        //     h5 {
+        //       font-size: 1rem;
+        //     }
+        //     p {
+        //       font-size: 0.7rem;
+        //     }
+        //   }
+        // }
       }
     }
   }
