@@ -2587,7 +2587,7 @@ $largeScreen: 1180px;
           width: 60%;
           font-size: 4rem;
           margin-bottom: 3%;
-          text-shadow: 5px 5px white;
+          // text-shadow: 5px 5px white;
           // color: index.$dark-blue;
           text-shadow: 5px 5px black;
         }
@@ -2632,7 +2632,9 @@ $largeScreen: 1180px;
         border-radius: 0;
         div {
           text-align: center;
-          bottom: 5%;
+          top: 60%;
+          bottom: 0;
+          // background-color: pink;
           h2 {
             font-size: 1.8rem;
           }
