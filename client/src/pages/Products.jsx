@@ -1,23 +1,17 @@
-// import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { NavLink } from "react-router-dom";
 
 export default function Products() {
-  // const choices = ["cate1.png", "cate3.png", "cate2.png"];
   const choices = [
-    // { title: "Stationery", img: "stationery.jpg" },
     {
       title: "Stationery",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688008/stationery_rttxkz.jpg",
     },
-    // { title: "School Uniforms", img: "uniforms.jpg" },
     {
       title: "School Uniforms",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688036/uniforms_kscbha.jpg",
     },
     {
-      title: "Exam Books",
+      title: "Books",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688005/books_gt3z0r.jpg",
     },
   ];

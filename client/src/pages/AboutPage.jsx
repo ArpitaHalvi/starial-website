@@ -180,15 +180,7 @@ export default function AboutPage() {
             <div>
               {teamMembers.map((member, index) => {
                 return (
-                  <div
-                    className="member"
-                    key={index}
-                    // style={{
-                    //   backgroundImage: `url("${member.img}") `,
-                    //   backgroundRepeat: "no-repeat",
-                    //   backgroundSize: "cover",
-                    // }}
-                  >
+                  <div className="member" key={index}>
                     <img src={member.img} alt="" />
                     <div>
                       <h5>{member.name}</h5>
@@ -221,21 +213,12 @@ export default function AboutPage() {
             <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
               <IoLogoGooglePlaystore className="link-icon" /> Play Store
             </Link>
-            <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
+            <Link to="https://apps.apple.com/us/app/starial-stationery-uniform/id6477531287">
               <FaApple className="link-icon" /> App Store
             </Link>
           </div>
-          <div className="left-div">
-            {/* <img src="click1.png" alt="" className="img-2" /> */}
-            {/* <img src="rich-click-me.png" alt="" className="img-1" /> */}
-          </div>
-          <div className="right-div">
-            {/* <img src="click2.png" alt="" className="img-1" /> */}
-            {/* <img src="click-me.png" alt="" className="img-2" /> */}
-          </div>
         </div>
         <div className="starial-app">
-          {/* <img src="starial.jpg" alt="" /> */}
           <img
             src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687822/starial_ewf2vu.jpg"
             alt="Starial Brochure"
