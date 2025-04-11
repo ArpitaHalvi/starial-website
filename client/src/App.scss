@@ -1949,262 +1949,6 @@ $largeScreen: 1180px;
   }
 }
 
-// ------------------------ SIGN UP STYLES --------------------
-.signup-section {
-  width: 100%;
-  height: 90vh;
-  @include index.res-grid;
-  .signup-form {
-    width: 60%;
-    background-color: white;
-    filter: drop-shadow(5px 5px 5px grey);
-    // padding: 4rem 3rem;
-    padding: 2rem;
-    @include index.flex-box($flex-dir: column);
-    gap: 3rem;
-    border-radius: 5px;
-    h2 {
-      font-size: 2rem;
-      border-bottom: 2px solid #00b7ff;
-    }
-    div {
-      width: 90%;
-      @include index.flex-box($flex-dir: column);
-      gap: 2rem;
-      input {
-        width: 100%;
-        padding: 0.5rem;
-        border: none;
-        border-bottom: 2px solid #c2bfbf;
-        outline: none;
-        font-size: 1.1rem;
-      }
-    }
-    button {
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      border: none;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: all 200ms ease-in;
-      background-color: #8fdfff;
-      &:hover {
-        background-color: #00b7ff;
-        color: black;
-      }
-    }
-    .already-acc {
-      width: 100%;
-      @include index.flex-box;
-      p {
-        @include index.flex-box;
-        gap: 0.5rem;
-        a {
-          @include index.flex-box;
-          color: darkblue;
-          gap: 0.3rem;
-        }
-      }
-    }
-  }
-  @media (width<=1350px) {
-    .signup-form {
-      width: 65%;
-      @media (width<=1120px) {
-        width: 75%;
-      }
-    }
-  }
-  @media (width<=1100px) {
-    @include index.res-grid(100%);
-    .signup-form {
-      width: 50%;
-      @media (width<=1000px) {
-        width: 60%;
-      }
-      @media (width<=600px) {
-        width: 80%;
-      }
-      @media (width<=500px) {
-        width: 90%;
-      }
-    }
-  }
-}
-
-// ------------------------ LOGIN STYLES ----------------------
-.login-section {
-  width: 100%;
-  height: 90vh;
-  // @include index.flex-box;
-  @include index.res-grid;
-  .login-form {
-    width: 60%;
-    background-color: white;
-    filter: drop-shadow(5px 5px 5px grey);
-    padding: 3rem;
-    @include index.flex-box($flex-dir: column);
-    gap: 1rem;
-    border-radius: 5px;
-    h2 {
-      font-size: 2rem;
-      // padding: 1rem;
-      margin: 5% 0;
-      border-bottom: 2px solid #00b7ff;
-    }
-    div {
-      width: 100%;
-      @include index.flex-box($align-items: flex-start, $flex-dir: column);
-      gap: 0.5rem;
-      label {
-        font-size: 1.1rem;
-      }
-      input {
-        width: 100%;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        font-size: 1.1rem;
-        outline: none;
-        border: 2px solid #a6a5a5;
-      }
-    }
-    button {
-      font-size: 1rem;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      margin-top: 5%;
-      background-color: #8fdfff;
-      cursor: pointer;
-      transition: all 200ms ease-in;
-      &:hover {
-        background-color: #00b7ff;
-      }
-    }
-    p {
-      width: 100%;
-      @include index.flex-box;
-      gap: 0.5rem;
-      a {
-        @include index.flex-box;
-        gap: 0.2rem;
-        color: darkblue;
-      }
-    }
-  }
-  @media (width<=1350px) {
-    .login-form {
-      width: 65%;
-      @media (width<=1120px) {
-        width: 75%;
-      }
-    }
-  }
-  @media (width<=1100px) {
-    @include index.res-grid(100%);
-    .login-form {
-      width: 50%;
-      @media (width<=1000px) {
-        width: 60%;
-      }
-      @media (width<=600px) {
-        width: 80%;
-      }
-      @media (width<=500px) {
-        width: 90%;
-      }
-    }
-  }
-}
-
-// --------------------- REGISTER STYLES -----------------------
-.register-section {
-  width: 100%;
-  height: 90vh;
-  @include index.flex-box;
-  .register-form {
-    width: 40%;
-    background-color: white;
-    filter: drop-shadow(5px 5px 5px grey);
-    padding: 2rem;
-    @include index.flex-box($flex-dir: column);
-    gap: 2rem;
-    border-radius: 5px;
-    h2 {
-      font-size: 2rem;
-      border-bottom: 2px solid #00b7ff;
-    }
-    div {
-      width: 100%;
-      @include index.flex-box;
-      gap: 0.5rem;
-      div {
-        @include index.flex-box($flex-dir: column, $align-items: flex-start);
-        gap: 0.5rem;
-        input {
-          width: 100%;
-          padding: 0.5rem;
-          border-radius: 5px;
-          border: 2px solid #c2bfbf;
-          outline: none;
-          font-size: 1.1rem;
-        }
-      }
-    }
-    button {
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      border: none;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: all 200ms ease-in;
-      background-color: #8fdfff;
-      &:hover {
-        background-color: #00b7ff;
-        color: black;
-      }
-    }
-    .already-acc {
-      width: 80%;
-      @include index.flex-box;
-      p {
-        @include index.flex-box;
-        gap: 1rem;
-        a {
-          @include index.flex-box;
-          color: darkblue;
-          gap: 0.3rem;
-        }
-      }
-    }
-  }
-  @media (width<=800px) {
-    height: auto;
-    padding: 2rem;
-    .register-form {
-      width: 80%;
-      padding: 3rem;
-      @media (width<=700px) {
-        width: 90%;
-      }
-      @media (width<=600px) {
-        width: 100%;
-        padding: 2rem;
-      }
-      div {
-        width: 100%;
-        flex-direction: column;
-        div {
-          width: 100%;
-          input {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
-
 // ---------------------- PRODUCTS STYLES --------------------
 .products-section {
   width: 100%;
@@ -3484,17 +3228,17 @@ $largeScreen: 1180px;
       position: relative;
       // margin: 2%;
       padding: 2rem 0;
-      // border: 1px solid white;
-      // background-color: grey;
-      // gap: 2rem;
       // background: url("https://res.cloudinary.com/dgkv2gft7/image/upload/v1743691550/bg2_a7xy7z.png")
       // left/contain no-repeat;
+      border-radius: 10px;
       .client-img {
         width: 100%;
         height: 100%;
         // object-fit: cover;
         // aspect-ratio: 3/2;
         @include index.img-setting(50%);
+        filter: drop-shadow(5px 5px 5px grey);
+        border-radius: 10px;
         // border: 1px solid white;
         // border-radius: 60% 40% 30% 70%/ 60% 30% 70% 40%;
       }
@@ -3509,6 +3253,7 @@ $largeScreen: 1180px;
         padding: 2rem;
         background-color: white;
         background-color: index.$dark-blue;
+        // background-color: #b1e9ff;
         color: white;
         border-radius: 5px;
         @include index.flex-box($flex-dir: column);

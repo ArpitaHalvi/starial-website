@@ -14,10 +14,10 @@ export default function Brands() {
       <h2>Shop the top brands</h2>
       <div className="brands">
         {brands.map((b, index) => {
-          return <img src={b} alt="" className="brand" key={index} />;
+          return <img src={b} alt="Brand logo" className="brand" key={index} />;
         })}
         {brands.map((b, index) => {
-          return <img src={b} alt="" className="brand" key={index} />;
+          return <img src={b} alt="Brand logo" className="brand" key={index} />;
         })}
       </div>
     </section>

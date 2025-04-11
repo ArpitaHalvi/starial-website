@@ -11,7 +11,7 @@ export default function Footer() {
   const links1 = [
     { title: "About Us", url: "/about" },
     { title: "Shipping Policy", url: "/shipping-policy" },
-    { title: "Vendors Inquiry", url: "/vendors" },
+    { title: "Become a Seller", url: "/vendors" },
     { title: "Terms & Conditions", url: "/terms-conditions" },
   ];
   const links2 = [

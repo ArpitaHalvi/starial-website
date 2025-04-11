@@ -34,7 +34,7 @@ export default function Clients() {
       name: "The Book House",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743863194/client-1_njy2gc.png",
+      img: "book-house2.jpg",
     },
     {
       name: "Akash Pustak Sadan",
