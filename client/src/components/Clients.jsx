@@ -60,7 +60,7 @@ export default function Clients() {
   }, []);
   return (
     <section className="clients-section">
-      <h2>Our Clients</h2>
+      <h2>Our Partners</h2>
       <div className="clients">
         {/* {clients.map((c, idx) => { */}
         {/* return ( */}
