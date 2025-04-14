@@ -12,11 +12,11 @@
   box-shadow: 2px 2px 7px grey;
   background-color: white;
   .logo {
-    width: 60%;
+    width: 50%;
     padding-left: 1.5rem;
     a {
       img {
-        @include index.img-setting(18%);
+        @include index.img-setting(20%);
       }
     }
     @media (max-width: 1000px) {
@@ -24,7 +24,7 @@
     }
   }
   .navbar {
-    width: 40%;
+    width: 50%;
     @include index.flex-box;
     font-size: 1.1rem;
     .links {
@@ -3593,5 +3593,202 @@ $largeScreen: 1180px;
   }
   h4 {
     @include h4-style;
+  }
+}
+
+// ------------------- CAREERS PAGE ---------------------
+.careers-page {
+  width: 100%;
+  @include index.flex-box($flex-dir: column);
+  gap: 2rem;
+  .career-intro {
+    width: 100%;
+    @include index.flex-box($flex-dir: column);
+    padding: 3rem 5rem;
+    gap: 2rem;
+    h1 {
+      width: 70%;
+      font-size: 3rem;
+      text-align: center;
+      z-index: 3;
+      text-transform: capitalize;
+      color: index.$dark-blue;
+    }
+    img {
+      width: 80%;
+      border-radius: 50px;
+      background-color: grey;
+    }
+    // &::after {
+    //   content: "";
+    //   width: 100%;
+    //   height: 90%;
+    //   position: absolute;
+    //   background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    //   bottom: 0;
+    //   left: 0;
+    // }
+  }
+  .about-company {
+    width: 90%;
+    height: 50vh;
+    padding: 2rem 3rem;
+    @include index.res-grid;
+    .about {
+      width: 100%;
+      height: 50vh;
+      @include index.flex-box($flex-dir: column, $align-items: flex-start);
+      gap: 2rem;
+      p {
+        width: 80%;
+        font-size: 1.2rem;
+        color: index.$dark-blue;
+        border-radius: 0 100px 100px 0;
+      }
+      a {
+        font-size: 1rem;
+        background-color: index.$dark-blue;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+      }
+    }
+    div {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        background-color: grey;
+      }
+    }
+  }
+  .stats-section {
+    width: 90%;
+    height: 50vh;
+    @include index.flex-box($flex-dir: column, $align-items: flex-start);
+    padding: 2rem;
+    gap: 3rem;
+    margin-top: 5%;
+    h3 {
+      font-size: 2.5rem;
+      color: index.$dark-blue;
+    }
+    .stats {
+      width: 100%;
+      @include index.flex-box($justify-content: space-around);
+      .stat {
+        padding: 2rem;
+        @include index.flex-box($flex-dir: column);
+        color: index.$dark-blue;
+        h4 {
+          font-size: 3rem;
+        }
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  .open-roles {
+    width: 90%;
+    height: 80vh;
+    padding: 2rem;
+    @include index.flex-box($flex-dir: column, $align-items: flex-start);
+    gap: 2rem;
+    h3 {
+      font-size: 2.5rem;
+      color: index.$dark-blue;
+    }
+    .roles {
+      width: 100%;
+      @include index.flex-box;
+      gap: 2rem;
+      .role {
+        width: 100%;
+        height: 50vh;
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 5px;
+        filter: drop-shadow(5px 5px 5px #bdbdbd);
+        @include index.flex-box($flex-dir: column, $align-items: flex-start);
+        gap: 0.5rem;
+        img {
+          width: 100%;
+          background-color: grey;
+          height: 80%;
+        }
+        h4 {
+          font-size: 1.1rem;
+          color: index.$dark-blue;
+        }
+        a {
+          font-size: 1rem;
+          background-color: transparent;
+          border: 2px solid index.$dark-blue;
+          padding: 0.5rem 1rem;
+          color: index.$dark-blue;
+          border-radius: 5px;
+          transition: all 0.3s ease-in;
+          &:hover {
+            background-color: index.$dark-blue;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .perks-faqs {
+    width: 90%;
+    height: 50vh;
+    padding: 2rem;
+    margin-bottom: 5%;
+    // background-color: pink;
+    @include index.res-grid;
+    border-radius: 5px;
+    // background: linear-gradient(to bottom, #ffffff, #93d9ff);
+    filter: drop-shadow(5px 5px 5px #cbcbcb);
+    .perks {
+      // width: 100%;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      border-radius: 5px 0 0 5px;
+      @include index.flex-box($flex-dir: column);
+      gap: 1rem;
+      border-right: 2px solid index.$dark-blue;
+      h3 {
+        font-size: 1.5rem;
+        color: index.$dark-blue;
+      }
+      ul {
+        @include index.flex-box($flex-dir: column, $align-items: flex-start);
+        .perk {
+          padding: 0.3rem;
+        }
+      }
+    }
+    .faqs {
+      width: 100%;
+      height: 100%;
+      padding: 2rem;
+      border-radius: 0 5px 5px 0;
+      gap: 1rem;
+      @include index.flex-box($flex-dir: column);
+      background-color: white;
+      h3 {
+        font-size: 1.5rem;
+        color: index.$dark-blue;
+      }
+      .faq {
+        @include index.flex-box($flex-dir: column);
+        p {
+          width: 100%;
+          padding: 0.5rem;
+          @include index.flex-box($justify-content: flex-start);
+          gap: 0.5rem;
+        }
+      }
+    }
   }
 }

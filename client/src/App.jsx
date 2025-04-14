@@ -19,6 +19,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ShippingPolicy from "./pages/ShippingPolicy";
 import ReturnPolicy from "./pages/ReturnPolicy";
 import Vendors from "./pages/Vendors";
+import Careers from "./pages/Careers";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -50,6 +51,7 @@ function App() {
           <Route path="/shipping-policy" element={<ShippingPolicy />} />
           <Route path="/return-policy" element={<ReturnPolicy />} />
           <Route path="/vendors" element={<Vendors />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       )}

@@ -59,6 +59,15 @@ export default function Navbar() {
               Categories
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/careers"
+              className={({ isActive }) => (isActive ? "active" : "a")}
+              onClick={() => setIsOpen(false)}
+            >
+              Careers
+            </NavLink>
+          </li>
           {/* <li> */}
           <NavLink
             to="/contact"
