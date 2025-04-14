@@ -3837,8 +3837,6 @@ $largeScreen: 1180px;
           border-radius: 50px;
         }
       }
-      .select-role {
-      }
       select {
         padding: 0.7rem;
         border-radius: 5px;
@@ -3862,6 +3860,88 @@ $largeScreen: 1180px;
           color: index.$dark-blue;
           background-color: transparent;
         }
+      }
+    }
+  }
+}
+
+// --------------------- LOGIN FORM ------------------------
+.login-section {
+  width: 100%;
+  height: 90vh;
+  padding: 2rem;
+  @include index.flex-box($flex-dir: column);
+  gap: 2rem;
+  background: linear-gradient(to bottom, #ffffff, #93d9ff);
+  .login-form {
+    width: 30%;
+    height: 50vh;
+    @include index.flex-box($flex-dir: column);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    gap: 1rem;
+    filter: drop-shadow(5px 5px 5px #b6b6b6);
+    h2 {
+      font-size: 3rem;
+      color: index.$dark-blue;
+    }
+    div {
+      width: 100%;
+      @include index.flex-box($flex-dir: column, $align-items: flex-start);
+      gap: 0.5rem;
+      label {
+        font-size: 1.1rem;
+        color: index.$dark-blue;
+      }
+      input {
+        width: 100%;
+        padding: 0.7rem;
+        border-radius: 5px;
+        outline: none;
+        font-size: 1rem;
+        // border: 2px solid index.$dark-blue;
+        border: none;
+        background-color: #e7e6e6;
+        color: grey;
+        border-radius: 50px;
+      }
+    }
+    button {
+      background-color: index.$dark-blue;
+      padding: 0.6rem 1rem;
+      border-radius: 5px;
+      color: white;
+      font-size: 1.1rem;
+      border: 2px solid index.$dark-blue;
+      transition: all 0.3s ease-in;
+      cursor: pointer;
+      &:hover {
+        color: index.$dark-blue;
+        background-color: transparent;
+      }
+    }
+  }
+  @media (max-width: 1200px) {
+    .login-form {
+      width: 40%;
+      @media (max-width: 1000px) {
+        width: 50%;
+      }
+      @media (max-width: 800px) {
+        width: 60%;
+      }
+      @media (max-width: 700px) {
+        width: 70%;
+      }
+      @media (max-width: 600px) {
+        width: 80%;
+      }
+      @media (max-width: 500px) {
+        width: 90%;
+      }
+      @media (max-width: 468px) {
+        width: 100%;
       }
     }
   }

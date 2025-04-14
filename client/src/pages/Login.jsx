@@ -1,14 +1,10 @@
 import { useState } from "react";
-import { IoArrowForward } from "react-icons/io5";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import axios from "axios";
-import { useAuth } from "../store/auth";
 
 export default function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
   const navigate = useNavigate();
-  const { storeTokenInLS } = useAuth();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser((prev) => {
@@ -19,31 +15,17 @@ export default function Login() {
     });
   };
   const handleSubmit = async (e) => {
-    try {
-      e.preventDefault();
-      await axios
-        .post("http://localhost:5002/api/auth/login", user, {
-          headers: { "Content-Type": "application/json" },
-        })
-        .then((res) => {
-          storeTokenInLS(res.data.token);
-          console.log("Response: ", res);
-          setUser({ email: "", password: "" });
-          toast.success(res.data.message, {
-            onClose: navigate("/categories"),
-          });
-        })
-        .catch((e) => {
-          toast.error(
-            e.response.data.extraDetails
-              ? e.response.data.extraDetails
-              : e.response.data.message
-          );
-          console.error(e);
-        });
-    } catch (e) {
-      console.error("Error: ", e);
-      toast.error("Error while loggin in.");
+    e.preventDefault();
+    if (
+      user.email === import.meta.env.VITE_LOGIN_EMAIL &&
+      user.password === import.meta.env.VITE_LOGIN_PASSWORD
+    ) {
+      localStorage.setItem("login-token", "shdsvdvreer45343vdfvdv");
+      toast.success("Logged in successfully!", {
+        onClose: navigate("/careers"),
+      });
+    } else {
+      toast.error("Unable to login!");
     }
   };
   return (
@@ -74,13 +56,7 @@ export default function Login() {
             required
           />
         </div>
-        <button>LOGIN</button>
-        <p>
-          Don't have an account?
-          <NavLink to="/signup">
-            Sign Up <IoArrowForward />
-          </NavLink>
-        </p>
+        <button type="submit">LOGIN</button>
       </form>
     </section>
   );

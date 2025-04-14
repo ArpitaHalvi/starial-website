@@ -1,8 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { MdWorkspacePremium } from "react-icons/md";
 import { FaChevronDown } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 export default function Careers() {
+  const [isAdmin, setIsAdmin] = useState(false);
   const openRoles = [
     { title: "Social Media Manager" },
     { title: "Graphic Designer" },
@@ -27,6 +29,18 @@ export default function Careers() {
     { ques: "What's the duration of the internship?", ans: "" },
     { ques: "Do I need prior experience to apply?", ans: "" },
   ];
+  useEffect(() => {
+    const checkAdmin = () => {
+      const token = localStorage.getItem("login-token");
+      if (token) {
+        setIsAdmin(true);
+      } else {
+        setIsAdmin(false);
+      }
+    };
+    checkAdmin();
+  }, []);
+  const addRoles = () => {};
   return (
     <section className="careers-page">
       <div className="career-intro">
@@ -66,14 +80,13 @@ export default function Careers() {
             return (
               <div className="role" key={index}>
                 <img src="" alt="" />
-                {/* <div> */}
                 <h4>{roles.title}</h4>
                 <NavLink to="/careers/apply-now">Apply Now</NavLink>
-                {/* </div> */}
               </div>
             );
           })}
         </div>
+        {isAdmin && <button onClick={addRoles}>Add Roles</button>}
       </div>
       <div className="perks-faqs">
         <div className="perks">

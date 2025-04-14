@@ -21,6 +21,7 @@ import ReturnPolicy from "./pages/ReturnPolicy";
 import Vendors from "./pages/Vendors";
 import Careers from "./pages/Careers";
 import ApplyForm from "./pages/ApplyForm";
+import Login from "./pages/Login";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -53,6 +54,7 @@ function App() {
           <Route path="/return-policy" element={<ReturnPolicy />} />
           <Route path="/vendors" element={<Vendors />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/careers-access-admin/admin/true" element={<Login />} />
           <Route path="/careers/apply-now" element={<ApplyForm />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
