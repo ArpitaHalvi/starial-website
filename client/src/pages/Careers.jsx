@@ -2,19 +2,23 @@ import { NavLink } from "react-router-dom";
 import { MdWorkspacePremium } from "react-icons/md";
 import { FaChevronDown } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import Modal from "../modals/Modal";
+import AddRoles from "../components/AddRoles";
 
+const roles = [
+  { img: "", title: "Social Media Manager" },
+  { img: "", title: "Graphic Designer" },
+  { img: "", title: "Web Developer" },
+  { img: "", title: "Product Manager" },
+];
 export default function Careers() {
   const [isAdmin, setIsAdmin] = useState(false);
-  const openRoles = [
-    { title: "Social Media Manager" },
-    { title: "Graphic Designer" },
-    { title: "Web Developer" },
-    { title: "Product Manager" },
-  ];
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [openRoles, setOpenRoles] = useState(roles);
   const stats = [
-    { title: "Team Members", count: "1k" },
-    { title: "Happy Clients", count: 10 },
-    { title: "Interns Trained", count: 10 },
+    { title: "Team Members", count: "25+" },
+    { title: "Happy Clients", count: "10+" },
+    { title: "Interns Trained", count: "170+" },
   ];
   const perks = [
     "Certificate of Completion",
@@ -40,9 +44,13 @@ export default function Careers() {
     };
     checkAdmin();
   }, []);
-  const addRoles = () => {};
   return (
     <section className="careers-page">
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <AddRoles roles={openRoles} setRole={setOpenRoles} />
+        </Modal>
+      )}
       <div className="career-intro">
         <h1>Grow with us - Explore Opportunities to Learn, Build & Create.</h1>
         <img src="/careers.jpg" alt="" />
@@ -57,7 +65,7 @@ export default function Careers() {
           <NavLink to="/about">Know More</NavLink>
         </div>
         <div>
-          <img src="" alt="" />
+          <img src="fvdf" alt="" />
         </div>
       </div>
       <div className="stats-section">
@@ -79,14 +87,18 @@ export default function Careers() {
           {openRoles.map((roles, index) => {
             return (
               <div className="role" key={index}>
-                <img src="" alt="" />
+                <img src={roles.img} alt="Role Image" />
                 <h4>{roles.title}</h4>
                 <NavLink to="/careers/apply-now">Apply Now</NavLink>
               </div>
             );
           })}
         </div>
-        {isAdmin && <button onClick={addRoles}>Add Roles</button>}
+        {isAdmin && (
+          <button onClick={() => setIsModalOpen(true)} className="add-roles">
+            Add Roles
+          </button>
+        )}
       </div>
       <div className="perks-faqs">
         <div className="perks">
