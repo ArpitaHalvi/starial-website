@@ -3698,15 +3698,6 @@ $largeScreen: 1180px;
       border-radius: 50px;
       background-color: grey;
     }
-    // &::after {
-    //   content: "";
-    //   width: 100%;
-    //   height: 90%;
-    //   position: absolute;
-    //   background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-    //   bottom: 0;
-    //   left: 0;
-    // }
   }
   .about-company {
     width: 90%;
@@ -3771,7 +3762,7 @@ $largeScreen: 1180px;
   }
   .open-roles {
     width: 90%;
-    height: 80vh;
+    height: 90vh;
     padding: 2rem;
     @include index.flex-box($flex-dir: column, $align-items: flex-start);
     gap: 2rem;
@@ -3783,35 +3774,60 @@ $largeScreen: 1180px;
       width: 100%;
       @include index.flex-box;
       gap: 2rem;
-      .role {
+      .slick-dots {
+        color: index.$dark-blue;
+      }
+      .slick-list {
+        @include index.flex-box;
+      }
+      .slick-track {
+        @include index.flex-box;
+        // background-color: plum;
+      }
+      .slick-slider {
         width: 100%;
-        height: 50vh;
-        background-color: white;
-        padding: 1.5rem;
-        border-radius: 5px;
-        filter: drop-shadow(5px 5px 5px #bdbdbd);
-        @include index.flex-box($flex-dir: column, $align-items: flex-start);
-        gap: 0.5rem;
-        img {
+        height: 60vh;
+        // background-color: pink;
+        @include index.flex-box;
+        .slick-slide {
           width: 100%;
-          background-color: grey;
-          height: 80%;
-        }
-        h4 {
-          font-size: 1.1rem;
-          color: index.$dark-blue;
-        }
-        a {
-          font-size: 1rem;
-          background-color: transparent;
-          border: 2px solid index.$dark-blue;
-          padding: 0.5rem 1rem;
-          color: index.$dark-blue;
-          border-radius: 5px;
-          transition: all 0.3s ease-in;
-          &:hover {
-            background-color: index.$dark-blue;
-            color: white;
+          // @include index.flex-box;
+          margin: 0.4%;
+          .role {
+            width: 100%;
+            height: 50vh;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 5px;
+            filter: drop-shadow(5px 5px 5px #bdbdbd);
+            @include index.flex-box(
+              $flex-dir: column,
+              // $align-items: flex-start
+            );
+            gap: 1rem;
+            img {
+              width: 100%;
+              background-color: grey;
+              height: 80%;
+            }
+            h4 {
+              height: 10%;
+              font-size: 1.1rem;
+              color: index.$dark-blue;
+            }
+            a {
+              font-size: 1rem;
+              background-color: transparent;
+              border: 2px solid index.$dark-blue;
+              padding: 0.5rem 1rem;
+              color: index.$dark-blue;
+              border-radius: 5px;
+              transition: all 0.3s ease-in;
+              &:hover {
+                background-color: index.$dark-blue;
+                color: white;
+              }
+            }
           }
         }
       }
@@ -3829,6 +3845,39 @@ $largeScreen: 1180px;
       &:hover {
         background-color: transparent;
         color: index.$dark-blue;
+      }
+    }
+    @media (max-width: 1100px) {
+      @media (max-width: 900px) {
+        width: 100%;
+      }
+      @media (max-width: 750px) {
+        width: 90%;
+      }
+      @media (max-width: 468px) {
+        width: 100%;
+      }
+      .roles {
+        .slick-slider {
+          .slick-slide {
+            margin: 1%;
+            @media (max-width: 900px) {
+              margin: 0.5%;
+              @media (max-width: 750px) {
+                margin: 1.5%;
+              }
+              @media (max-width: 650px) {
+                margin: 1%;
+              }
+              @media (max-width: 500px) {
+                margin: 0.5%;
+              }
+              @media (max-width: 468px) {
+                margin: 0.3%;
+              }
+            }
+          }
+        }
       }
     }
   }

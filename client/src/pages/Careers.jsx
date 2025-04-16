@@ -4,17 +4,43 @@ import { FaChevronDown } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Modal from "../modals/Modal";
 import AddRoles from "../components/AddRoles";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const roles = [
   { img: "", title: "Social Media Manager" },
   { img: "", title: "Graphic Designer" },
-  { img: "", title: "Web Developer" },
-  { img: "", title: "Product Manager" },
+  { img: "", title: "Product Editor" },
+  { img: "", title: "Video Editor" },
+  { img: "", title: "HR" },
+  { img: "", title: "Finance" },
 ];
 export default function Careers() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openRoles, setOpenRoles] = useState(roles);
+  const settings = {
+    dots: true, // Show dots
+    infinite: true, // Loop the carousel
+    speed: 500, // Transition speed
+    slidesToShow: 4, // Number of slides to show at once
+    slidesToScroll: 1, // Number of slides to scroll at once
+    responsive: [
+      {
+        breakpoint: 1400,
+        settings: { slidesToShow: 3 },
+      },
+      {
+        breakpoint: 1100,
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 750,
+        settings: { slidesToShow: 1 },
+      },
+    ],
+  };
   const stats = [
     { title: "Team Members", count: "25+" },
     { title: "Happy Clients", count: "10+" },
@@ -84,15 +110,17 @@ export default function Careers() {
       <div className="open-roles">
         <h3>We're Hiring!</h3>
         <div className="roles">
-          {openRoles.map((roles, index) => {
-            return (
-              <div className="role" key={index}>
-                <img src={roles.img} alt="Role Image" />
-                <h4>{roles.title}</h4>
-                <NavLink to="/careers/apply-now">Apply Now</NavLink>
-              </div>
-            );
-          })}
+          <Slider {...settings}>
+            {openRoles.map((roles, index) => {
+              return (
+                <div className="role" key={index}>
+                  <img src={roles.img} alt="Role Image" />
+                  <h4>{roles.title}</h4>
+                  <NavLink to="/careers/apply-now">Apply Now</NavLink>
+                </div>
+              );
+            })}
+          </Slider>
         </div>
         {isAdmin && (
           <button onClick={() => setIsModalOpen(true)} className="add-roles">
