@@ -20,6 +20,10 @@ export default function Careers() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openRoles, setOpenRoles] = useState(roles);
+  const [openIndex, setOpenIndex] = useState(null);
+  const handleClick = (index) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
+  };
   const settings = {
     dots: true, // Show dots
     infinite: true, // Loop the carousel
@@ -54,10 +58,26 @@ export default function Careers() {
     "Collaborative Team Culture",
   ];
   const faqs = [
-    { ques: "Are the Internships paid?", ans: "" },
-    { ques: "Is the internship remote or in-office?", ans: "" },
-    { ques: "What's the duration of the internship?", ans: "" },
-    { ques: "Do I need prior experience to apply?", ans: "" },
+    {
+      ques: "Are the Internships paid?",
+      ans: "Currently, our internships are paid. You receive certificates, mentorship, and priority for paid opportunities in the future.",
+    },
+    {
+      ques: "Is the internship remote or in-office?",
+      ans: "All roles are currently in office unless specified otherwise.",
+    },
+    {
+      ques: "What's the duration of the internship?",
+      ans: "Most internships last 2 to 3 months, depending on the role and your availability.",
+    },
+    {
+      ques: " Can I get a Letter of Recommendation?",
+      ans: " Yes! Based on your dedication and performance, we provide a personalized LOR.",
+    },
+    {
+      ques: "Do I need prior experience to apply?",
+      ans: "Not at all! We welcome passionate learners, even if you're just starting out.",
+    },
   ];
   useEffect(() => {
     const checkAdmin = () => {
@@ -146,9 +166,21 @@ export default function Careers() {
           <div className="faq">
             {faqs.map((faq, index) => {
               return (
-                <p key={index}>
-                  <FaChevronDown /> {faq.ques}
-                </p>
+                <div key={index}>
+                  <p
+                    className={`ques ${openIndex === index ? "active" : ""}`}
+                    onClick={() => handleClick(index)}
+                  >
+                    <FaChevronDown className="down-arrow" /> {faq.ques}
+                  </p>
+                  <div
+                    className={`answer-wrapper ${
+                      openIndex === index ? "open" : ""
+                    }`}
+                  >
+                    <p className="ans">{faq.ans}</p>
+                  </div>
+                </div>
               );
             })}
           </div>

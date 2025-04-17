@@ -3984,7 +3984,6 @@ $largeScreen: 1180px;
   }
   .perks-faqs {
     width: 90%;
-    height: 50vh;
     padding: 2rem;
     margin-bottom: 5%;
     @include index.res-grid;
@@ -4005,6 +4004,7 @@ $largeScreen: 1180px;
       }
       ul {
         @include index.flex-box($flex-dir: column, $align-items: flex-start);
+        gap: 0.5rem;
         .perk {
           padding: 0.3rem;
         }
@@ -4023,17 +4023,109 @@ $largeScreen: 1180px;
         color: index.$dark-blue;
       }
       .faq {
+        width: 70%;
         @include index.flex-box($flex-dir: column);
-        p {
+        div {
           width: 100%;
           padding: 0.5rem;
-          @include index.flex-box($justify-content: flex-start);
+          @include index.flex-box($align-items: flex-start, $flex-dir: column);
           gap: 0.5rem;
+          .ques {
+            @include index.flex-box($justify-content: flex-start);
+            gap: 0.5rem;
+            .down-arrow {
+              transition: transform 0.3s ease;
+            }
+            &.active .down-arrow {
+              transform: rotate(180deg);
+            }
+          }
+          .answer-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0;
+            &.open {
+              max-height: 220px;
+              padding: 1rem;
+            }
+            .ans {
+              line-height: 1.5;
+              font-size: 0.95rem;
+            }
+          }
+        }
+        @media (max-width: 1250px) {
+          width: 90%;
+        }
+        @media (max-width: 950px) {
+          width: 100%;
         }
       }
     }
     @media (max-width: 1100px) {
       width: 100%;
+    }
+    @media (max-width: 910px) {
+      width: 80%;
+      @include index.res-grid(100%);
+      .perks {
+        border: none;
+        border-bottom: 2px solid index.$dark-blue;
+        border-radius: 5px 5px 0 0;
+        ul {
+          .perk {
+            padding: 0.5rem;
+          }
+        }
+      }
+      .faqs {
+        border-radius: 0 0 5px 5px;
+        .faq {
+          width: 75%;
+        }
+      }
+    }
+    @media (max-width: 750px) {
+      width: 100%;
+      .faqs {
+        .faq {
+          width: 90%;
+          @media (max-width: 570px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+    @media (max-width: 500px) {
+      .perks {
+        ul {
+          gap: 0;
+        }
+      }
+      .faqs {
+        .faq {
+          div {
+            padding: 0.3rem;
+          }
+        }
+      }
+    }
+    @media (max-width: 468px) {
+      .perks {
+        padding: 2rem 1rem;
+        ul .perk {
+          font-size: 0.9rem;
+        }
+      }
+      .faqs {
+        padding: 2rem 1rem;
+        .faq {
+          div {
+            font-size: 0.9rem;
+          }
+        }
+      }
     }
   }
 }

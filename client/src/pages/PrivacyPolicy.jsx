@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
   return (
     <section className="privacy-policies">
       <h2>Privacy Policy</h2>
-      <h4>Last Updated - 18-06-2022</h4>
+      <h4>Last Updated - 18-06-2024</h4>
       <div className="privacy-policy">
         <div className="privacy">
           <h3>Your privacy is important to us</h3>
@@ -31,7 +31,7 @@ export default function PrivacyPolicy() {
               Jabalpur,
             </p>
             <p>Jabalpur 482002 Madhya Pradesh , India</p>
-            <p>9131413886</p>
+            {/* <p>9131413886</p> */}
             It is Starial’s policy to respect your privacy regarding any
             information we may collect while operating our website. This Privacy
             Policy applies to www.starial.in/ (hereinafter, “us”, “we”, or
