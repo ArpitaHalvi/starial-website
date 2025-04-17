@@ -3614,7 +3614,7 @@ $largeScreen: 1180px;
     @include index.flex-box($flex-dir: column);
     gap: 2rem;
     .modal-content {
-      width: 30%;
+      width: 40%;
       @include index.flex-box($flex-dir: column);
       gap: 2rem;
       .close-btn {
@@ -3633,16 +3633,19 @@ $largeScreen: 1180px;
           color: black;
         }
       }
-      // ----------------- ADD ROLES SECTION ------------------
+      // ---------------- ADD ROLES SECTION ------------------
       .add-roles-section {
         width: 100%;
         .add-roles-form {
-          padding: 2rem;
+          padding: 1rem 2rem 2rem 2rem;
           background-color: white;
           filter: drop-shadow(5px 5px 5px #adadad6c);
           border-radius: 5px;
           @include index.flex-box($flex-dir: column);
           gap: 1rem;
+          img {
+            @include index.img-setting(30%);
+          }
           div {
             width: 100%;
             @include index.flex-box(
@@ -3674,6 +3677,31 @@ $largeScreen: 1180px;
             &:hover {
               background-color: transparent;
               color: index.$dark-blue;
+            }
+          }
+        }
+      }
+      @media (max-width: 1250px) {
+        width: 50%;
+        @media (max-width: 1000px) {
+          width: 60%;
+        }
+        @media (max-width: 800px) {
+          width: 70%;
+        }
+        @media (max-width: 600px) {
+          width: 90%;
+          .add-roles-section {
+            .add-roles-form {
+              img {
+                @include index.img-setting(40%);
+                @media (max-width: 468px) {
+                  @include index.img-setting(50%);
+                }
+              }
+              @media (max-width: 468px) {
+                padding: 1rem 1rem 2rem 1rem;
+              }
             }
           }
         }
@@ -3901,16 +3929,19 @@ $largeScreen: 1180px;
               $flex-dir: column,
               // $align-items: flex-start
             );
-            gap: 1rem;
+            // gap: 1rem;
             img {
               width: 100%;
               background-color: grey;
               height: 80%;
+              margin: 0 auto;
+              @include index.img-setting(80%);
             }
             h4 {
               height: 10%;
               font-size: 1.1rem;
               color: index.$dark-blue;
+              margin: 2% 0;
             }
             a {
               font-size: 1rem;
@@ -4200,6 +4231,58 @@ $largeScreen: 1180px;
       }
     }
   }
+  @media (max-width: 1300px) {
+    .apply-form {
+      width: 60%;
+      @media (max-width: 1100px) {
+        width: 70%;
+      }
+      @media (max-width: 900px) {
+        width: 80%;
+      }
+      @media (max-width: 800px) {
+        width: 90%;
+        h3 {
+          font-size: 2.5rem;
+        }
+      }
+      @media (max-width: 700px) {
+        width: 100%;
+        padding: 2rem 1rem;
+        h3 {
+          font-size: 2.5rem;
+        }
+      }
+      @media (max-width: 500px) {
+        padding: 1rem;
+        h3 {
+          font-size: 2rem;
+        }
+        form {
+          padding: 2rem 0.5rem;
+          label {
+            font-size: 1rem;
+          }
+          .input-container {
+            input {
+              font-size: 0.9rem;
+              padding: 0.6rem 0.7rem;
+            }
+          }
+          select {
+            font-size: 0.9rem;
+            padding: 0.6rem 0.7rem;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    padding: 2rem 1.5rem;
+  }
+  @media (max-width: 468px) {
+    padding: 2rem 1rem;
+  }
 }
 
 // --------------------- LOGIN FORM ------------------------
@@ -4211,7 +4294,7 @@ $largeScreen: 1180px;
   gap: 2rem;
   background: linear-gradient(to bottom, #ffffff, #93d9ff);
   .login-form {
-    width: 30%;
+    width: 25%;
     height: 50vh;
     @include index.flex-box($flex-dir: column);
     background-color: white;

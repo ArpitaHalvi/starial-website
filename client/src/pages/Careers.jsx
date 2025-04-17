@@ -8,28 +8,29 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-const roles = [
-  { img: "", title: "Social Media Manager" },
-  { img: "", title: "Graphic Designer" },
-  { img: "", title: "Product Editor" },
-  { img: "", title: "Video Editor" },
-  { img: "", title: "HR" },
-  { img: "", title: "Finance" },
-];
+// const roles = [
+//   { img: "/socialManager.svg", title: "Social Media Manager" },
+//   { img: "/graphicDesigner.svg", title: "Graphic Designer" },
+//   { img: "/productEditor.svg", title: "Product Editor" },
+//   { img: "/videoEditor.svg", title: "Video Editor" },
+//   // { img: "", title: "HR" },
+//   { img: "/finance.svg", title: "Finance" },
+// ];
 export default function Careers() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [openRoles, setOpenRoles] = useState(roles);
+  const [openRoles, setOpenRoles] = useState([]);
   const [openIndex, setOpenIndex] = useState(null);
   const handleClick = (index) => {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
   const settings = {
-    dots: true, // Show dots
-    infinite: true, // Loop the carousel
-    speed: 500, // Transition speed
-    slidesToShow: 4, // Number of slides to show at once
-    slidesToScroll: 1, // Number of slides to scroll at once
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 4,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1400,
@@ -90,6 +91,28 @@ export default function Careers() {
     };
     checkAdmin();
   }, []);
+  useEffect(() => {
+    const fetchRoles = async () => {
+      try {
+        const res = await fetch("http://localhost:4002/api/roles", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (res) {
+          const res_data = await res.json();
+          console.log("Roles Fetched.", res_data);
+          setOpenRoles(res_data);
+        } else {
+          console.error("Unable to load roles.");
+        }
+      } catch (e) {
+        console.error("Error while loading roles.", e);
+      }
+    };
+    fetchRoles();
+  }, []);
   return (
     <section className="careers-page">
       {isModalOpen && (
@@ -130,17 +153,22 @@ export default function Careers() {
       <div className="open-roles">
         <h3>We're Hiring!</h3>
         <div className="roles">
-          <Slider {...settings}>
-            {openRoles.map((roles, index) => {
-              return (
-                <div className="role" key={index}>
-                  <img src={roles.img} alt="Role Image" />
-                  <h4>{roles.title}</h4>
-                  <NavLink to="/careers/apply-now">Apply Now</NavLink>
-                </div>
-              );
-            })}
-          </Slider>
+          {openRoles.length !== 0 ? (
+            <Slider {...settings}>
+              {openRoles.map((roles) => {
+                const { _id, imgUrl, title } = roles;
+                return (
+                  <div className="role" key={_id}>
+                    <img src={imgUrl} alt="Role Image" />
+                    <h4>{title}</h4>
+                    <NavLink to="/careers/apply-now">Apply Now</NavLink>
+                  </div>
+                );
+              })}
+            </Slider>
+          ) : (
+            <p>No hirings posted.</p>
+          )}
         </div>
         {isAdmin && (
           <button onClick={() => setIsModalOpen(true)} className="add-roles">

@@ -1,5 +1,4 @@
 const nodemailer = require("nodemailer");
-const { Resend } = require("resend");
 
 const contact = (req, res, next) => {
   try {

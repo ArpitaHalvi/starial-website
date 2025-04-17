@@ -4,11 +4,15 @@ if (process.env.NODE_ENV !== "production") {
 
 const express = require("express");
 const app = express();
-const port = 5002;
+const port = 4002;
+const mongoose = require("mongoose");
 const cors = require("cors");
 const contactRoutes = require("./routers/contact-router");
 const downloadRoutes = require("./routers/download-link-router");
 const ErrorMiddleware = require("./middlewares/error-middleware");
+const roleRoutes = require("./routers/roles-router");
+const url = "mongodb://127.0.0.1:27017/starial";
+const applicantRoutes = require("./routers/applicant-router");
 
 const corsConfig = {
   origin: "http://localhost:5173",
@@ -19,10 +23,20 @@ const corsConfig = {
 app.use(cors(corsConfig));
 app.use(express.json());
 
-app.listen(port, () => {
-  console.log(`Listening on port : ${port}`);
-});
+mongoose
+  .connect(url)
+  .then(() => {
+    console.log("Connected successfully to database.");
+    app.listen(port, () => {
+      console.log(`Listening on port : ${port}`);
+    });
+  })
+  .catch((e) => {
+    console.error("Unable to connect to database.", e);
+  });
 
 app.use("/api/contact", contactRoutes);
 app.use("/api/download", downloadRoutes);
+app.use("/api/roles", roleRoutes);
+app.use("/api/applicant", applicantRoutes);
 app.use(ErrorMiddleware);
