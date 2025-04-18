@@ -6,6 +6,7 @@ const upload = require("../cloudinary/multer");
 const {
   newApplicant,
   showApplicants,
+  deleteApplicant,
 } = require("../controllers/applicant-controller");
 const applicantSchema = require("../validators/applicant-validator");
 
@@ -23,5 +24,6 @@ router.route("/new").post(
 );
 
 router.route("/").get(showApplicants);
+router.route("/:id/delete").delete(deleteApplicant);
 
 module.exports = router;

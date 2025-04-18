@@ -4,73 +4,57 @@ import { Link } from "react-router-dom";
 const stationery = [
   {
     name: "Art & Crafts",
-    img: "craft.jpg",
-    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687290/stationery5_vjhyxu.png",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744977078/craft_fo3set.jpg",
   },
   {
     name: "Notebooks",
-    img: "notebooks.jpg",
-    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687291/stationery6_toeeqf.png",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744977078/notebooks_thztna.jpg",
   },
   {
     name: "Writing Materials",
-    img: "pens.jpg",
-    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687293/stationery9_quuocg.png",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744977078/pens_ygkami.jpg",
   },
   {
     name: "Office Stationery",
-    img: "office.jpg",
-    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687196/stationery4_hpkwck.png",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744977078/office_nqrvsw.jpg",
   },
 ];
 
 const uniforms = [
   {
-    // name: "Billabong High International School (BHIS)",
     name: "Regular Dresses",
-    img: "regular-uniform.jpg",
-    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687164/school1_k22tix.jpg",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744977185/regular-uniform_suucfu.jpg",
   },
   {
-    // name: "Little World School",
     name: "House Dresses",
-    img: "house-uniforms.jpg",
-    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school4_xucuox.jpg",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744977184/house-dress_iruxii.jpg",
   },
   {
-    // name: "StemField International School",
     name: "Seasonal Dresses",
-    img: "coats.jpg",
-    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school3_ejn0wb.jpg",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744977186/winter-uniforms_wxfeuz.jpg",
   },
   {
-    // name: "Delhi Public School (DPS Jabalpur)",
     name: "Essentials",
-    img: "",
-    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687167/school2_s2skvq.jpg",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744977184/essentials_qcv8z2.jpg",
   },
 ];
 
 const books = [
   {
     name: "Academic Books",
-    img: "academic2.jpg",
-    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687120/exam1_tii4sq.jpg",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744977757/academic2_grk33v.jpg",
   },
   {
     name: "Civil Services",
-    img: "compBook.jpg",
-    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687121/exam2_o4pxyu.jpg",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744977758/compBooks_hwhtva.jpg",
   },
   {
     name: "Novels",
-    img: "novels2.jpg",
-    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687122/exam3_qnhttj.jpg",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744977268/novels2_lijnci.jpg",
   },
   {
     name: "Kids Books",
-    img: "kidsBook2.jpg",
-    // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687124/exam4_okqo1s.jpg",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744977267/kidsBook2_x1vv1f.jpg",
   },
 ];
 

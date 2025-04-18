@@ -5,7 +5,7 @@ const Applicant = require("../models/applicant-model");
 const newApplicant = async (req, res, next) => {
   try {
     const { fullname, email, phone, portfolio, role } = req.body;
-    console.log("Req.body: ", req.body);
+    // console.log("Req.body: ", req.body);
     if (!req.file) {
       return res.status(400).json({ message: "No file provided for upload." });
     }
@@ -13,7 +13,7 @@ const newApplicant = async (req, res, next) => {
       folder: "Applicant's Resumes",
       resource_type: "raw",
     });
-    console.log("result: ", result);
+    // console.log("result: ", result);
     if (!result.secure_url || !result.public_id) {
       return res.status(500).json({ message: "Cloudinary upload failed." });
     }
@@ -35,7 +35,7 @@ const newApplicant = async (req, res, next) => {
     // } catch (e) {
     //   console.error("Error while creating application: ", e);
     // }
-    console.log("Application: ", applicant);
+    // console.log("Application: ", applicant);
     if (!applicant) {
       console.error("Unable to send application.");
       return res.status(500).json({ message: "Unable to send application." });
@@ -59,4 +59,24 @@ const showApplicants = async (req, res, next) => {
   }
 };
 
-module.exports = { newApplicant, showApplicants };
+const deleteApplicant = async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const applicant = await Applicant.findById(id);
+    const publicId = applicant.resumePublicId;
+    await cloudinary.uploader.destroy(publicId, {
+      resource_type: "raw",
+    });
+    const deletedApplicant = await Applicant.findByIdAndDelete(id);
+    if (deletedApplicant)
+      return res
+        .status(200)
+        .json({ message: "Application deleted successfully." });
+    else
+      return res.status(500).json({ message: "Unable to delete application." });
+  } catch (e) {
+    next(e);
+  }
+};
+
+module.exports = { newApplicant, showApplicants, deleteApplicant };

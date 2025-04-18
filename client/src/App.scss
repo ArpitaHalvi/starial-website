@@ -4234,7 +4234,8 @@ $largeScreen: 1180px;
           font-size: 1rem;
           // border: 2px solid index.$dark-blue;
           border: none;
-          background-color: #e7e6e6;
+          // background-color: #e7e6e6;
+          background-color: whitesmoke;
           color: grey;
           border-radius: 50px;
         }
@@ -4244,7 +4245,8 @@ $largeScreen: 1180px;
         border-radius: 5px;
         width: 100%;
         font-size: 1rem;
-        background-color: #e7e6e6;
+        // background-color: #e7e6e6;
+        background-color: whitesmoke;
         color: grey;
         border-radius: 50px;
         outline: none;
@@ -4509,8 +4511,26 @@ $largeScreen: 1180px;
                   text-decoration: underline;
                 }
               }
+              .delete {
+                button {
+                  padding: 0.3rem 0.5rem;
+                  border-radius: 5px;
+                  border: none;
+                  background-color: #ffb5c37c;
+                  .delete-icon {
+                    color: crimson;
+                    font-size: 1.3rem;
+                  }
+                  &:hover {
+                    background-color: crimson;
+                    .delete-icon {
+                      color: whitesmoke;
+                    }
+                  }
+                }
+              }
               &:hover {
-                background-color: #c2c2c298;
+                background-color: #c2c2c276;
               }
             }
           }
