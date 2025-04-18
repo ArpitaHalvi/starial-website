@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const initialData = {
@@ -9,6 +10,7 @@ const initialData = {
 export default function AddRoles() {
   const [newRole, setNewRole] = useState(initialData);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     setNewRole((prev) => {
@@ -60,17 +62,19 @@ export default function AddRoles() {
         method: "POST",
         body: formData,
       });
+      const res_data = await res.json();
       if (res.ok) {
         setLoading(false);
-        const res_data = await res.json();
         console.log("Role Added.", res_data);
-        toast.success("Role added.");
         setNewRole(initialData);
         e.target.reset();
+        toast.success("Role added.", { onClose: navigate("/careers") });
       } else {
         setLoading(false);
         console.error("Unable to add role.");
-        toast.error("Unable to add role.");
+        toast.error(
+          res_data.extraDetails ? res_data.extraDetails : res_data.message
+        );
       }
     } catch (e) {
       setLoading(false);

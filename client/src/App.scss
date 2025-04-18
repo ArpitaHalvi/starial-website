@@ -3909,6 +3909,18 @@ $largeScreen: 1180px;
         @include index.flex-box;
         // background-color: plum;
       }
+      .slick-prev:before,
+      .slick-next:before {
+        font-size: 30px;
+        border-radius: 2px;
+        color: index.$dark-blue;
+        &:hover {
+          background-color: index.$dark-blue;
+        }
+      }
+      .slick-next {
+        right: -1%;
+      }
       .slick-slider {
         width: 100%;
         height: 60vh;
@@ -3929,7 +3941,28 @@ $largeScreen: 1180px;
               $flex-dir: column,
               // $align-items: flex-start
             );
+            position: relative;
             // gap: 1rem;
+            .delete-btn {
+              position: absolute;
+              top: 0;
+              right: 0;
+              background-color: #ff93a991;
+              padding: 0.4rem 0.5rem;
+              border-radius: 5px;
+              border: none;
+              transition: all 0.4s ease-in;
+              .delete-icon {
+                color: crimson;
+                font-size: 1.5rem;
+              }
+              &:hover {
+                background-color: crimson;
+                .delete-icon {
+                  color: whitesmoke;
+                }
+              }
+            }
             img {
               width: 100%;
               // background-color: grey;
@@ -3942,6 +3975,7 @@ $largeScreen: 1180px;
               font-size: 1.1rem;
               color: index.$dark-blue;
               margin: 2% 0;
+              text-transform: capitalize;
             }
             a {
               font-size: 1rem;
@@ -4362,6 +4396,193 @@ $largeScreen: 1180px;
       }
       @media (max-width: 468px) {
         width: 100%;
+      }
+    }
+  }
+}
+
+// --------------------- ADMIN PANEL ---------------------
+.admin-panel {
+  width: 100%;
+  height: 90vh;
+  @include index.flex-box;
+  .sidebar {
+    width: 20%;
+    padding: 2rem;
+    background-color: index.$dark-blue;
+    height: 100%;
+    @include index.flex-box(
+      $flex-dir: column,
+      $justify-content: space-between,
+      $align-items: flex-start
+    );
+    h2 {
+      text-transform: uppercase;
+      color: white;
+      font-size: 2rem;
+      font-weight: 400;
+    }
+    ul {
+      width: 100%;
+      height: 80%;
+      @include index.flex-box(
+        $flex-dir: column,
+        $align-items: flex-start,
+        $justify-content: flex-start
+      );
+      li {
+        width: 100%;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid white;
+        transition: all 0.3s ease-in;
+        a {
+          font-size: 1.3rem;
+          color: white;
+        }
+        &:hover {
+          scale: 1.02;
+        }
+      }
+    }
+    // div {
+    //   width: 100%;
+    //   height: 10%;
+    //   img {
+    //     @include index.img-setting;
+    //   }
+    // }
+  }
+  .collections {
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    .applications-section {
+      width: 100%;
+      h3 {
+        width: 100%;
+        font-size: 2rem;
+        border-bottom: 2px solid index.$dark-blue;
+        padding: 0 0 0.5rem 0;
+        color: index.$dark-blue;
+      }
+      .applications {
+        width: 100%;
+        padding: 1rem 0.5rem;
+        overflow: scroll;
+        table {
+          width: 100%;
+          background-color: white;
+          border-radius: 5px;
+          filter: drop-shadow(5px 5px 5px #c2c2c2);
+          // box-shadow: 5px 5px 5px 5px #c2c2c2;
+          thead {
+            width: 100%;
+            tr {
+              width: 100%;
+              th {
+                padding: 1rem;
+                font-size: 1.1rem;
+                // border-bottom: 2px solid #e4e4e4;
+                color: index.$dark-blue;
+              }
+            }
+          }
+          tbody {
+            width: 100%;
+            tr {
+              width: 100%;
+              transition: all 0.2s ease-in;
+              td {
+                padding: 1rem;
+                border-top: 2px solid #e4e4e4;
+                font-size: 0.9rem;
+              }
+              &:nth-last-child(1) {
+                border-bottom: none;
+              }
+              .role {
+                text-transform: capitalize;
+              }
+              .link {
+                a {
+                  color: index.$dark-blue;
+                  text-decoration: underline;
+                }
+              }
+              &:hover {
+                background-color: #c2c2c298;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// --------------- Confirm Modal Styles -----------------
+.confirm-modal-overlay {
+  position: fixed;
+  width: 100%;
+  height: 90%;
+  background-color: #1c1c1c46;
+  @include index.flex-box;
+  z-index: 500;
+  height: 100%;
+  top: 0;
+  left: 0;
+  .confirm-modal {
+    width: 27%;
+    border-radius: 5px;
+    align-self: center;
+    @include index.flex-box($flex-dir: column);
+    background-color: white;
+    // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 10px #4140409e;
+    p {
+      width: 100%;
+      font-size: 1.1rem;
+      padding: 1.5rem;
+      color: black;
+      text-align: center;
+    }
+    .button-group {
+      width: 100%;
+      border-top: 1px solid grey;
+      padding: 1rem;
+      @include index.flex-box($justify-content: space-around);
+      .btn-look {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+      .confirm-btn {
+        background-color: #e63023;
+        color: white;
+        &:hover {
+          background-color: #d12929;
+        }
+      }
+      .cancel-btn {
+        background-color: #9e9e9e;
+        color: white;
+        &:hover {
+          background-color: #757575;
+        }
+      }
+    }
+  }
+  @media (width<=1250px) {
+    top: 10%;
+    .confirm-modal {
+      width: 40%;
+      @media (width<=900px) {
+        width: 60%;
+      }
+      @media (width<=600px) {
+        width: 80%;
       }
     }
   }

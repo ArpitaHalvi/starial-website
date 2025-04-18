@@ -3,7 +3,10 @@ const router = express.Router();
 const validate = require("../middlewares/validate-middleware");
 const roleSchema = require("../validators/role-validator");
 const upload = require("../cloudinary/multer");
-const { newApplicant } = require("../controllers/applicant-controller");
+const {
+  newApplicant,
+  showApplicants,
+} = require("../controllers/applicant-controller");
 const applicantSchema = require("../validators/applicant-validator");
 
 router.route("/new").post(
@@ -18,5 +21,7 @@ router.route("/new").post(
   validate(applicantSchema),
   newApplicant
 );
+
+router.route("/").get(showApplicants);
 
 module.exports = router;

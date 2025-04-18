@@ -52,9 +52,12 @@ const showRoles = async (req, res, next) => {
 };
 
 const deleteRole = async (req, res, next) => {
+  const { id } = req.params;
   try {
-    const { id } = req.params;
-    const deletedRole = await Role.deleteOne({ _id: id });
+    const role = await Role.findById(id);
+    const publicId = role.publicId;
+    await cloudinary.uploader.destroy(publicId);
+    const deletedRole = await Role.findByIdAndDelete(id);
     if (deletedRole) {
       console.log("Successfully deleted role.");
       return res.status(200).json({ message: "Role deleted successfully." });

@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+// import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { CiMenuFries } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
@@ -6,20 +7,29 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
-  const navRef = useRef(null);
+  // const navRef = useRef(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+  // useEffect(() => {
+  //   const handleOutsideClick = (event) => {
+  //     if (isOpen && navRef.current && !navRef.current.contains(event.target)) {
+  //       setIsOpen(false);
+  //     }
+  //   };
+  //   if (isOpen) {
+  //     document.addEventListener("click", handleOutsideClick);
+  //   }
+  //   return () => {
+  //     document.removeEventListener("click", handleOutsideClick);
+  //   };
+  // }, [isOpen]);
   useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (isOpen && navRef.current && !navRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
+    const checkAdmin = () => {
+      const token = localStorage.getItem("auth-token");
+      if (token) setIsAdmin(true);
+      else setIsAdmin(false);
     };
-    if (isOpen) {
-      document.addEventListener("click", handleOutsideClick);
-    }
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, [isOpen]);
+    checkAdmin();
+  }, []);
   return (
     <header className="head-section">
       <div className="logo">
@@ -68,7 +78,11 @@ export default function Navbar() {
               Careers
             </NavLink>
           </li>
-          {/* <li> */}
+          {isAdmin && (
+            <li>
+              <NavLink to="/admin-panel">Admin Panel</NavLink>
+            </li>
+          )}
           <NavLink
             to="/contact"
             className="contact-us"
@@ -76,7 +90,6 @@ export default function Navbar() {
           >
             Contact Us
           </NavLink>
-          {/* </li> */}
         </ul>
         <div className="menu" onClick={toggleMenu}>
           {isOpen ? (

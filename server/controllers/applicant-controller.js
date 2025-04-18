@@ -48,4 +48,15 @@ const newApplicant = async (req, res, next) => {
   }
 };
 
-module.exports = { newApplicant };
+const showApplicants = async (req, res, next) => {
+  try {
+    const applicants = await Applicant.find();
+    if (applicants) return res.status(200).json(applicants);
+    else
+      return res.status(500).json({ message: "Unable to fetch applications." });
+  } catch (e) {
+    next(e);
+  }
+};
+
+module.exports = { newApplicant, showApplicants };

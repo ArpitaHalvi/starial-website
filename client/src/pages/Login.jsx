@@ -16,16 +16,27 @@ export default function Login() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (
-      user.email === import.meta.env.VITE_LOGIN_EMAIL &&
-      user.password === import.meta.env.VITE_LOGIN_PASSWORD
-    ) {
-      localStorage.setItem("login-token", "shdsvdvreer45343vdfvdv");
-      toast.success("Logged in successfully!", {
-        onClose: navigate("/careers"),
+    try {
+      const res = await fetch("http://localhost:4002/api/admin/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
       });
-    } else {
-      toast.error("Unable to login!");
+      const res_data = await res.json();
+      console.log("Response from backend: ", res_data);
+      if (res.ok) {
+        localStorage.setItem("auth-token", res_data.token);
+        toast.success("Logged in successfully!", {
+          onClose: navigate("/careers"),
+        });
+        setUser({ email: "", password: "" });
+      } else {
+        toast.error(res_data ? res_data : res_data.message);
+      }
+    } catch (e) {
+      console.error("Unable to login in.", e);
     }
   };
   return (

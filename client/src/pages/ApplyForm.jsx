@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const initialData = {
@@ -13,6 +14,7 @@ const initialData = {
 export default function ApplyForm() {
   const [user, setUser] = useState(initialData);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     setUser((prev) => {
@@ -33,7 +35,7 @@ export default function ApplyForm() {
     formData.append("role", user.role);
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:4002/api/applicant/new", {
+      const res = await fetch("http://localhost:4002/api/applicants/new", {
         method: "POST",
         body: formData,
       });
@@ -41,9 +43,11 @@ export default function ApplyForm() {
         setLoading(false);
         const res_data = await res.json();
         console.log("Application Submitted.", res_data);
-        toast.success("Application Submitted.");
         setUser(initialData);
         e.target.reset();
+        toast.success("Application Submitted.", {
+          onClose: navigate("/careers"),
+        });
       } else {
         setLoading(false);
         console.error("Unable to send application.");

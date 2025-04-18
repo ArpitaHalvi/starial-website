@@ -13,6 +13,7 @@ const ErrorMiddleware = require("./middlewares/error-middleware");
 const roleRoutes = require("./routers/roles-router");
 const url = "mongodb://127.0.0.1:27017/starial";
 const applicantRoutes = require("./routers/applicant-router");
+const adminRoutes = require("./routers/admin-router");
 
 const corsConfig = {
   origin: "http://localhost:5173",
@@ -35,8 +36,9 @@ mongoose
     console.error("Unable to connect to database.", e);
   });
 
+app.use("/api/admin/login", adminRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/download", downloadRoutes);
 app.use("/api/roles", roleRoutes);
-app.use("/api/applicant", applicantRoutes);
+app.use("/api/applicants", applicantRoutes);
 app.use(ErrorMiddleware);

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { MdWorkspacePremium } from "react-icons/md";
+import { MdDelete, MdWorkspacePremium } from "react-icons/md";
 import { FaChevronDown } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Modal from "../modals/Modal";
@@ -7,20 +7,52 @@ import AddRoles from "../components/AddRoles";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { toast } from "react-toastify";
+import ConfirmModal from "../modals/ConfirmModal";
 
-// const roles = [
-//   { img: "/socialManager.svg", title: "Social Media Manager" },
-//   { img: "/graphicDesigner.svg", title: "Graphic Designer" },
-//   { img: "/productEditor.svg", title: "Product Editor" },
-//   { img: "/videoEditor.svg", title: "Video Editor" },
-//   // { img: "", title: "HR" },
-//   { img: "/finance.svg", title: "Finance" },
-// ];
+const stats = [
+  { title: "Team Members", count: "25+" },
+  { title: "Happy Clients", count: "10+" },
+  { title: "Interns Trained", count: "170+" },
+];
+const perks = [
+  "Certificate of Completion",
+  "Letter of Recommendation (Based on Performance)",
+  "Real-World Exprience",
+  "Skill Development",
+  "Collaborative Team Culture",
+];
+const faqs = [
+  {
+    ques: "Are the Internships paid?",
+    ans: "Yes, the internships are paid. Interns receive compensationfor their work during the internship period.",
+  },
+  {
+    ques: "Is the internship remote or in-office?",
+    ans: "All roles are currently in office unless specified otherwise.",
+  },
+  {
+    ques: "What's the duration of the internship?",
+    ans: "Most internships last 2 to 3 months, depending on the role and your availability.",
+  },
+  {
+    ques: " Can I get a Letter of Recommendation?",
+    ans: " Yes! Based on your dedication and performance, we provide a personalized LOR.",
+  },
+  {
+    ques: "Do I need prior experience to apply?",
+    ans: "Yes, basic knowledge is required, but prior work experience is not necessary.",
+    // ans: "Not at all! We welcome passionate learners, even if you're just starting out.",
+  },
+];
+
 export default function Careers() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openRoles, setOpenRoles] = useState([]);
   const [openIndex, setOpenIndex] = useState(null);
+  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
+  const [selectedRoleId, setSelectedRoleId] = useState(null);
   const handleClick = (index) => {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
@@ -46,43 +78,25 @@ export default function Careers() {
       },
     ],
   };
-  const stats = [
-    { title: "Team Members", count: "25+" },
-    { title: "Happy Clients", count: "10+" },
-    { title: "Interns Trained", count: "170+" },
-  ];
-  const perks = [
-    "Certificate of Completion",
-    "Letter of Recommendation (Based on Performance)",
-    "Real-World Exprience",
-    "Skill Development",
-    "Collaborative Team Culture",
-  ];
-  const faqs = [
-    {
-      ques: "Are the Internships paid?",
-      ans: "Currently, our internships are paid. You receive certificates, mentorship, and priority for paid opportunities in the future.",
-    },
-    {
-      ques: "Is the internship remote or in-office?",
-      ans: "All roles are currently in office unless specified otherwise.",
-    },
-    {
-      ques: "What's the duration of the internship?",
-      ans: "Most internships last 2 to 3 months, depending on the role and your availability.",
-    },
-    {
-      ques: " Can I get a Letter of Recommendation?",
-      ans: " Yes! Based on your dedication and performance, we provide a personalized LOR.",
-    },
-    {
-      ques: "Do I need prior experience to apply?",
-      ans: "Not at all! We welcome passionate learners, even if you're just starting out.",
-    },
-  ];
+  const openConfirmModal = (id) => {
+    setSelectedRoleId(id);
+    setIsConfirmModalOpen(true);
+  };
+
+  const closeConfirmModal = () => {
+    setSelectedRoleId(null);
+    setIsConfirmModalOpen(false);
+  };
+
+  const confirmDelete = async () => {
+    if (selectedRoleId) {
+      await deleteRole(selectedRoleId);
+    }
+    closeConfirmModal();
+  };
   useEffect(() => {
     const checkAdmin = () => {
-      const token = localStorage.getItem("login-token");
+      const token = localStorage.getItem("auth-token");
       if (token) {
         setIsAdmin(true);
       } else {
@@ -91,34 +105,61 @@ export default function Careers() {
     };
     checkAdmin();
   }, []);
-  useEffect(() => {
-    const fetchRoles = async () => {
-      try {
-        const res = await fetch("http://localhost:4002/api/roles", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        if (res) {
-          const res_data = await res.json();
-          console.log("Roles Fetched.", res_data);
-          setOpenRoles(res_data);
-        } else {
-          console.error("Unable to load roles.");
-        }
-      } catch (e) {
-        console.error("Error while loading roles.", e);
+  const fetchRoles = async () => {
+    try {
+      const res = await fetch("http://localhost:4002/api/roles", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (res) {
+        const res_data = await res.json();
+        console.log("Roles Fetched.", res_data);
+        setOpenRoles(res_data);
+      } else {
+        console.error("Unable to load roles.");
       }
-    };
+    } catch (e) {
+      console.error("Error while loading roles.", e);
+    }
+  };
+  useEffect(() => {
     fetchRoles();
   }, []);
+  const deleteRole = async (id) => {
+    try {
+      const res = await fetch(`http://localhost:4002/api/roles/${id}/delete`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const res_data = await res.json();
+      if (res.ok) {
+        fetchRoles();
+        toast.success("Role deleted Successfully!");
+      } else {
+        toast.error(res_data?.res_data.message);
+      }
+    } catch (e) {
+      console.error(e);
+      toast.error("Unable to delete role.");
+    }
+  };
   return (
     <section className="careers-page">
       {isModalOpen && (
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <AddRoles roles={openRoles} setRole={setOpenRoles} />
         </Modal>
+      )}
+      {isConfirmModalOpen && (
+        <ConfirmModal
+          isOpen={isConfirmModalOpen}
+          isClose={closeConfirmModal}
+          onConfirm={confirmDelete}
+        />
       )}
       <div className="career-intro">
         <h1>Grow with us - Explore Opportunities to Learn, Build & Create.</h1>
@@ -159,6 +200,14 @@ export default function Careers() {
                 const { _id, imgUrl, title } = roles;
                 return (
                   <div className="role" key={_id}>
+                    {isAdmin && (
+                      <button
+                        className="delete-btn"
+                        onClick={() => openConfirmModal(_id)}
+                      >
+                        <MdDelete className="delete-icon" />
+                      </button>
+                    )}
                     <img src={imgUrl} alt="Role Image" />
                     <h4>{title}</h4>
                     <NavLink to="/careers/apply-now">Apply Now</NavLink>
