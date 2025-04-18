@@ -40,7 +40,7 @@ const showRoles = async (req, res, next) => {
   try {
     const roles = await Role.find();
     if (roles) {
-      console.log("Successfully fetched roles: ", roles);
+      // console.log("Successfully fetched roles: ", roles);
       return res.status(200).json(roles);
     } else {
       console.log("Unable to fetch roles.");

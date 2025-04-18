@@ -5,6 +5,7 @@ const Applicant = require("../models/applicant-model");
 const newApplicant = async (req, res, next) => {
   try {
     const { fullname, email, phone, portfolio, role } = req.body;
+    console.log("Req.body: ", req.body);
     if (!req.file) {
       return res.status(400).json({ message: "No file provided for upload." });
     }
@@ -12,6 +13,7 @@ const newApplicant = async (req, res, next) => {
       folder: "Applicant's Resumes",
       resource_type: "raw",
     });
+    console.log("result: ", result);
     if (!result.secure_url || !result.public_id) {
       return res.status(500).json({ message: "Cloudinary upload failed." });
     }
@@ -20,6 +22,7 @@ const newApplicant = async (req, res, next) => {
     } catch (e) {
       console.error("Error while deleting file: ", e);
     }
+    // try {
     const applicant = await Applicant.create({
       fullname: fullname,
       email: email,
@@ -29,11 +32,15 @@ const newApplicant = async (req, res, next) => {
       portfolio: portfolio,
       role: role,
     });
+    // } catch (e) {
+    //   console.error("Error while creating application: ", e);
+    // }
+    console.log("Application: ", applicant);
     if (!applicant) {
       console.error("Unable to send application.");
       return res.status(500).json({ message: "Unable to send application." });
     }
-    console.log("Added applicant successfully.");
+    console.log("Application sent successfully.");
     return res.status(201).json({ message: "Application sent successfully." });
   } catch (e) {
     console.error("Unable to send application.");
