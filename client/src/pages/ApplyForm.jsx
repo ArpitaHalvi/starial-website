@@ -32,6 +32,7 @@ export default function ApplyForm() {
     formData.append("file", user.resume);
     formData.append("role", user.role);
     try {
+      setLoading(true);
       const res = await fetch("http://localhost:4002/api/applicant/new", {
         method: "POST",
         body: formData,
@@ -49,6 +50,7 @@ export default function ApplyForm() {
         toast.error("Unable to send application.");
       }
     } catch (e) {
+      setLoading(false);
       console.error("Error while submitting form.", e);
     }
   };
@@ -121,6 +123,7 @@ export default function ApplyForm() {
               value={user.role}
               onChange={handleChange}
             >
+              <option value="">Choose role</option>
               <option value="social media manager">Social Media Manager</option>
               <option value="graphic designer">Graphic designer</option>
               <option value="product editor">Product Editor</option>

@@ -3,7 +3,6 @@ import { FaApple } from "react-icons/fa";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import axios from "axios";
 
 export default function DownloadApp() {
   const [isPhoneSelected, setIsPhoneSelected] = useState(false);
@@ -14,49 +13,47 @@ export default function DownloadApp() {
     e.preventDefault();
     try {
       if (email) {
-        await axios
-          .post(
-            "http://localhost:5002/api/download/using-email",
-            { email },
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          )
-          .then(() => {
-            toast.success(
-              "Email sent successfully! Check your email for the link."
-            );
-            setEmail("");
-          })
-          .catch((e) => {
-            console.error("Error: ", e);
-            toast.error("Error while sending download link!");
-          });
+        const res = await fetch(
+          "http://localhost:4002/api/download/using-email",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email: email }),
+          }
+        );
+        if (res.ok) {
+          console.log("Message sent!");
+          toast.success(
+            "Email sent successfully! Check your email for the link."
+          );
+          setEmail("");
+        } else {
+          toast.error("Error while sending download link!");
+        }
       }
       if (phoneNumber) {
-        await axios
-          .post(
-            "http://localhost:5002/api/download/using-phone-number",
-            { phoneNumber },
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          )
-          .then(() => {
-            console.log("Message sent!");
-            toast.success(
-              "Message sent successfully! Check your whatsapp for the link."
-            );
-            setPhoneNumber("");
-          })
-          .catch((e) => {
-            console.error("Error: ", e);
-            toast.error("Error while sending download link!");
-          });
+        const res = await fetch(
+          "http://localhost:4002/api/download/using-phone-number",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ phoneNumber: phoneNumber }),
+          }
+        );
+        if (res.ok) {
+          console.log("Message sent!");
+          toast.success(
+            "Message sent successfully! Check your whatsapp for the link."
+          );
+          setPhoneNumber("");
+        } else {
+          console.error("Error: ", e);
+          toast.error("Error while sending download link!");
+        }
       }
     } catch (e) {
       console.error("Error: ", e);
