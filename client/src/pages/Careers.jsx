@@ -63,6 +63,9 @@ export default function Careers() {
     autoplaySpeed: 3000,
     slidesToShow: 4,
     slidesToScroll: 1,
+    focusOnSelect: true,
+    centerMode: true,
+    cssEase: "linear",
     responsive: [
       {
         breakpoint: 1400,
