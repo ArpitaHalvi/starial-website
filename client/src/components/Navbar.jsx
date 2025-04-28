@@ -29,7 +29,7 @@ export default function Navbar() {
       else setIsAdmin(false);
     };
     checkAdmin();
-  }, []);
+}, []);
   return (
     <header className="head-section">
       <div className="logo">

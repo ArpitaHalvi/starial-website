@@ -22,6 +22,7 @@ import Vendors from "./pages/Vendors";
 import Careers from "./pages/Careers";
 import ApplyForm from "./pages/ApplyForm";
 import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 import AdminPanel from "./pages/AdminPanel";
 import Applications from "./components/Applications";
 
@@ -57,6 +58,7 @@ function App() {
           <Route path="/vendors" element={<Vendors />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/careers-access-admin/admin/true" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/careers/apply-now" element={<ApplyForm />} />
           <Route path="/admin-panel" element={<AdminPanel />}>
             <Route path="applications" element={<Applications />} />

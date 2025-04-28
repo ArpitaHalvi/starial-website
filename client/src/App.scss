@@ -4414,6 +4414,7 @@ $largeScreen: 1180px;
     padding: 2rem;
     background-color: index.$dark-blue;
     height: 100%;
+    position: relative;
     @include index.flex-box(
       $flex-dir: column,
       $justify-content: space-between,
@@ -4441,19 +4442,32 @@ $largeScreen: 1180px;
         a {
           font-size: 1.3rem;
           color: white;
+          @include index.flex-box($justify-content: flex-start);
+          gap: 0.5rem;
         }
         &:hover {
           scale: 1.02;
         }
       }
     }
-    // div {
-    //   width: 100%;
-    //   height: 10%;
-    //   img {
-    //     @include index.img-setting;
-    //   }
-    // }
+    .logout-btn {
+      position: absolute;
+      bottom: 2%;
+      left: 10%;
+      background-color: white;
+      border: 2px solid index.$dark-blue;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      color: index.$dark-blue;
+      transition: all 0.3s ease-in;
+      @include index.flex-box;
+      gap: 0.5rem;
+      &:hover {
+        background-color: transparent;
+        color: white;
+        border-color: white;
+      }
+    }
   }
   .collections {
     width: 80%;

@@ -33,10 +33,13 @@ export default function Login() {
         });
         setUser({ email: "", password: "" });
       } else {
-        toast.error(res_data ? res_data : res_data.message);
+        toast.error(
+          res_data.extraDetails ? res_data.extraDetails : res_data.message
+        );
       }
     } catch (e) {
       console.error("Unable to login in.", e);
+      toast.error("Unable to login!");
     }
   };
   return (
@@ -53,6 +56,7 @@ export default function Login() {
             value={user.email}
             onChange={handleChange}
             required
+            autoComplete="off"
           />
         </div>
         <div>
@@ -65,6 +69,7 @@ export default function Login() {
             value={user.password}
             onChange={handleChange}
             required
+            autoComplete="off"
           />
         </div>
         <button type="submit">LOGIN</button>

@@ -1,4 +1,5 @@
 import { Outlet, NavLink } from "react-router-dom";
+import { FiFileText, FiLogOut } from "react-icons/fi";
 
 export default function AdminPanel() {
   const links = [{ title: "Applications", link: "/admin-panel/applications" }];
@@ -10,14 +11,17 @@ export default function AdminPanel() {
           {links.map((item, index) => {
             return (
               <li key={index}>
-                <NavLink to={item.link}>{item.title}</NavLink>
+                <NavLink to={item.link}>
+                  <FiFileText className="application-icon" /> {item.title}
+                </NavLink>
               </li>
             );
           })}
         </ul>
-        {/* <div>
-          <img src="/starial-white-logo.png" alt="" />
-        </div> */}
+        <NavLink to="/logout" className="logout-btn">
+          Logout
+          <FiLogOut className="logout-icon" />
+        </NavLink>
       </aside>
       <div className="collections">
         <Outlet />
