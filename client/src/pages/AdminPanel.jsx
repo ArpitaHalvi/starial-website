@@ -10,7 +10,7 @@ export default function AdminPanel() {
           {links.map((item, index) => {
             return (
               <li key={index}>
-                <NavLink to={item.link}> {item.title}</NavLink>
+                <NavLink to={item.link}>{item.title}</NavLink>
               </li>
             );
           })}

@@ -122,9 +122,11 @@ export default function Careers() {
         setOpenRoles(res_data);
       } else {
         console.error("Unable to load roles.");
+        toast.error("Unable to load roles.");
       }
     } catch (e) {
       console.error("Error while loading roles.", e);
+      toast.error("Unable to load roles.");
     }
   };
   useEffect(() => {
@@ -143,7 +145,9 @@ export default function Careers() {
         fetchRoles();
         toast.success("Role deleted Successfully!");
       } else {
-        toast.error(res_data?.res_data.message);
+        toast.error(
+          res_data.extraDetails ? res_data.extraDetails : res_data.message
+        );
       }
     } catch (e) {
       console.error(e);

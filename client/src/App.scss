@@ -4408,6 +4408,7 @@ $largeScreen: 1180px;
   width: 100%;
   height: 90vh;
   @include index.flex-box;
+  position: relative;
   .sidebar {
     width: 20%;
     padding: 2rem;
@@ -4476,7 +4477,6 @@ $largeScreen: 1180px;
           background-color: white;
           border-radius: 5px;
           filter: drop-shadow(5px 5px 5px #c2c2c2);
-          // box-shadow: 5px 5px 5px 5px #c2c2c2;
           thead {
             width: 100%;
             tr {
@@ -4484,7 +4484,6 @@ $largeScreen: 1180px;
               th {
                 padding: 1rem;
                 font-size: 1.1rem;
-                // border-bottom: 2px solid #e4e4e4;
                 color: index.$dark-blue;
               }
             }
@@ -4531,6 +4530,56 @@ $largeScreen: 1180px;
               }
               &:hover {
                 background-color: #c2c2c276;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    .sidebar {
+      width: 100%;
+      height: 40vh;
+      padding: 2rem 1rem;
+      gap: 1rem;
+      align-items: center;
+      h2 {
+        text-align: center;
+      }
+      ul {
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        li {
+          width: fit-content;
+          border-bottom: none;
+          background-color: white;
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+          a {
+            color: index.$dark-blue;
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+    .collections {
+      width: 100%;
+      .applications-section {
+        h3 {
+          @media (max-width: 600px) {
+            font-size: 2rem;
+          }
+        }
+        .applications {
+          table {
+            thead {
+              tr {
+                th {
+                  font-size: 1rem;
+                }
               }
             }
           }
