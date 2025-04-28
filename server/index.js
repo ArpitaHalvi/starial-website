@@ -37,7 +37,7 @@ mongoose
     console.error("Unable to connect to database.", e);
   });
 
-app.use("/api/admin/login", adminRoutes);
+app.use("/api/admin", adminRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/download", downloadRoutes);
 app.use("/api/roles", roleRoutes);

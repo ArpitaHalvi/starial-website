@@ -34,7 +34,9 @@ export default function Applications() {
       if (res.ok) {
         setApplications(res_data);
       } else {
-        toast.error(res_data && res_data.message);
+        toast.error(
+          res_data.extraDetails ? res_data.extraDetails : res_data.message
+        );
       }
     } catch (e) {
       toast.error(e.message);

@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useAuth } from "../store/auth";
 
 export default function Login() {
   const [user, setUser] = useState({ email: "", password: "" });
   const navigate = useNavigate();
+  const { storeTokenInLS } = useAuth();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser((prev) => {
@@ -25,9 +27,9 @@ export default function Login() {
         body: JSON.stringify(user),
       });
       const res_data = await res.json();
-      console.log("Response from backend: ", res_data);
+      // console.log("Response from backend: ", res_data);
       if (res.ok) {
-        localStorage.setItem("auth-token", res_data.token);
+        storeTokenInLS(res_data.token);
         toast.success("Logged in successfully!", {
           onClose: navigate("/careers"),
         });

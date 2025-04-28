@@ -1,8 +1,15 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, useNavigate } from "react-router-dom";
 import { FiFileText, FiLogOut } from "react-icons/fi";
+import { useEffect } from "react";
+import { useAuth } from "../store/auth";
 
 export default function AdminPanel() {
   const links = [{ title: "Applications", link: "/admin-panel/applications" }];
+  const navigate = useNavigate();
+  const { token } = useAuth();
+  useEffect(() => {
+    if (!token) navigate("/");
+  });
   return (
     <section className="admin-panel">
       <aside className="sidebar">

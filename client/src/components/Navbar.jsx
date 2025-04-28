@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { CiMenuFries } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../store/auth";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
   // const navRef = useRef(null);
   const [isAdmin, setIsAdmin] = useState(false);
+  const { token } = useAuth();
   // useEffect(() => {
   //   const handleOutsideClick = (event) => {
   //     if (isOpen && navRef.current && !navRef.current.contains(event.target)) {
@@ -24,12 +26,13 @@ export default function Navbar() {
   // }, [isOpen]);
   useEffect(() => {
     const checkAdmin = () => {
-      const token = localStorage.getItem("auth-token");
-      if (token) setIsAdmin(true);
-      else setIsAdmin(false);
+      if (!token) setIsAdmin(false);
+      else {
+        setIsAdmin(true);
+      }
     };
     checkAdmin();
-}, []);
+  }, [token]);
   return (
     <header className="head-section">
       <div className="logo">

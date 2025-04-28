@@ -3713,7 +3713,7 @@ $largeScreen: 1180px;
     @include index.flex-box($flex-dir: column);
     padding: 3rem 5rem;
     gap: 2rem;
-    h1 {
+    h2 {
       width: 70%;
       font-size: 3rem;
       text-align: center;
@@ -3727,14 +3727,14 @@ $largeScreen: 1180px;
       background-color: grey;
     }
     @media (max-width: 1200px) {
-      h1 {
+      h2 {
         width: 80%;
         font-size: 2.8rem;
       }
     }
     @media (max-width: 800px) {
       padding: 2rem;
-      h1 {
+      h2 {
         width: 90%;
         font-size: 2.5rem;
       }
@@ -3745,7 +3745,7 @@ $largeScreen: 1180px;
     @media (max-width: 700px) {
       padding: 1rem;
       height: 90vh;
-      h1 {
+      h2 {
         width: 100%;
         font-size: 2rem;
       }
@@ -3829,6 +3829,7 @@ $largeScreen: 1180px;
         }
         p {
           font-size: 1.5rem;
+          text-align: center;
         }
       }
     }
@@ -3929,10 +3930,10 @@ $largeScreen: 1180px;
         .slick-slide {
           width: 100%;
           // @include index.flex-box;
-          margin: 0.3%;
+          margin: 0.2%;
           .role {
             width: 100%;
-            height: 50vh;
+            height: 45vh;
             background-color: white;
             padding: 1.5rem;
             border-radius: 5px;
@@ -4153,6 +4154,11 @@ $largeScreen: 1180px;
     }
     @media (max-width: 750px) {
       width: 100%;
+      .perks {
+        ul {
+          width: 100%;
+        }
+      }
       .faqs {
         .faq {
           width: 90%;
@@ -4177,14 +4183,15 @@ $largeScreen: 1180px;
       }
     }
     @media (max-width: 468px) {
+      padding: 2rem 1rem;
       .perks {
-        padding: 2rem 1rem;
+        padding: 2rem 0.5rem;
         ul .perk {
           font-size: 0.9rem;
         }
       }
       .faqs {
-        padding: 2rem 1rem;
+        padding: 2rem 0.5rem;
         .faq {
           div {
             font-size: 0.9rem;

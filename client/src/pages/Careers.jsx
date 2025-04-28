@@ -69,15 +69,15 @@ export default function Careers() {
     responsive: [
       {
         breakpoint: 1400,
-        settings: { slidesToShow: 3 },
+        settings: { slidesToShow: 3, centerMode: false },
       },
       {
         breakpoint: 1100,
-        settings: { slidesToShow: 2 },
+        settings: { slidesToShow: 2, centerMode: false },
       },
       {
         breakpoint: 750,
-        settings: { slidesToShow: 1 },
+        settings: { slidesToShow: 1, centerMode: false },
       },
     ],
   };
@@ -100,11 +100,8 @@ export default function Careers() {
   useEffect(() => {
     const checkAdmin = () => {
       const token = localStorage.getItem("auth-token");
-      if (token) {
-        setIsAdmin(true);
-      } else {
-        setIsAdmin(false);
-      }
+      if (token) setIsAdmin(true);
+      else setIsAdmin(false);
     };
     checkAdmin();
   }, []);
@@ -116,7 +113,7 @@ export default function Careers() {
           "Content-Type": "application/json",
         },
       });
-      if (res) {
+      if (res.ok) {
         const res_data = await res.json();
         console.log("Roles Fetched.", res_data);
         setOpenRoles(res_data);
@@ -169,7 +166,7 @@ export default function Careers() {
         />
       )}
       <div className="career-intro">
-        <h1>Grow with us - Explore Opportunities to Learn, Build & Create.</h1>
+        <h2>Grow with us - Explore Opportunities to Learn, Build & Create.</h2>
         <img src="/careers.jpg" alt="" />
       </div>
       <div className="about-company">
