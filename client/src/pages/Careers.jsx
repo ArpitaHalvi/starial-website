@@ -119,11 +119,11 @@ export default function Careers() {
         setOpenRoles(res_data);
       } else {
         console.error("Unable to load roles.");
-        toast.error("Unable to load roles.");
+        // toast.error("Unable to load roles.");
       }
     } catch (e) {
       console.error("Error while loading roles.", e);
-      toast.error("Unable to load roles.");
+      // toast.error("Unable to load roles.");
     }
   };
   useEffect(() => {
@@ -220,7 +220,10 @@ export default function Careers() {
               })}
             </Slider>
           ) : (
-            <p>No hirings posted.</p>
+            <div className="no-hirings">
+              <p>No hirings posted.</p>
+              <img src="/not-found.svg" alt="" />
+            </div>
           )}
         </div>
         {isAdmin && (

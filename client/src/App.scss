@@ -3785,7 +3785,8 @@ $largeScreen: 1180px;
       img {
         width: 100%;
         height: 100%;
-        background-color: grey;
+        background-color: #00000012;
+        border-radius: 5px;
       }
     }
     @media (max-width: 1100px) {
@@ -3821,7 +3822,8 @@ $largeScreen: 1180px;
       width: 100%;
       @include index.flex-box($justify-content: space-around);
       .stat {
-        padding: 2rem;
+        width: 100%;
+        padding: 2rem 0;
         @include index.flex-box($flex-dir: column);
         color: index.$dark-blue;
         h4 {
@@ -3991,6 +3993,30 @@ $largeScreen: 1180px;
                 color: white;
               }
             }
+          }
+        }
+      }
+      .no-hirings {
+        width: 100%;
+        height: 70vh;
+        @include index.flex-box($flex-dir: column);
+        color: index.$dark-blue;
+        background-color: #00000012;
+        border-radius: 5px;
+        gap: 2rem;
+        p {
+          font-size: 1.2rem;
+        }
+        img {
+          @include index.img-setting(40%);
+        }
+        @media (max-width: 500px) {
+          background-color: #00000006;
+          p {
+            font-size: 1rem;
+          }
+          img {
+            @include index.img-setting(80%);
           }
         }
       }
@@ -4474,6 +4500,17 @@ $largeScreen: 1180px;
         color: white;
         border-color: white;
       }
+      @media (max-width: 1100px) {
+        left: 2%;
+        bottom: 5%;
+        background-color: #ff00009d;
+        color: white;
+        &:hover {
+          border-color: transparent;
+          background-color: white;
+          color: crimson;
+        }
+      }
     }
   }
   .collections {
@@ -4562,7 +4599,7 @@ $largeScreen: 1180px;
     flex-direction: column;
     .sidebar {
       width: 100%;
-      height: 40vh;
+      height: 30vh;
       padding: 2rem 1rem;
       gap: 1rem;
       align-items: center;
@@ -4588,6 +4625,7 @@ $largeScreen: 1180px;
     }
     .collections {
       width: 100%;
+      height: 70vh;
       .applications-section {
         h3 {
           @media (max-width: 600px) {

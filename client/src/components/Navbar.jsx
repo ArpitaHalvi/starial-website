@@ -83,7 +83,9 @@ export default function Navbar() {
           </li>
           {isAdmin && (
             <li>
-              <NavLink to="/admin-panel">Admin Panel</NavLink>
+              <NavLink to="/admin-panel" onClick={() => setIsOpen(false)}>
+                Admin Panel
+              </NavLink>
             </li>
           )}
           <NavLink

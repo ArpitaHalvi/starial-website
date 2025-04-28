@@ -15,7 +15,7 @@ const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const userExist = await Admin.findOne({ email });
-    if (email) {
+    if (userExist) {
       const user = await userExist.comparePassword(password);
       if (user) {
         return res.status(200).json({
