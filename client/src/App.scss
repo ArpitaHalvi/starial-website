@@ -628,50 +628,6 @@
       padding: 1rem 0.5rem;
       border-radius: 5px;
       transition: all 0.3s ease-in;
-      // .slick-dots {
-      //   color: #050523;
-      //   bottom: 0;
-      // }
-      // .slick-prev,
-      // .slick-next {
-      //   z-index: 10;
-      //   border-radius: 50px;
-      //   &::before {
-      //     font-size: 30px;
-      //     color: #e4e3e3;
-      //     filter: drop-shadow(2px 2px 2px grey);
-      //   }
-      // }
-      // .slick-prev {
-      //   left: 2%;
-      // }
-      // .slick-next {
-      //   right: 6%;
-      // }
-      // .slick-list {
-      //   width: 100%;
-      // }
-      // .slick-track {
-      //   @include index.flex-box;
-      // }
-      // .slick-slider {
-      //   width: 80%;
-      //   height: 80%;
-      //   // width: 100%;
-      //   // height: 100%;
-      //   overflow: hidden;
-      //   @include index.flex-box;
-      //   background-color: index.$argentinan-blue;
-      //   .slick-slide {
-      //     width: 100%;
-      //     @include index.flex-box;
-      //     img {
-      //       width: 100%;
-      //       height: 100%;
-      //       object-fit: cover;
-      //     }
-      //   }
-      // }
       div {
         width: 100%;
         height: 100%;
@@ -2154,8 +2110,9 @@ $largeScreen: 1180px;
           gap: 2rem;
           .item {
             width: 100%;
-            height: 45vh;
-            filter: drop-shadow(5px 5px 5px grey);
+            // height: 45vh;
+            height: 320px;
+            filter: drop-shadow(5px 5px 5px #c2c2c2);
             background-color: white;
             border-radius: 5px;
             transition: all 0.3s ease-in;
@@ -2168,7 +2125,8 @@ $largeScreen: 1180px;
             }
             h6 {
               color: white;
-              padding: 1rem;
+              padding-top: 1rem;
+              // padding: 1rem;
               font-size: 1rem;
               color: index.$dark-blue;
               text-align: center;
@@ -2216,6 +2174,13 @@ $largeScreen: 1180px;
               gap: 2rem;
               .item {
                 width: 80%;
+                @media (700px<=width<=1000px) {
+                  height: 280px;
+                }
+                @media (600px<=width<=800px) {
+                  width: 90%;
+                  height: 280px;
+                }
               }
               @media (max-width: 900px) {
                 gap: 1rem;

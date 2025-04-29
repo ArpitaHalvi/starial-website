@@ -46,7 +46,7 @@ const books = [
   },
   {
     name: "Civil Services",
-    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1744977758/compBooks_hwhtva.jpg",
+    img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1745918767/compBooks2_nkiq9i.jpg",
   },
   {
     name: "Novels",
