@@ -9,12 +9,12 @@ export default function AboutPage() {
       title: "Global Invest Event",
     },
     {
-      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687427/work1-1_ohncui.jpg",
-      title: "Learning in Action",
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1745930263/work2_xe7xx0.jpg",
+      title: "Honoring Excellence",
     },
     {
-      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687462/work8_fgzzxn.jpg",
-      title: "Learning in Action",
+      url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1745930267/team4-2_ijxr2y.jpg",
+      title: "Moments of Joy",
     },
     {
       url: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687514/work14_dnmsly.jpg",
@@ -120,7 +120,7 @@ export default function AboutPage() {
     "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687669/starial4_rqnxzy.jpg",
     "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687665/starial2_q4se9w.jpg",
     "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687668/starial3_svrs1o.jpg",
-    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687672/work7_zm4qus.jpg",
+    "https://res.cloudinary.com/dgkv2gft7/image/upload/v1745929439/starial4_u2zpyx.jpg",
   ];
   return (
     <section className="about-page">

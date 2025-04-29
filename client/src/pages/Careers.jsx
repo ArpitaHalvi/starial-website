@@ -166,7 +166,8 @@ export default function Careers() {
       )}
       <div className="career-intro">
         <h2>Grow with us - Explore Opportunities to Learn, Build & Create.</h2>
-        <img src="/aboutus2.jpg" alt="Happy Work Life" />
+        {/* <img src="/aboutus2.jpg" alt="Happy Work Life" /> */}
+        <img src="/team2.jpg" alt="Happy Work Life" />
       </div>
       <div className="about-company">
         <div className="about">
@@ -178,10 +179,11 @@ export default function Careers() {
           <NavLink to="/about">Know More</NavLink>
         </div>
         <div>
-          <img
+          <img src="intern.jpg" alt="About Starial" />
+          {/* <img
             src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743687785/about1_m6mygv.jpg"
             alt="About Starial"
-          />
+          /> */}
         </div>
       </div>
       <div className="stats-section">
