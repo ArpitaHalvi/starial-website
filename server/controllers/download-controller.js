@@ -32,7 +32,7 @@ const sendWhatsappMsg = async (req, res, next) => {
       console.error(error.response?.data || error.message);
       res.status(500).json({
         message: "Failed to send SMS",
-        error: error.response?.data || error.message,
+        extraDetails: error.response?.data || error.message,
       });
     }
   } catch (e) {

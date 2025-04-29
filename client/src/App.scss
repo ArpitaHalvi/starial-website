@@ -4717,3 +4717,52 @@ $largeScreen: 1180px;
     }
   }
 }
+
+// ------------------ VENDORS SECTION ------------------
+.vendors-section {
+  width: 100%;
+  @include index.flex-box($flex-dir: column);
+  .become-seller {
+    width: 100%;
+    padding: 2rem;
+    @include index.flex-box($flex-dir: column);
+    text-align: center;
+    color: index.$dark-blue;
+    h2 {
+      width: 50%;
+      font-size: 3rem;
+    }
+    p {
+      width: 30%;
+      font-size: 1rem;
+    }
+  }
+  .sellers-testimonies {
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    h2 {
+      color: index.$dark-blue;
+      font-size: 2rem;
+    }
+    .sellers {
+      @include index.flex-box;
+      padding: 1rem;
+      gap: 2rem;
+      .seller {
+        width: 100%;
+        padding: 2rem;
+        height: 40vh;
+        border-radius: 5px;
+        background-color: #00000012;
+        // background-color: white;
+        filter: drop-shadow(5px 5px 5px #d7d7d7);
+      }
+    }
+  }
+  .contact-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: index.$dark-blue;
+  }
+}

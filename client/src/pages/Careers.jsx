@@ -42,7 +42,6 @@ const faqs = [
   {
     ques: "Do I need prior experience to apply?",
     ans: "Yes, basic knowledge is required, but prior work experience is not necessary.",
-    // ans: "Not at all! We welcome passionate learners, even if you're just starting out.",
   },
 ];
 
@@ -115,7 +114,7 @@ export default function Careers() {
       });
       if (res.ok) {
         const res_data = await res.json();
-        console.log("Roles Fetched.", res_data);
+        // console.log("Roles Fetched.", res_data);
         setOpenRoles(res_data);
       } else {
         console.error("Unable to load roles.");
@@ -217,7 +216,9 @@ export default function Careers() {
                     )}
                     <img src={imgUrl} alt="Role Image" />
                     <h4>{title}</h4>
-                    <NavLink to="/careers/apply-now">Apply Now</NavLink>
+                    <NavLink to="/careers/apply-now" state={{ title: title }}>
+                      Apply Now
+                    </NavLink>
                   </div>
                 );
               })}

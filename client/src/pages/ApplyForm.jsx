@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const initialData = {
@@ -12,9 +12,25 @@ const initialData = {
 };
 
 export default function ApplyForm() {
-  const [user, setUser] = useState(initialData);
   const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState(initialData);
+  const [title, setTitle] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+  useEffect(() => {
+    const changeTitle = async () => {
+      if (location.state) {
+        const { title } = location.state;
+        setTitle(title);
+        setUser((prev) => ({
+          ...prev,
+          role: title.toLowerCase(),
+        }));
+      }
+    };
+    changeTitle();
+  }, [location.state, title]);
+
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     setUser((prev) => {
@@ -72,6 +88,7 @@ export default function ApplyForm() {
               placeholder="Enter fullname"
               value={user.fullname}
               onChange={handleChange}
+              autocomplete="off"
             />
           </div>
           <div className="input-container">
@@ -83,6 +100,7 @@ export default function ApplyForm() {
               placeholder="Enter email"
               value={user.email}
               onChange={handleChange}
+              autocomplete="off"
             />
           </div>
           <div className="input-container">
@@ -94,6 +112,7 @@ export default function ApplyForm() {
               id="phone"
               value={user.phone}
               onChange={handleChange}
+              autocomplete="off"
             />
           </div>
           <div className="input-container">
@@ -104,6 +123,7 @@ export default function ApplyForm() {
               name="resume"
               accept=".pdf"
               onChange={handleChange}
+              autocomplete="off"
             />
           </div>
           <div className="input-container">
@@ -115,6 +135,7 @@ export default function ApplyForm() {
               placeholder="Paste Portfolio Link"
               value={user.portfolio}
               onChange={handleChange}
+              autocomplete="off"
             />
           </div>
           <div className="input-container">
