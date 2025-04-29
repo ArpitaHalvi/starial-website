@@ -1278,7 +1278,7 @@ $largeScreen: 1180px;
   .about-app {
     width: 80%;
     @include index.flex-box($flex-dir: column, $align-items: flex-start);
-    height: 400px;
+    // height: 400px;
     gap: 1rem;
     padding: 3rem;
     border-radius: 5px;
@@ -1349,7 +1349,7 @@ $largeScreen: 1180px;
     .download-btns {
       width: 100%;
       @include index.flex-box($flex-dir: column, $align-items: flex-start);
-      // gap: 3rem;
+      gap: 1rem;
       padding: 1rem 0 0 0;
       h6 {
         font-size: 1rem;
@@ -1416,7 +1416,6 @@ $largeScreen: 1180px;
   }
   @media (width<=1000px) {
     @include index.res-grid(100%);
-    background: none;
     .about-app {
       padding: 2rem;
       @media (width<=700px) {

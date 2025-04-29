@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { FaApple } from "react-icons/fa";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
@@ -6,8 +7,8 @@ import { toast } from "react-toastify";
 
 export default function DownloadApp() {
   // const [isPhoneSelected, setIsPhoneSelected] = useState(false);
-  const [isEmailSelected, setIsEmailSelected] = useState(true);
-  const [phoneNumber, setPhoneNumber] = useState("");
+  // const [isEmailSelected, setIsEmailSelected] = useState(true);
+  // const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,28 +34,28 @@ export default function DownloadApp() {
           toast.error("Error while sending download link!");
         }
       }
-      if (phoneNumber) {
-        const res = await fetch(
-          "http://localhost:4002/api/download/using-phone-number",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ phoneNumber: phoneNumber }),
-          }
-        );
-        if (res.ok) {
-          console.log("Message sent!");
-          toast.success(
-            "Message sent successfully! Check your whatsapp for the link."
-          );
-          setPhoneNumber("");
-        } else {
-          console.error("Error: ", e);
-          toast.error("Error while sending download link!");
-        }
-      }
+      // if (phoneNumber) {
+      //   const res = await fetch(
+      //     "http://localhost:4002/api/download/using-phone-number",
+      //     {
+      //       method: "POST",
+      //       headers: {
+      //         "Content-Type": "application/json",
+      //       },
+      //       body: JSON.stringify({ phoneNumber: phoneNumber }),
+      //     }
+      //   );
+      //   if (res.ok) {
+      //     console.log("Message sent!");
+      //     toast.success(
+      //       "Message sent successfully! Check your whatsapp for the link."
+      //     );
+      //     setPhoneNumber("");
+      //   } else {
+      //     console.error("Error: ", e);
+      //     toast.error("Error while sending download link!");
+      //   }
+      // }
     } catch (e) {
       console.error("Error: ", e);
       toast.error("Error while sending download link!");
@@ -65,13 +66,13 @@ export default function DownloadApp() {
       <div className="about-app">
         <h4>Download Our App</h4>
         <p>
-          Enter your email or phone number, and we'll send you a link to explore
-          our latest collections of premium stationery products.
+          Enter your email, and we'll send you our App link to explore our
+          services.
         </p>
-        <div className="download-options">
-          <div>
-            <label htmlFor="email">Email</label>
-            <input
+        {/* <div className="download-options"> */}
+        {/* <div> */}
+        {/* <label htmlFor="email">Email</label> */}
+        {/* <input
               type="radio"
               name="download-option"
               id="email"
@@ -80,9 +81,9 @@ export default function DownloadApp() {
                 // setIsPhoneSelected(false);
               }}
               checked={isEmailSelected}
-            />
-          </div>
-          {/* <div>
+            /> */}
+        {/* </div> */}
+        {/* <div>
             <label htmlFor="phoneNumber">Phone Number</label>
             <input
               type="radio"
@@ -95,19 +96,19 @@ export default function DownloadApp() {
               checked={isPhoneSelected}
             />
           </div> */}
-        </div>
+        {/* </div> */}
         <div className="download-form">
           <form method="post" onSubmit={handleSubmit}>
-            {isEmailSelected && (
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            )}
+            {/* {isEmailSelected && ( */}
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            {/* )} */}
             {/* {isPhoneSelected && (
               <input
                 type="tel"
@@ -122,7 +123,7 @@ export default function DownloadApp() {
           </form>
         </div>
         <div className="download-btns">
-          {/* <h6>Download app from</h6> */}
+          <h6>Download app from</h6>
           <div>
             <Link
               to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1"
