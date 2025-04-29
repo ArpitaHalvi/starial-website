@@ -22,19 +22,19 @@ export default function Clients() {
       name: "Novelty Dresses",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-      img: "novelty3.png",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1745926630/novelty3_uxl48e.png",
     },
     {
       name: "Om Book",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743863194/client-1_njy2gc.png",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1745926501/omBook_xkjyzw.jpg",
     },
     {
       name: "The Book House",
       review:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-      img: "book-house2.jpg",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1745926501/bookStore_do00ph.jpg",
     },
     {
       name: "Akash Pustak Sadan",
@@ -42,12 +42,6 @@ export default function Clients() {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743863194/client-1_njy2gc.png",
     },
-    // {
-    //   name: "Singhai Paper Mart",
-    //   review:
-    //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-    //   img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743863194/client-1_njy2gc.png",
-    // },
   ];
   const ANIMATION_DURATION = 0.6;
   const DELAY_BETWEEN_CARDS = 500;
