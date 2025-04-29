@@ -25,14 +25,14 @@ export default function AdminPanel() {
             );
           })}
         </ul>
-        <NavLink to="/logout" className="logout-btn">
-          Logout
-          <FiLogOut className="logout-icon" />
-        </NavLink>
       </aside>
       <div className="collections">
         <Outlet />
       </div>
+      <NavLink to="/logout" className="logout-btn">
+        {/* Logout */}
+        <FiLogOut className="logout-icon" />
+      </NavLink>
     </section>
   );
 }

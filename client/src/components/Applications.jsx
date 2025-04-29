@@ -93,38 +93,44 @@ export default function Applications() {
             </tr>
           </thead>
           <tbody>
-            {applications.map((app) => {
-              const {
-                _id,
-                fullname,
-                email,
-                phone,
-                resumeLink,
-                portfolio,
-                role,
-              } = app;
-              return (
-                <tr key={_id}>
-                  <td>{fullname}</td>
-                  <td className="link">
-                    <Link to={`mailto:${email}`}>{email}</Link>
-                  </td>
-                  <td>{phone}</td>
-                  <td className="link">
-                    <Link to={resumeLink}>{fullname} Resume</Link>
-                  </td>
-                  <td className="link">
-                    <Link to={portfolio}>{fullname} Portfolio</Link>
-                  </td>
-                  <td className="role">{role}</td>
-                  <td className="delete">
-                    <button onClick={() => openConfirmModal(_id)}>
-                      <MdDelete className="delete-icon" />
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
+            {applications.length !== 0 ? (
+              applications.map((app) => {
+                const {
+                  _id,
+                  fullname,
+                  email,
+                  phone,
+                  resumeLink,
+                  portfolio,
+                  role,
+                } = app;
+                return (
+                  <tr key={_id}>
+                    <td>{fullname}</td>
+                    <td className="link">
+                      <Link to={`mailto:${email}`}>{email}</Link>
+                    </td>
+                    <td>{phone}</td>
+                    <td className="link">
+                      <Link to={resumeLink}>{fullname} Resume</Link>
+                    </td>
+                    <td className="link">
+                      <Link to={portfolio}>{fullname} Portfolio</Link>
+                    </td>
+                    <td className="role">{role}</td>
+                    <td className="delete">
+                      <button onClick={() => openConfirmModal(_id)}>
+                        <MdDelete className="delete-icon" />
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })
+            ) : (
+              <tr>
+                <td>No Applications Found</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>

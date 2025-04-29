@@ -1272,14 +1272,13 @@ $largeScreen: 1180px;
 // ------------------------ DOWNLOAD STYLES --------------------
 .download-app {
   width: 100%;
-  // .app-info {
   @include index.res-grid;
   padding: 1rem;
   background: linear-gradient(to bottom, #ffffff, #93d9ff);
-  // background-color: #93d9ff;
   .about-app {
     width: 80%;
     @include index.flex-box($flex-dir: column, $align-items: flex-start);
+    height: 400px;
     gap: 1rem;
     padding: 3rem;
     border-radius: 5px;
@@ -1350,7 +1349,7 @@ $largeScreen: 1180px;
     .download-btns {
       width: 100%;
       @include index.flex-box($flex-dir: column, $align-items: flex-start);
-      gap: 1rem;
+      // gap: 3rem;
       padding: 1rem 0 0 0;
       h6 {
         font-size: 1rem;
@@ -1401,7 +1400,6 @@ $largeScreen: 1180px;
       width: 60%;
     }
   }
-  // }
   @media (width<=1100px) {
     .about-app {
       padding: 2rem;
@@ -2429,7 +2427,6 @@ $largeScreen: 1180px;
       }
       .about-starial {
         width: 100%;
-        // margin-top: 5%;
         padding: 2rem;
         @include index.flex-box($flex-dir: column);
         .about {
@@ -4450,35 +4447,6 @@ $largeScreen: 1180px;
         }
       }
     }
-    .logout-btn {
-      position: absolute;
-      bottom: 2%;
-      left: 10%;
-      background-color: white;
-      border: 2px solid index.$dark-blue;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      color: index.$dark-blue;
-      transition: all 0.3s ease-in;
-      @include index.flex-box;
-      gap: 0.5rem;
-      &:hover {
-        background-color: transparent;
-        color: white;
-        border-color: white;
-      }
-      @media (max-width: 1100px) {
-        left: 2%;
-        bottom: 5%;
-        background-color: #ff00009d;
-        color: white;
-        &:hover {
-          border-color: transparent;
-          background-color: white;
-          color: crimson;
-        }
-      }
-    }
   }
   .collections {
     width: 80%;
@@ -4559,6 +4527,40 @@ $largeScreen: 1180px;
             }
           }
         }
+      }
+    }
+  }
+  .logout-btn {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    background-color: white;
+    border: 2px solid index.$dark-blue;
+    // padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: index.$dark-blue;
+    transition: all 0.3s ease-in;
+    @include index.flex-box;
+    // gap: 0.5rem;
+    border-radius: 50%;
+    .logout-icon {
+      font-size: 1.5rem;
+    }
+    &:hover {
+      background-color: transparent;
+      color: white;
+      border-color: white;
+    }
+    @media (max-width: 1100px) {
+      background-color: #c71414;
+      color: white;
+      border-color: crimson;
+      &:hover {
+        border-color: crimson;
+        background-color: white;
+        color: crimson;
       }
     }
   }

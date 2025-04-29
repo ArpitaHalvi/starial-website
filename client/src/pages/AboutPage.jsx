@@ -139,13 +139,6 @@ export default function AboutPage() {
       </div>
       <div className="about-us">
         <div className="about-members">
-          {/* <h2>Where creativity meets functionality</h2>
-          <p>
-            At Starial, we take pride in our commitment to speed, reliability,
-            and quality. Our team works tirelessly to source the best stationery
-            products and optimize our delivery network, ensuring that every
-            order reaches you in record time.
-          </p> */}
           <div className="about-starial">
             {about.map(({ title, text, img }, index) => {
               return (

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export default function DownloadApp() {
-  const [isPhoneSelected, setIsPhoneSelected] = useState(false);
+  // const [isPhoneSelected, setIsPhoneSelected] = useState(false);
   const [isEmailSelected, setIsEmailSelected] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
@@ -77,12 +77,12 @@ export default function DownloadApp() {
               id="email"
               onChange={() => {
                 setIsEmailSelected(true);
-                setIsPhoneSelected(false);
+                // setIsPhoneSelected(false);
               }}
               checked={isEmailSelected}
             />
           </div>
-          <div>
+          {/* <div>
             <label htmlFor="phoneNumber">Phone Number</label>
             <input
               type="radio"
@@ -94,7 +94,7 @@ export default function DownloadApp() {
               }}
               checked={isPhoneSelected}
             />
-          </div>
+          </div> */}
         </div>
         <div className="download-form">
           <form method="post" onSubmit={handleSubmit}>
@@ -108,7 +108,7 @@ export default function DownloadApp() {
                 required
               />
             )}
-            {isPhoneSelected && (
+            {/* {isPhoneSelected && (
               <input
                 type="tel"
                 name="phoneNumber"
@@ -117,12 +117,12 @@ export default function DownloadApp() {
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 required
               />
-            )}
+            )} */}
             <button type="submit">Send Link</button>
           </form>
         </div>
         <div className="download-btns">
-          <h6>Download app from</h6>
+          {/* <h6>Download app from</h6> */}
           <div>
             <Link
               to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1"
