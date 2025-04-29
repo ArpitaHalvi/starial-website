@@ -3782,9 +3782,11 @@ $largeScreen: 1180px;
     div {
       width: 100%;
       height: 100%;
+      border-radius: 5px;
       img {
         width: 100%;
-        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 3/2;
         background-color: #00000012;
         border-radius: 5px;
       }
