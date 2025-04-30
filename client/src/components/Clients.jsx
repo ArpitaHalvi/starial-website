@@ -36,12 +36,12 @@ export default function Clients() {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1745926501/bookStore_do00ph.jpg",
     },
-    {
-      name: "Akash Pustak Sadan",
-      review:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
-      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743863194/client-1_njy2gc.png",
-    },
+    // {
+    //   name: "Akash Pustak Sadan",
+    //   review:
+    //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
+    //   img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743863194/client-1_njy2gc.png",
+    // },
   ];
   const ANIMATION_DURATION = 0.6;
   const DELAY_BETWEEN_CARDS = 500;
@@ -95,16 +95,3 @@ export default function Clients() {
     </section>
   );
 }
-
-// <div
-//   className="client"
-//   key={idx}
-//   onMouseEnter={() => setOpenIdx(idx)}
-//   onMouseLeave={() => setOpenIdx(null)}
-// >
-//   <img src={c.img} alt="Client Images" loading="lazy" />
-//   <div className={`accordian ${openIdx === idx ? "open" : ""}`}>
-//     <h5>{c.name}</h5>
-//     <p> {c.review} </p>
-//   </div>
-// </div>

@@ -73,22 +73,19 @@ export default function Footer() {
               <CgMail className="connect-icon" />
               <span>
                 <span>Mail Us</span>
-                <NavLink to="mailto:connect@starial.in">
-                  connect@starial.in
-                </NavLink>
+                <a href="mailto:connect@starial.in">connect@starial.in</a>
               </span>
             </li>
             <li>
               <IoCall className="connect-icon" />
               <span>
                 <span>Call Us</span>
-                <NavLink to="tel:+919329885817">+91 9329885817</NavLink>
+                <a href="tel:+919329885817">+91 9329885817</a>
               </span>
             </li>
           </ul>
         </div>
         <div className="social-links">
-          {/* <img src="/starial-white-logo.png" alt="LOGO" /> */}
           <img
             src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688557/starial-white-logo_jshtqw.png"
             alt="Starial Logo"
@@ -110,7 +107,6 @@ export default function Footer() {
             </div>
             <div className="download-links">
               <Link to="https://play.google.com/store/apps/details?id=com.starial.stationery&hl=en-US&pli=1">
-                {/* <img src="play-store-logo.svg" alt="" /> */}
                 <img
                   src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688588/play-store-logo_k1g8ob.svg"
                   alt="Play Store Logo"
