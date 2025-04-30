@@ -9,31 +9,31 @@ export default function Clients() {
     {
       name: "Radhika Book Palace",
       review:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
+        "A trusted stationery partner since 2022, bringing quality products and reliable service to our customers.",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743863194/client-2_ekg3yb.png",
     },
     {
       name: "Children Book House",
       review:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
+        "A trusted stationery partner since 2022, bringing quality products and reliable service to our customers.",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743863194/client-1_njy2gc.png",
     },
     {
       name: "Novelty Dresses",
       review:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
+        "A valued partner since 2022, providing high-quality uniforms with the same commitment to reliability and service as our stationery partners.",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1745926630/novelty3_uxl48e.png",
     },
     {
       name: "Om Book",
       review:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
+        "A trusted stationery partner since 2022, bringing quality products and reliable service to our customers.",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1745926501/omBook_xkjyzw.jpg",
     },
     {
       name: "The Book House",
       review:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit labore alias, temporibus ipsa aperiam ex nobis quam dolor magni deserunt.",
+        "A trusted stationery partner since 2024, bringing quality products and reliable service to our customers.",
       img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1745926501/bookStore_do00ph.jpg",
     },
     // {
