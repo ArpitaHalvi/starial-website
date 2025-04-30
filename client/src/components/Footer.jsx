@@ -2,9 +2,8 @@ import { BsLinkedin } from "react-icons/bs";
 import { CgMail } from "react-icons/cg";
 import { CiLocationOn } from "react-icons/ci";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { IoCall, IoLogoGooglePlaystore } from "react-icons/io5";
-import { Link, NavLink } from "react-router-dom";
+import { IoCall } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -15,13 +14,12 @@ export default function Footer() {
     { title: "Terms & Conditions", url: "/terms-conditions" },
   ];
   const links2 = [
-    { title: "Category", url: "/categories" },
+    { title: "Categories", url: "/categories" },
     { title: "Contact Us", url: "/contact" },
     { title: "Return Policy", url: "/return-policy" },
     { title: "Privacy Policy", url: "/privacy-policy" },
   ];
   const socialLinks = [
-    // { url: "", icon: <FaXTwitter className="social-icon" />, color: "black" },
     {
       url: "https://www.linkedin.com/company/starial/?originalSubdomain=in",
       icon: <FaLinkedin className="social-icon" />,
@@ -117,7 +115,6 @@ export default function Footer() {
                 </span>
               </Link>
               <Link to="https://apps.apple.com/us/app/starial-stationery-uniform/id6477531287">
-                {/* <img src="apple-logo.svg" alt="" /> */}
                 <img
                   src="https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688584/apple-logo_czqbji.svg"
                   alt="App Store Logo"
