@@ -3669,6 +3669,7 @@ $largeScreen: 1180px;
     @include index.flex-box($flex-dir: column);
     padding: 3rem 5rem;
     gap: 2rem;
+    // background-color: pink;
     h2 {
       width: 70%;
       font-size: 3rem;
@@ -3716,6 +3717,7 @@ $largeScreen: 1180px;
     // height: 50vh;
     padding: 2rem 3rem;
     @include index.res-grid;
+    // background-color: plum;
     .about {
       width: 100%;
       height: 50vh;
@@ -3751,8 +3753,11 @@ $largeScreen: 1180px;
       padding: 0.5rem;
     }
     @media (max-width: 900px) {
+      gap: 2rem;
       .about {
-        height: 40vh;
+        // height: 30vh;
+        height: fit-content;
+        // background-color: pink;
         p {
           font-size: 1rem;
         }
@@ -3760,8 +3765,9 @@ $largeScreen: 1180px;
     }
     @media (max-width: 750px) {
       @include index.res-grid(100%);
+      padding: 0 0.5rem;
       div {
-        height: 40vh;
+        // height: 40vh;
       }
     }
   }
@@ -3809,6 +3815,7 @@ $largeScreen: 1180px;
       }
     }
     @media (max-width: 750px) {
+      height: fit-content;
       margin: 5% 0 0 0;
       padding: 2rem 0;
     }
@@ -4707,7 +4714,7 @@ $largeScreen: 1180px;
       font-size: 2rem;
     }
     .sellers {
-      @include index.flex-box;
+      @include index.res-grid(calc(100% / 4));
       padding: 1rem;
       gap: 2rem;
       .seller {
@@ -4716,7 +4723,6 @@ $largeScreen: 1180px;
         height: 40vh;
         border-radius: 5px;
         background-color: #00000012;
-        // background-color: white;
         filter: drop-shadow(5px 5px 5px #d7d7d7);
       }
     }
@@ -4725,5 +4731,55 @@ $largeScreen: 1180px;
     text-align: center;
     font-size: 2rem;
     color: index.$dark-blue;
+  }
+  @media (max-width: 1000px) {
+    .become-seller {
+      h2 {
+        width: 70%;
+      }
+      p {
+        width: 50%;
+      }
+      @media (max-width: 800px) {
+        h2 {
+          width: 90%;
+        }
+        p {
+          width: 70%;
+        }
+      }
+      @media (max-width: 600px) {
+        h2 {
+          width: 100%;
+          font-size: 2rem;
+        }
+        p {
+          width: 90%;
+        }
+      }
+    }
+    .sellers-testimonies {
+      .sellers {
+        @include index.res-grid(calc(100% / 3));
+        .seller {
+          &:nth-child(3) {
+            place-items: center;
+            grid-column: span 2;
+          }
+        }
+        @media (max-width: 800px) {
+          @include index.flex-box($flex-dir: column);
+          &:nth-child(3) {
+            place-items: center;
+          }
+        }
+      }
+      @media (max-width: 500px) {
+        padding: 1rem 0.5rem;
+      }
+    }
+    .contact-heading{
+      padding: 0 1rem;
+    }
   }
 }
