@@ -3110,13 +3110,18 @@ $largeScreen: 1180px;
   }
   .brands {
     @include index.flex-box;
-    gap: 10rem;
+    // gap: 10rem;
     width: max-content;
-    animation: moveBelt 30s linear infinite;
+    // animation: moveBelt 30s linear infinite;
+    overflow: hidden;
+    white-space: nowrap;
     .brand {
-      width: 200px;
-      height: 80px;
-      object-fit: contain;
+      img {
+        margin: 0 1%;
+        width: 200px;
+        height: 80px;
+        object-fit: contain;
+      }
     }
   }
   @media (max-width: 700px) {
@@ -4778,7 +4783,7 @@ $largeScreen: 1180px;
         padding: 1rem 0.5rem;
       }
     }
-    .contact-heading{
+    .contact-heading {
       padding: 0 1rem;
     }
   }
