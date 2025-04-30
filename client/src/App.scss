@@ -2106,9 +2106,9 @@
       padding: 2rem;
       gap: 2rem;
       @include index.flex-box($flex-dir: column);
+      // background-color: pink;
       div {
         width: 100%;
-        // @include index.res-grid(calc(100% / 6));
         @include index.res-grid(calc(100% / 5));
         gap: 1rem;
         justify-content: center;
@@ -2120,7 +2120,6 @@
             $flex-dir: column,
             $justify-content: flex-end
           );
-          // padding-bottom: 5%;
           filter: drop-shadow(5px 5px 5px #bdbdbd);
           background-size: cover;
           background-position: center;
@@ -2156,12 +2155,14 @@
             }
           }
         }
+        @media (max-width: 468px) {
+          gap: 0.5rem;
+        }
       }
       @media (max-width: 1200px) {
         padding: 1rem;
         div {
           @include index.res-grid(calc(100% / 4));
-          // @include index.res-grid(calc(100% / 3));
           @media (max-width: 900px) {
             @include index.res-grid(calc(100% / 3));
             .member {
@@ -2172,8 +2173,6 @@
             }
           }
           @media (max-width: 600px) {
-            // @include index.res-grid(calc(100%));
-            // width: 70%;
             .member {
               width: 100%;
               height: 40vh;
@@ -2210,11 +2209,13 @@
         }
         @media (max-width: 468px) {
           padding: 0.5rem;
+          padding: 0;
           div {
             .member {
               height: 30vh;
               div {
                 width: 95%;
+                padding: 0.3rem;
               }
             }
           }
