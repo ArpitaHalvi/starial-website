@@ -4,8 +4,7 @@ export default function Products() {
   const choices = [
     {
       title: "Stationery",
-      img: "stationery3.jpg",
-      // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688008/stationery_rttxkz.jpg",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1745995035/stationery3_n1dfau.jpg",
     },
     {
       title: "School Uniforms",
@@ -13,8 +12,7 @@ export default function Products() {
     },
     {
       title: "Books",
-      img: "books1.jpg",
-      // img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1743688005/books_gt3z0r.jpg",
+      img: "https://res.cloudinary.com/dgkv2gft7/image/upload/v1745995031/books1_jbilhm.jpg",
     },
   ];
   return (
