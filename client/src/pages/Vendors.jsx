@@ -3,7 +3,7 @@ import ContactUs from "./ContactUs";
 export default function Vendors() {
   const sellers = [
     {
-      text: "Some Shop",
+      text: "",
       imgUrl:
         "https://res.cloudinary.com/dgkv2gft7/image/upload/v1746011141/seller3-2_tbdlyy.jpg",
     },
