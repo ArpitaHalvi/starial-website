@@ -1530,6 +1530,7 @@
       gap: 1rem;
       overflow: hidden;
       padding: 2rem;
+      // background-color: pink;
       a {
         width: 400px;
         height: 550px;
@@ -1571,6 +1572,9 @@
           height: 450px;
         }
       }
+      @media (max-width: 600px) {
+        padding: 1rem;
+      }
     }
     @media (max-width: 1300px) {
       .choices {
@@ -1609,7 +1613,7 @@
         }
         @media (max-width: 680px) {
           flex-direction: column;
-          width: 70%;
+          width: 80%;
           a {
             transition: height 0.5s ease-in-out;
             width: 100%;
@@ -1643,14 +1647,20 @@
       }
     }
     @media (max-width: 500px) {
+      gap: 1rem;
       h2 {
         font-size: 2rem;
+        padding: 0 1rem;
       }
       p {
         width: 90%;
         font-size: 1rem;
+        padding: 0 1rem;
       }
     }
+  }
+  @media (max-width: 600px) {
+    padding: 2rem 0;
   }
 }
 
