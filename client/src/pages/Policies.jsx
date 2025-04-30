@@ -24,8 +24,8 @@ export default function Policies() {
             by email:
             <br />
             <br />
-            <Link to="mailto:Starialofficial@gmail.com">
-              Starialofficial@gmail.com
+            <Link to="mailto:starialofficial@gmail.com">
+              starialofficial@gmail.com
             </Link>
             .
             <br />
