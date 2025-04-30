@@ -3377,14 +3377,10 @@
     @media (max-width: 750px) {
       @include index.res-grid(100%);
       padding: 0 0.5rem;
-      div {
-        // height: 40vh;
-      }
     }
   }
   .stats-section {
     width: 90%;
-    // height: 50vh;
     @include index.flex-box($flex-dir: column, $align-items: flex-start);
     padding: 2rem;
     gap: 3rem;
