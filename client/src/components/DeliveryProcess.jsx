@@ -1,6 +1,4 @@
-// import { useEffect, useState } from "react";
 import { useEffect, useState } from "react";
-import { FaPencilRuler } from "react-icons/fa";
 
 const processes = [
   {
@@ -48,14 +46,6 @@ export default function DeliveryProcess() {
     <section className="delivery-process">
       <h2>From Cart to Doorstep</h2>
       <div className="process">
-        {/* <img
-          src="delivery-boy.svg"
-          alt="Delivery Boy"
-          className="delivery-boy"
-        /> */}
-        {/* <div className="step-route">
-          <div></div>
-        </div> */}
         <div className="process-div">
           {processes.map(({ id, step, cName, url }) => {
             return (
@@ -65,7 +55,6 @@ export default function DeliveryProcess() {
                     id - 1 === activeIndex ? "scaled" : ""
                   }`}
                 >
-                  {/* <FaPencilRuler className="icon" /> */}
                   <img src={url} alt="" />
                 </div>
                 <h5>
