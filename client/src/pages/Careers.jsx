@@ -25,7 +25,7 @@ const perks = [
 const faqs = [
   {
     ques: "Are the Internships paid?",
-    ans: "Yes, the internships are paid. Interns receive compensationfor their work during the internship period.",
+    ans: "Yes, the internships are paid, but the stipend will depend on your performance and the skills you bring to the role.",
   },
   {
     ques: "Is the internship remote or in-office?",
