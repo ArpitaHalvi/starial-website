@@ -13,7 +13,7 @@ export default function Vendors() {
         "https://res.cloudinary.com/dgkv2gft7/image/upload/v1746011144/seller1-2_s60sk0.jpg",
     },
     {
-      text: "Akash Pustak Sadan",
+      text: "Om Book",
       imgUrl:
         "https://res.cloudinary.com/dgkv2gft7/image/upload/v1746011149/seller2-2_emwc37.jpg",
     },
