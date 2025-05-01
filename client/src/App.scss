@@ -4387,6 +4387,7 @@
         .step-desc {
           padding: 2rem;
           h4 {
+            width: 100%;
             font-size: 2rem;
             color: index.$dark-blue;
           }
@@ -4396,9 +4397,7 @@
           }
         }
         img {
-          // background-color: grey;
           width: 100%;
-          // height: 300px;
           @include index.img-setting(100%);
         }
         &:nth-of-type(2) {
@@ -4406,6 +4405,48 @@
             order: 1;
           }
         }
+      }
+    }
+    @media (max-width: 900px) {
+      h2 {
+        font-size: 2rem;
+      }
+      .steps {
+        .step {
+          width: 100%;
+          .step-desc {
+            h4 {
+              font-size: 1.5rem;
+            }
+            p {
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 700px) {
+      .steps {
+        gap: 2rem;
+        .step {
+          @include index.res-grid(100%);
+          width: 80%;
+          text-align: center;
+          img {
+            @include index.img-setting(80%);
+          }
+          &:nth-of-type(2) {
+            img {
+              order: 2;
+            }
+          }
+          @media (max-width: 500px) {
+            width: 100%;
+          }
+        }
+      }
+      @media (max-width: 500px) {
+        gap: 0;
       }
     }
   }
