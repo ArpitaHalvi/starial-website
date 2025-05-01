@@ -14,7 +14,7 @@ export default function Footer() {
     { title: "Terms & Conditions", url: "/terms-conditions" },
   ];
   const links2 = [
-    { title: "Categories", url: "/categories" },
+    { title: "Careers", url: "/careers" },
     { title: "Contact Us", url: "/contact" },
     { title: "Return Policy", url: "/return-policy" },
     { title: "Privacy Policy", url: "/privacy-policy" },
