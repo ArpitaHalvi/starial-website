@@ -63,7 +63,9 @@ export default function Vendors() {
             return (
               <div className="step" key={index}>
                 <div className="step-desc">
-                  <h4>{step.title}</h4>
+                  <h4>
+                    <span>1</span> {step.title}
+                  </h4>
                   <p>{step.desc}</p>
                 </div>
                 <img src={step.img} alt="Step Graphics" loading="lazy" />

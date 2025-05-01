@@ -4383,13 +4383,18 @@
       .step {
         width: 80%;
         @include index.res-grid;
-        // padding: 1rem;
         .step-desc {
           padding: 2rem;
           h4 {
             width: 100%;
             font-size: 2rem;
             color: index.$dark-blue;
+            margin: 0.5rem 0;
+            span {
+              font-size: 2rem;
+              background-color: index.$dark-blue;
+              border-radius: 50px;
+            }
           }
           p {
             font-size: 1rem;
@@ -4398,7 +4403,7 @@
         }
         img {
           width: 100%;
-          @include index.img-setting(100%);
+          @include index.img-setting(90%);
         }
         &:nth-of-type(2) {
           .step-desc {
