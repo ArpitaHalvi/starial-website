@@ -97,6 +97,7 @@ export default function Footer() {
                     to={link.url}
                     key={index}
                     style={{ "--accent-color": link.color }}
+                    target="_blank"
                   >
                     {link.icon}
                   </Link>

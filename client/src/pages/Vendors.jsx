@@ -21,7 +21,7 @@ export default function Vendors() {
   return (
     <section className="vendors-section">
       <div className="become-seller">
-        <h2>Partner With Us - Sell Your Stationery Online</h2>
+        <h2>Partner With Us - Sell Your Study Materials</h2>
         <p>
           Reach thousands of customers by listing your products on our platform.
         </p>

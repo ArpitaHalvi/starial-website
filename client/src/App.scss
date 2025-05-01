@@ -3576,7 +3576,7 @@
           font-size: 1.2rem;
         }
         img {
-          @include index.img-setting(40%);
+          @include index.img-setting(30%);
         }
         @media (max-width: 500px) {
           background-color: #00000006;
