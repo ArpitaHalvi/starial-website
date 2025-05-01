@@ -4405,7 +4405,7 @@
             padding: 0.5rem 1rem;
             border-radius: 5px;
             color: white;
-            margin-top: 2%;
+            margin-top: 5%;
             font-size: 1rem;
             border: 2px solid index.$dark-blue;
             transition: all 0.3s ease-in;
@@ -4478,7 +4478,7 @@
           .step {
             .step-desc {
               .contact-btn {
-                margin-top: 5%;
+                margin-top: 7%;
               }
             }
           }
@@ -4515,18 +4515,6 @@
         }
       }
     }
-    // .sellers-testimonies {
-    //   .sellers {
-    //     .seller {
-    //     }
-    //     @media (max-width: 800px) {
-    //       @include index.flex-box($flex-dir: column);
-    //     }
-    //   }
-    //   @media (max-width: 500px) {
-    //     padding: 1rem 0.5rem;
-    //   }
-    // }
     .contact-heading {
       padding: 0 1rem;
     }
