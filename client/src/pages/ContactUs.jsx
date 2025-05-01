@@ -73,7 +73,7 @@ export default function ContactUs() {
     }
   });
   return (
-    <section className="contact-section">
+    <section className="contact-section" id="contact-us">
       <StatusModal
         msg={error ? error : success}
         statusType={error ? "error" : "success"}

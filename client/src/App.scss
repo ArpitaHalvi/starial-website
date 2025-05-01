@@ -4400,6 +4400,20 @@
             font-size: 1rem;
             color: index.$dark-blue;
           }
+          .contact-btn {
+            background-color: index.$dark-blue;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            color: white;
+            margin-top: 2%;
+            font-size: 1rem;
+            border: 2px solid index.$dark-blue;
+            transition: all 0.3s ease-in;
+            &:hover {
+              background-color: transparent;
+              color: index.$dark-blue;
+            }
+          }
         }
         img {
           width: 100%;
@@ -4460,14 +4474,21 @@
       }
       @media (max-width: 500px) {
         gap: 0;
+        .steps {
+          .step {
+            .step-desc {
+              .contact-btn {
+                margin-top: 5%;
+              }
+            }
+          }
+        }
       }
     }
   }
-  // .contact-heading {
-  //   text-align: center;
-  //   font-size: 2rem;
-  //   color: index.$dark-blue;
-  // }
+  .contact-container {
+    width: 100%;
+  }
   @media (max-width: 1000px) {
     .become-seller {
       h2 {

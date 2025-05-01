@@ -1,6 +1,14 @@
+import { useRef } from "react";
 import ContactUs from "./ContactUs";
+import { NavLink } from "react-router-dom";
 
 export default function Vendors() {
+  const contactRef = useRef(null);
+
+  const handleClick = () => {
+    contactRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const sellers = [
     {
       text: "Children Book House",
@@ -20,18 +28,18 @@ export default function Vendors() {
   ];
   const steps = [
     {
-      title: "Submit Seller Application",
-      desc: "Fill out the seller registration form in the Seller App. Upload required documents including identity proof, a clear photo, and basic business details.",
-      img: "/application.svg",
-    },
-    {
-      title: "Verification Process",
-      desc: "Our team will verify the submitted documents and photo for authenticity. We’ll also review the stationery products you intend to sell to ensure they meet our platform standards.",
+      title: "Submit Your Application",
+      desc: "Fill out the contact form below to apply. Our team will review your details and verify your profile.",
       img: "/verification.svg",
     },
     {
+      title: "Get a Seller App",
+      desc: "Once verified, you’ll receive access to the Seller App where you can manage products, view analytics, and more.",
+      img: "/application.svg",
+    },
+    {
       title: "Start Selling",
-      desc: "Once verified and approved, you’ll gain access to your seller dashboard where you can list your stationery products and begin selling to customers.",
+      desc: "After final confirmation, your store goes live and you can begin selling on our platform.",
       img: "/sell.svg",
     },
   ];
@@ -67,6 +75,11 @@ export default function Vendors() {
                     <span>1</span> {step.title}
                   </h4>
                   <p>{step.desc}</p>
+                  {index === 0 && (
+                    <button className="contact-btn" onClick={handleClick}>
+                      Contact Us
+                    </button>
+                  )}
                 </div>
                 <img src={step.img} alt="Step Graphics" loading="lazy" />
               </div>
@@ -75,7 +88,9 @@ export default function Vendors() {
         </div>
       </div>
       {/* <h2 className="contact-heading">Become a Seller - Contact Us Today!</h2> */}
-      <ContactUs />
+      <div className="contact-container" ref={contactRef}>
+        <ContactUs />
+      </div>
     </section>
   );
 }
