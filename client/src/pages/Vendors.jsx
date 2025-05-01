@@ -21,7 +21,7 @@ export default function Vendors() {
   const steps = [
     {
       title: "Submit Seller Application",
-      desc: "Fill out the seller registration form in the Seller App. Upload required documents including identity proof (e.g., DTF), a clear photo, and basic business details.",
+      desc: "Fill out the seller registration form in the Seller App. Upload required documents including identity proof, a clear photo, and basic business details.",
       img: "/application.svg",
     },
     {
