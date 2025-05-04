@@ -3,11 +3,13 @@ import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import ConfirmModal from "../modals/ConfirmModal";
+import { useAuth } from "../store/auth";
 
 export default function Applications() {
   const [applications, setApplications] = useState([]);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
   const [selectedAppId, setSelectedAppId] = useState(null);
+  const { authorizationToken } = useAuth();
   const openConfirmModal = (id) => {
     setSelectedAppId(id);
     setIsConfirmModalOpen(true);
@@ -25,12 +27,16 @@ export default function Applications() {
     closeConfirmModal();
   };
   const fetchApplications = async () => {
+    console.log("Authorization: ", authorizationToken);
     try {
-      const res = await fetch("http://localhost:4002/api/applicants/", {
+      const res = await fetch("http://localhost:4002/api/applicants", {
         method: "GET",
+        headers: {
+          Authorization: authorizationToken,
+        },
       });
       const res_data = await res.json();
-      console.log("Response data from applicats controller: ", res_data);
+      console.log("Response data from applicants controller: ", res_data);
       if (res.ok) {
         setApplications(res_data);
       } else {
@@ -54,6 +60,7 @@ export default function Applications() {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
+            Authorization: authorizationToken,
           },
         }
       );

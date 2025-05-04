@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const validate = require("../middlewares/validate-middleware");
-const roleSchema = require("../validators/role-validator");
+// const roleSchema = require("../validators/role-validator");
 const upload = require("../cloudinary/multer");
 const {
   newApplicant,
@@ -9,6 +9,7 @@ const {
   deleteApplicant,
 } = require("../controllers/applicant-controller");
 const applicantSchema = require("../validators/applicant-validator");
+const authMiddleware = require("../middlewares/auth-middleware");
 
 router.route("/new").post(
   upload.single("file"),
@@ -23,7 +24,7 @@ router.route("/new").post(
   newApplicant
 );
 
-router.route("/").get(showApplicants);
-router.route("/:id/delete").delete(deleteApplicant);
+router.route("/").get(authMiddleware, showApplicants);
+router.route("/:id/delete").delete(authMiddleware, deleteApplicant);
 
 module.exports = router;
