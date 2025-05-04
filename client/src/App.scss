@@ -3463,7 +3463,7 @@
     width: 90%;
     padding: 2rem;
     @include index.flex-box($flex-dir: column, $align-items: flex-start);
-    gap: 1rem;
+    gap: 2rem;
     h3 {
       font-size: 2.5rem;
       color: index.$dark-blue;
@@ -3503,6 +3503,7 @@
         width: 100%;
         height: 60vh;
         @include index.flex-box;
+        // background-color: pink;
         .slick-slide {
           width: 100%;
           margin: 0.2%;
